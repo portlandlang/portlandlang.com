@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **LICENSE.md stays in the repo, off the site** — added to Jekyll's exclude list, so it is no longer published as a page.
 - **Bootstrap moved under assets/** — the vendored files and `.bootstrap-version` now live in `assets/`, published with the rest of the assets, and the root `vendor/` is excluded whole as bundler's. The bootstrap-vendor tasks take the `assets` path. This deploy also rebuilds the site for the custom domain: the live page was built while the site still sat at the github.io subpath, so its asset URLs carried a `/portlandlang.com` prefix that portlandlang.com does not have, and it rendered unstyled.
 - **MIT license** — added MIT license file.
 - **Plain CSS and vendored Bootstrap** — removed Jekyll generated Sass files. Vendored Boostrap CSS/JS.

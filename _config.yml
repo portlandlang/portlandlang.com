@@ -10,6 +10,7 @@ exclude:
   - CHANGELOG.md
   - Gemfile
   - Gemfile.lock
+  - LICENSE.md
   - Rakefile
   - README.md
   - script
