@@ -2,7 +2,7 @@
 One directory's files as table rows: include.files. Each row is a link
 target (file.anchor) with its own `#` link.
 {%- endcomment -%}
-<table class="table table-sm align-middle">
+<table class="table table-sm align-top">
   <tbody>
     {%- for file in include.files %}
     {%- assign status = site.data.statuses | where: "key", file.status | first %}
