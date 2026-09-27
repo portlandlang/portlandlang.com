@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-27T03:11:18Z",
-  "portland_commit": "eb387d1",
+  "generated_at": "2026-09-27T15:19:59Z",
+  "portland_commit": "0993713",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
@@ -11,6 +11,11 @@
     "missing": 3555,
     "skipped": 205,
     "files": 3840
+  },
+  "progress": {
+    "examples_portable": 24271,
+    "examples_passing": 405,
+    "examples_partial": 571
   },
   "areas": [
     {
@@ -2004,10 +2009,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/allocate_spec.rb",
               "examples": 5,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-allocate"
@@ -2018,10 +2023,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/attached_object_spec.rb",
               "examples": 4,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-attached_object"
@@ -2032,10 +2037,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/dup_spec.rb",
               "examples": 6,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-dup"
@@ -2046,10 +2051,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/inherited_spec.rb",
               "examples": 9,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-inherited"
@@ -2060,10 +2065,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/initialize_spec.rb",
               "examples": 4,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-initialize"
@@ -2074,10 +2079,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/new_spec.rb",
               "examples": 15,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-new"
@@ -2088,10 +2093,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/subclasses_spec.rb",
               "examples": 8,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-subclasses"
@@ -2102,10 +2107,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/class/superclass_spec.rb",
               "examples": 3,
               "status": "skipped",
-              "reason": "The class keyword is gone; its four jobs have other homes.",
+              "reason": "These specs test Class as a runtime object — Class.new, allocate, superclass, subclasses, inherited — which is runtime metaprogramming. The class keyword itself is a spelling of struct (ADR 0056).",
               "link": {
-                "label": "classes",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [],
               "anchor": "core-class-superclass"
@@ -2145,10 +2150,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/comparable/clamp_spec.rb",
               "examples": 26,
               "status": "partial_planned",
-              "reason": "The range-argument forms, clamp(1..3) with endless and beginless ranges, are not built; nil bounds and backwards bounds refuse by design.",
+              "reason": "A number clamps by an integer range, endless and beginless included (#101); upstream's range examples clamp structs by a range of structs, which waits on ranges over any orderable (ADR 0019 holds integers). Nil bounds and backwards bounds refuse by design.",
               "link": {
-                "label": "issues/101",
-                "url": "https://github.com/portlandlang/portland/issues/101"
+                "label": "issues/149",
+                "url": "https://github.com/portlandlang/portland/issues/149"
               },
               "pdx": [
                 {

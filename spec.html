@@ -20,6 +20,33 @@ wide: true
   The ruby/spec to portland/spec mapping is at <a href="https://github.com/portlandlang/portland/blob/main/spec/ruby_spec.yml" target="_blank" class="text-body-secondary"><code>spec/ruby_spec.yml</code></a>.
 </p>
 
+{%- assign progress = dashboard.progress %}
+{%- assign taken_in = progress.examples_passing | plus: progress.examples_partial %}
+{%- assign passing_width = progress.examples_passing | times: 100.0 | divided_by: progress.examples_portable %}
+{%- assign partial_width = progress.examples_partial | times: 100.0 | divided_by: progress.examples_portable %}
+{%- assign taken_in_percent = taken_in | times: 100.0 | divided_by: progress.examples_portable | round: 1 %}
+
+<h2 class="h4 mt-4">Examples taken in</h2>
+
+<div class="progress-stacked thermometer" role="img" aria-label="{{ taken_in }} of {{ progress.examples_portable }} portable examples taken in">
+  <div class="progress" style="width: {{ passing_width }}%" title="{{ progress.examples_passing }} in files passing whole">
+    <div class="progress-bar status-green"></div>
+  </div>
+
+  <div class="progress" style="width: {{ partial_width }}%" title="{{ progress.examples_partial }} in files taken in part">
+    <div class="progress-bar status-green-striped"></div>
+  </div>
+</div>
+
+<p class="mt-2">
+  <strong>{% include number.html value=taken_in %}</strong> of {% include number.html value=progress.examples_portable %} portable examples ({{ taken_in_percent }}%):
+  {% include number.html value=progress.examples_passing %} in files passing whole,
+  {% include number.html value=progress.examples_partial %} in files taken in part.
+  Skipped files are decided out, so they aren't counted.
+</p>
+
+<h2 class="h4 mt-4">Files</h2>
+
 {% include status_bar.html totals=dashboard.totals size="large" %}
 
 <table class="table table-striped align-top status-legend mt-3">

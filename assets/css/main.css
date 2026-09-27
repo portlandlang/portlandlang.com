@@ -36,6 +36,9 @@ Bootstrap's own palette variables, so dark mode follows.
 .status-bar-small         { height: 0.5rem; }
 .status-bar .progress-bar { width: 100%; }
 
+.thermometer               { height: 2.5rem; }
+.thermometer .progress-bar { width: 100%; }
+
 .status-swatch {
   height: 0.8rem;
   vertical-align: baseline;

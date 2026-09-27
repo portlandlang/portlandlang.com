@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **One big bar for examples taken in** (#1) — atop `/spec/`, a thermometer of upstream examples, out of every example in a file not skipped: green for files passing whole, striped green for files taken in part, with the numbers written out beneath (976 of 24,271, 4.0%, today). It reads `progress` from `_data/ruby_spec.json` (portland#130). The file bar and legend follow under their own heading.
 - **Counts take thousands commas** — the area and legend counts read 2,151 and 3,840, formatted by `_includes/number.html`, since Liquid has no number formatter.
 - **File tables indent under their directory** — an open directory's table starts 1.5rem in and narrows by as much, so it reads as held by the folder above it.
 - **Time tags carry their values** — the generated time is a `datetime` attribute with the full UTC timestamp and now shows the hour and minute; the ruby/spec commit date is a `datetime` attribute too.
