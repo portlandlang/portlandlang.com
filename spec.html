@@ -11,14 +11,14 @@ wide: true
 <p class="lead">Every spec file in Ruby's executable specification <a href="https://github.com/ruby/spec" target="_blank">ruby/spec</a> and how far Portland's own spec suite has taken it in</p>
 
 <p class="alert alert-light text-body-secondary">
-  Generated <time>{{ dashboard.generated_at | date: "%Y-%m-%d" }}</time>
+  Generated <time datetime="{{ dashboard.generated_at }}">{{ dashboard.generated_at | date: "%Y-%m-%d %H:%M UTC" }}</time>
 
   with ruby/spec at <a href="https://github.com/ruby/spec/tree/{{ dashboard.ruby_spec_commit }}" target="_blank" class="text-body-secondary"><code>{{ dashboard.ruby_spec_commit }}</code></a>
-  (<time>{{ dashboard.ruby_spec_date }}</time>),
+  (<time datetime="{{ dashboard.ruby_spec_date }}">{{ dashboard.ruby_spec_date }}</time>),
   and Portland at <a href="https://github.com/portlandlang/portland/tree/{{ dashboard.portland_commit }}" target="_blank" class="text-body-secondary"><code>{{ dashboard.portland_commit }}</code></a>.
 
   The ruby/spec to portland/spec mapping is at <a href="https://github.com/portlandlang/portland/blob/main/spec/ruby_spec.yml" target="_blank" class="text-body-secondary"><code>spec/ruby_spec.yml</code></a>.
-  </p>
+</p>
 
 {% include status_bar.html totals=dashboard.totals size="large" %}
 
