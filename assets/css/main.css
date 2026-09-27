@@ -58,7 +58,7 @@ details.area {
     margin-bottom: 0.5rem;
 
     & .area-name  { margin-right: 0.5rem; }
-    & .status-bar { margin-top: 0.5rem; }
+    & .status-bar { margin-top:   0.5rem; }
   }
 }
 
