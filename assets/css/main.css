@@ -1,5 +1,7 @@
-/* The site's own styles, on top of the vendored Bootstrap. Plain CSS: no
-   preprocessor, served exactly as written. */
+/*
+The site's own styles, on top of the vendored Bootstrap.
+Plain CSS: no preprocessor, served exactly as written.
+*/
 
 main {
   margin: 4rem auto;
