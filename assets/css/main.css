@@ -15,9 +15,10 @@ main.wide {
 }
 
 /*
-The spec dashboard's status colors: grey, red, yellow, orange, green, and
-green striped for the partials that are as done as they will be. Bootstrap's
-own palette variables, so dark mode follows.
+The spec dashboard's status colors:
+grey, red, yellow, orange, green, and green striped
+for the partials that are as done as they will be.
+Bootstrap's own palette variables, so dark mode follows.
 */
 .status-green { background-color: var(--bs-success); }
 .status-green-striped {
