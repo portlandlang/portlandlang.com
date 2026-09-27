@@ -43,10 +43,10 @@ own palette variables, so dark mode follows.
   width: 0.8rem;
 }
 
-.status-legend { width: auto; }
 .status-legend .legend-swatch { width: 1.5rem; }
-.status-legend .legend-count { font-variant-numeric: tabular-nums; font-weight: 600; padding-right: 1rem; }
+.status-legend .legend-count { font-variant-numeric: tabular-nums; font-weight: 600; }
 .status-legend .legend-label { padding-right: 1.5rem; white-space: nowrap; }
+.status-legend .legend-means { padding-right: 1.5rem; }
 .status-legend tfoot td { border-bottom: 0; }
 
 details.area { margin-top: 2.5rem; }

@@ -1,16 +1,19 @@
 {%- comment -%}
-A stacked bar for one set of totals: include.totals is a hash of status key
-to file count, plus "files". Segments run in _data/statuses.yml's order, and
-an empty status draws nothing.
+A stacked bar for one set of totals:
+include.totals is a hash of status key to file count, plus "files".
+Segments run in _data/statuses.yml's order, and an empty status draws nothing.
 {%- endcomment -%}
+
 <div class="progress-stacked status-bar{% if include.size %} status-bar-{{ include.size }}{% endif %}" role="img" aria-label="{% for status in site.data.statuses %}{{ include.totals[status.key] }} {{ status.label | downcase }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
   {%- for status in site.data.statuses %}
-  {%- assign files = include.totals[status.key] %}
-  {%- if files > 0 %}
-  {%- assign width = files | times: 100.0 | divided_by: include.totals.files %}
-  <div class="progress" style="width: {{ width }}%" title="{{ files }} {{ status.label | downcase }}">
-    <div class="progress-bar status-{{ status.color }}"></div>
-  </div>
-  {%- endif %}
+    {%- assign files = include.totals[status.key] %}
+
+    {%- if files > 0 %}
+      {%- assign width = files | times: 100.0 | divided_by: include.totals.files %}
+
+      <div class="progress" style="width: {{ width }}%" title="{{ files }} {{ status.label | downcase }}">
+        <div class="progress-bar status-{{ status.color }}"></div>
+      </div>
+    {%- endif %}
   {%- endfor %}
 </div>

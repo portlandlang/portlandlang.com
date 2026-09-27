@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "The spec"
+title: The spec
 permalink: /spec/
 wide: true
 ---
@@ -23,67 +23,78 @@ wide: true
   <thead>
     <tr>
       <th scope="col"><span class="visually-hidden">Color</span></th>
-      <th scope="col" class="legend-count text-end">Files</th>
       <th scope="col" class="legend-label">Status</th>
-      <th scope="col">Means</th>
+      <th scope="col" class="legend-means">Means</th>
+      <th scope="col" class="legend-count text-end">Files</th>
     </tr>
   </thead>
+
   <tbody>
     {%- for status in site.data.statuses %}
-    <tr>
-      <td class="legend-swatch"><span class="status-swatch status-{{ status.color }}"></span></td>
-      <td class="legend-count text-end">{{ dashboard.totals[status.key] }}</td>
-      <td class="legend-label">{{ status.label }}</td>
-      <td class="text-body-secondary">{{ status.description }}</td>
-    </tr>
+      <tr>
+        <td class="legend-swatch"><span class="status-swatch status-{{ status.color }}"></span></td>
+        <td class="legend-label">{{ status.label }}</td>
+        <td class="legend-means text-body-secondary">{{ status.description }}</td>
+        <td class="legend-count text-end">{{ dashboard.totals[status.key] }}</td>
+      </tr>
     {%- endfor %}
   </tbody>
+
   <tfoot>
     <tr>
       <td></td>
-      <td class="legend-count text-end">{{ dashboard.totals.files }}</td>
       <td class="legend-label">All</td>
-      <td class="text-body-secondary">Every spec file in the checkout.</td>
+      <td class="legend-means text-body-secondary">Every spec file in the checkout</td>
+      <td class="legend-count text-end">{{ dashboard.totals.files }}</td>
     </tr>
   </tfoot>
 </table>
 
 {% for area in dashboard.areas %}
-<details class="area" id="{{ area.anchor }}">
-  <summary>
-    <span class="area-name h3">{{ area.name }}</span>
-    <span class="text-body-secondary">{{ area.totals.files }} files</span>
-    <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
-    {% include status_bar.html totals=area.totals %}
-  </summary>
-
-  {% for directory in area.directories %}
-  {%- if directory.name == area.name %}
-  {%- comment %}An area's own top-level files, as language/ has: no extra level.{% endcomment %}
-  {% include spec_files.html files=directory.files %}
-  {%- else %}
-  <details class="directory" id="{{ directory.anchor }}">
+  <details class="area" id="{{ area.anchor }}">
     <summary>
-      {%- assign area_prefix = area.name | append: "/" %}
-      {%- assign short_name = directory.name | remove_first: area_prefix %}
-      <span class="directory-label">
-        <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
-        <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
-      </span>
-      <span class="directory-count text-body-secondary">{{ directory.totals.files }}</span>
-      {% include status_bar.html totals=directory.totals size="small" %}
+      <span class="area-name h3">{{ area.name }}</span>
+      <span class="text-body-secondary">{{ area.totals.files }} files</span>
+      <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
+
+      {% include status_bar.html totals=area.totals %}
     </summary>
-    {% include spec_files.html files=directory.files %}
+
+    {% for directory in area.directories %}
+      {%- if directory.name == area.name %}
+        {%- comment %}
+        An area's own top-level files, as language/ has: no extra level.
+        {% endcomment %}
+
+        {% include spec_files.html files=directory.files %}
+      {%- else %}
+        <details class="directory" id="{{ directory.anchor }}">
+          <summary>
+            {%- assign area_prefix = area.name | append: "/" %}
+            {%- assign short_name = directory.name | remove_first: area_prefix %}
+
+            <span class="directory-label">
+              <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
+              <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
+            </span>
+
+            <span class="directory-count text-body-secondary">{{ directory.totals.files }}</span>
+
+            {% include status_bar.html totals=directory.totals size="small" %}
+          </summary>
+
+          {% include spec_files.html files=directory.files %}
+        </details>
+      {%- endif %}
+    {% endfor %}
   </details>
-  {%- endif %}
-  {% endfor %}
-</details>
 {% endfor %}
 
 <script>
-  // A link into the tree lands on a visible spot: every <details> around the
-  // target opens — the target's own too, so #core-array shows its files —
-  // on load and whenever the anchor changes. Closed is the default.
+  // A link into the tree lands on a visible spot:
+  // every <details> around the target opens, so #core-array shows its files.
+  // On load and whenever the anchor changes. Closed is the default.
+  //
   (() => {
     const reveal = () => {
       const target = document.getElementById(decodeURIComponent(location.hash.slice(1)))
