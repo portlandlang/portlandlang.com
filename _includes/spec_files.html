@@ -3,18 +3,38 @@ One directory's files as table rows: include.files.
 Each row is a link target (file.anchor) with its own `#` link.
 {%- endcomment -%}
 
-<table class="table table-sm align-top">
+<table class="table table-striped align-top">
   <tbody>
     {%- for file in include.files %}
       {%- assign status = site.data.statuses | where: "key", file.status | first %}
 
       <tr id="{{ file.anchor }}">
-        <td class="file-status"><span class="status-swatch status-{{ status.color }}" title="{{ status.label }}"></span></td>
-        <td class="file-name"><a href="{{ file.url }}">{{ file.name }}</a> <a class="anchor" href="#{{ file.anchor }}" aria-label="Link to {{ file.name }}">#</a></td>
-        <td class="file-examples text-body-secondary">{{ file.examples }}</td>
-        <td class="file-detail">
-          {%- for pdx in file.pdx %}<a class="pdx" href="{{ pdx.url }}"><code>{{ pdx.path | remove_first: "spec/" }}</code></a>{% endfor %}
-          {%- if file.reason %}<div class="reason">{{ file.reason }}{% if file.link %} <a href="{{ file.link.url }}">{{ file.link.label }}</a>{% endif %}</div>{% endif %}
+        <td class="file-name">
+          <a class="anchor" href="#{{ file.anchor }}" aria-label="Link to {{ file.name }}">#</a>
+
+          <span class="status-swatch d-inline-block rounded-1 status-{{ status.color }}" title="{{ status.label }}"></span>
+
+          <a href="{{ file.url }}" target="_blank">{{ file.name }}</a>
+        </td>
+
+        <td class="file-examples text-end text-body-secondary">{{ file.examples }}</td>
+
+        <td class="file-detail me-5">
+          {%- for pdx in file.pdx %}
+            <a class="pdx me-1" href="{{ pdx.url }}" target="_blank">
+              <code>{{ pdx.path | remove_first: "spec/" }}</code>
+            </a>
+          {% endfor %}
+
+          {%- if file.reason %}
+            <div class="text-body-secondary">
+              {{ file.reason }}
+
+              {% if file.link %}
+                <a href="{{ file.link.url }}" target="_blank">{{ file.link.label }}</a>
+              {% endif %}
+            </div>
+          {% endif %}
         </td>
       </tr>
     {%- endfor %}

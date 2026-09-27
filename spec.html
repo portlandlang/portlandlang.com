@@ -21,7 +21,7 @@ wide: true
 
 {% include status_bar.html totals=dashboard.totals size="large" %}
 
-<table class="table table-sm align-top status-legend mt-3">
+<table class="table table-striped align-top status-legend mt-3">
   <thead>
     <tr>
       <th scope="col"><span class="visually-hidden">Color</span></th>
@@ -34,7 +34,7 @@ wide: true
   <tbody>
     {%- for status in site.data.statuses %}
       <tr>
-        <td class="legend-swatch"><span class="status-swatch status-{{ status.color }}"></span></td>
+        <td class="legend-swatch"><span class="status-swatch d-inline-block rounded-1 status-{{ status.color }}"></span></td>
         <td class="legend-label">{{ status.label }}</td>
         <td class="legend-means text-body-secondary">{{ status.description }}</td>
         <td class="legend-count text-end">{{ dashboard.totals[status.key] }}</td>
@@ -55,9 +55,10 @@ wide: true
 {% for area in dashboard.areas %}
   <details class="area" id="{{ area.anchor }}">
     <summary>
+      <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
+
       <span class="area-name h3">{{ area.name }}</span>
       <span class="text-body-secondary">{{ area.totals.files }} files</span>
-      <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
 
       {% include status_bar.html totals=area.totals %}
     </summary>
@@ -76,11 +77,11 @@ wide: true
             {%- assign short_name = directory.name | remove_first: area_prefix %}
 
             <span class="directory-label">
-              <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
               <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
+              <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
             </span>
 
-            <span class="directory-count text-body-secondary">{{ directory.totals.files }}</span>
+            <span class="directory-count text-end text-body-secondary">{{ directory.totals.files }}</span>
 
             {% include status_bar.html totals=directory.totals size="small" %}
           </summary>
