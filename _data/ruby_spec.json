@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-09-27T15:19:59Z",
-  "portland_commit": "0993713",
+  "generated_at": "2026-09-27T16:33:14Z",
+  "portland_commit": "4877fa3",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 42,
-    "partial_intentional": 33,
+    "passing": 43,
+    "partial_intentional": 41,
     "partial_planned": 5,
     "failing": 0,
-    "missing": 3555,
-    "skipped": 205,
+    "missing": 3525,
+    "skipped": 226,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 24271,
-    "examples_passing": 405,
-    "examples_partial": 571
+    "examples_portable": 24240,
+    "examples_passing": 406,
+    "examples_partial": 586
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 42,
-        "partial_intentional": 32,
+        "passing": 43,
+        "partial_intentional": 40,
         "partial_planned": 4,
         "failing": 0,
-        "missing": 1873,
-        "skipped": 200,
+        "missing": 1843,
+        "skipped": 221,
         "files": 2151
       },
       "directories": [
@@ -6118,11 +6118,11 @@
           "anchor": "core-false",
           "totals": {
             "passing": 0,
-            "partial_intentional": 0,
+            "partial_intentional": 3,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 9,
-            "skipped": 0,
+            "missing": 3,
+            "skipped": 3,
             "files": 9
           },
           "files": [
@@ -6140,8 +6140,18 @@
               "path": "core/false/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/case_compare_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "There is no Object class object for false to be compared with; every other row ports.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/case_compare_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/case_compare_spec.pdx"
+                }
+              ],
               "anchor": "core-false-case_compare"
             },
             {
@@ -6149,7 +6159,12 @@
               "path": "core/false/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-false-dup"
             },
@@ -6158,7 +6173,12 @@
               "path": "core/false/falseclass_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/falseclass_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "false is a value, not an instance of a class object to allocate from, and failures are values rather than raised exceptions.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-false-falseclass"
             },
@@ -6167,8 +6187,18 @@
               "path": "core/false/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(false), not a method (ADR 0026), so the example compares its answer rather than method objects.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/to_s_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/to_s_spec.pdx"
+                }
+              ],
               "anchor": "core-false-inspect"
             },
             {
@@ -6185,7 +6215,12 @@
               "path": "core/false/singleton_method_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/singleton_method_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Singleton methods are runtime metaprogramming, which Portland closes.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-false-singleton_method"
             },
@@ -6194,8 +6229,18 @@
               "path": "core/false/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/false/to_s_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Whether the string is frozen or the same object each time can't be observed where values never mutate.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/to_s_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/to_s_spec.pdx"
+                }
+              ],
               "anchor": "core-false-to_s"
             },
             {
@@ -13828,12 +13873,12 @@
           "name": "core/nil",
           "anchor": "core-nil",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
+            "passing": 1,
+            "partial_intentional": 2,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 18,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 15,
             "files": 18
           },
           "files": [
@@ -13842,7 +13887,12 @@
               "path": "core/nil/and_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/and_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-and"
             },
@@ -13851,8 +13901,18 @@
               "path": "core/nil/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/case_compare_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "There is no Object class object for nil to be compared with; every other row ports.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/case_compare_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/case_compare_spec.pdx"
+                }
+              ],
               "anchor": "core-nil-case_compare"
             },
             {
@@ -13860,7 +13920,12 @@
               "path": "core/nil/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-nil-dup"
             },
@@ -13869,8 +13934,18 @@
               "path": "core/nil/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(nil), not a method (ADR 0026).",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/optionals/nil_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/optionals/nil_spec.pdx"
+                }
+              ],
               "anchor": "core-nil-inspect"
             },
             {
@@ -13878,7 +13953,12 @@
               "path": "core/nil/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/match_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-match"
             },
@@ -13887,8 +13967,13 @@
               "path": "core/nil/nil_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/nil_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/optionals/nil_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/optionals/nil_spec.pdx"
+                }
+              ],
               "anchor": "core-nil-nil"
             },
             {
@@ -13896,7 +13981,12 @@
               "path": "core/nil/nilclass_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/nilclass_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil is a value, not an instance of a class object to allocate from, and failures are values rather than raised exceptions.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-nilclass"
             },
@@ -13905,7 +13995,12 @@
               "path": "core/nil/or_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/or_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-or"
             },
@@ -13914,7 +14009,12 @@
               "path": "core/nil/rationalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/rationalize_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-rationalize"
             },
@@ -13923,7 +14023,12 @@
               "path": "core/nil/singleton_method_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/singleton_method_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Singleton methods are runtime metaprogramming, which Portland closes.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-nil-singleton_method"
             },
@@ -13932,7 +14037,12 @@
               "path": "core/nil/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_a_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_a"
             },
@@ -13941,7 +14051,12 @@
               "path": "core/nil/to_c_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_c_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_c"
             },
@@ -13950,7 +14065,12 @@
               "path": "core/nil/to_f_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_f_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_f"
             },
@@ -13959,7 +14079,12 @@
               "path": "core/nil/to_h_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_h_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_h"
             },
@@ -13968,7 +14093,12 @@
               "path": "core/nil/to_i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_i_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_i"
             },
@@ -13977,7 +14107,12 @@
               "path": "core/nil/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_r_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_r"
             },
@@ -13986,7 +14121,12 @@
               "path": "core/nil/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/to_s_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-to_s"
             },
@@ -13995,7 +14135,12 @@
               "path": "core/nil/xor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/nil/xor_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "nil has no methods beyond nil? and some? — absence is explicit; handle the nil case first.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-nil-xor"
             }
@@ -21825,11 +21970,11 @@
           "anchor": "core-true",
           "totals": {
             "passing": 0,
-            "partial_intentional": 0,
+            "partial_intentional": 3,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 9,
-            "skipped": 0,
+            "missing": 3,
+            "skipped": 3,
             "files": 9
           },
           "files": [
@@ -21847,8 +21992,18 @@
               "path": "core/true/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/case_compare_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "There is no Object class object for true to be compared with; every other row ports.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/case_compare_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/case_compare_spec.pdx"
+                }
+              ],
               "anchor": "core-true-case_compare"
             },
             {
@@ -21856,7 +22011,12 @@
               "path": "core/true/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-true-dup"
             },
@@ -21865,8 +22025,18 @@
               "path": "core/true/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(true), not a method (ADR 0026), so the example compares its answer rather than method objects.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/to_s_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/to_s_spec.pdx"
+                }
+              ],
               "anchor": "core-true-inspect"
             },
             {
@@ -21883,7 +22053,12 @@
               "path": "core/true/singleton_method_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/singleton_method_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Singleton methods are runtime metaprogramming, which Portland closes.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-true-singleton_method"
             },
@@ -21892,8 +22067,18 @@
               "path": "core/true/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/to_s_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Whether the string is frozen or the same object each time can't be observed where values never mutate.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/boolean/to_s_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/boolean/to_s_spec.pdx"
+                }
+              ],
               "anchor": "core-true-to_s"
             },
             {
@@ -21901,7 +22086,12 @@
               "path": "core/true/trueclass_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/true/trueclass_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "true is a value, not an instance of a class object to allocate from, and failures are values rather than raised exceptions.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
               "pdx": [],
               "anchor": "core-true-trueclass"
             },
