@@ -99,7 +99,11 @@ details.directory {
     min-width: 0;
   }
 
-  table { margin: 0.25rem 0 1rem; }
+  /* Indented under its directory, so an open folder reads as holding it. */
+  table {
+    margin: 0.25rem 0 1rem 1.5rem;
+    width: calc(100% - 1.5rem);
+  }
 }
 
 .file-status   { width: 1.5rem; }

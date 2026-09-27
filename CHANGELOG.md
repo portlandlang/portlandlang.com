@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **File tables indent under their directory** — an open directory's table starts 1.5rem in and narrows by as much, so it reads as held by the folder above it.
 - **Time tags carry their values** — the generated time is a `datetime` attribute with the full UTC timestamp and now shows the hour and minute; the ruby/spec commit date is a `datetime` attribute too.
 - **The legend is a table** — color, file count (right-aligned), status, and what it means, one row per status and a total row beneath, in place of the bulleted list.
 - **File rows align to the top** — every cell starts on the row's first line, so the swatch, name, count, and pdx link line up when a reason wraps below.
