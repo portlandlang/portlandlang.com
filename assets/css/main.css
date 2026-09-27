@@ -9,6 +9,12 @@ grey, red, yellow, orange, green, and green striped
 for the partials that are as done as they will be.
 Bootstrap's own palette variables, so dark mode follows.
 */
+.status-green  { background-color: var(--bs-success);   }
+.status-yellow { background-color: var(--bs-warning);   }
+.status-red    { background-color: var(--bs-danger);    }
+.status-orange { background-color: var(--bs-orange);    }
+.status-grey   { background-color: var(--bs-secondary); }
+
 .status-green-striped {
   background-color: var(--bs-success);
   background-size: 0.75rem 0.75rem;
@@ -24,12 +30,6 @@ Bootstrap's own palette variables, so dark mode follows.
     transparent
   );
 }
-
-.status-green  { background-color: var(--bs-success);   }
-.status-yellow { background-color: var(--bs-warning);   }
-.status-red    { background-color: var(--bs-danger);    }
-.status-orange { background-color: var(--bs-orange);    }
-.status-grey   { background-color: var(--bs-secondary); }
 
 .status-bar               { height: 0.75rem; }
 .status-bar-large         { height: 1.5rem; }
