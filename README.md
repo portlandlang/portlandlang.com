@@ -19,9 +19,9 @@ Built with [Jekyll](https://jekyllrb.com) and deployed to GitHub Pages by the wo
 
 ### Styles
 
-Plain CSS in `assets/css/main.css`, on top of [Bootstrap](https://getbootstrap.com) vendored into `vendor/stylesheets/` and `vendor/javascript/` by [bootstrap-vendor](https://github.com/xoengineering/bootstrap-vendor). No preprocessor, no npm. The pinned version lives in `.bootstrap-version`:
+Plain CSS in `assets/css/main.css`, on top of [Bootstrap](https://getbootstrap.com) vendored into `assets/vendor/stylesheets/` and `assets/vendor/javascript/` by [bootstrap-vendor](https://github.com/xoengineering/bootstrap-vendor). No preprocessor, no npm. The pinned version lives in `assets/.bootstrap-version`, so each task takes the `assets` path:
 
-|                                     |                                            |
-| ----------------------------------- | ------------------------------------------ |
-| `bundle exec rake bootstrap:status` | compare the vendored version to upstream's |
-| `bundle exec rake bootstrap:update` | re-download at the pinned version          |
+|                                                 |                                            |
+| ----------------------------------------------- | ------------------------------------------ |
+| `bundle exec rake 'bootstrap:status[, assets]'` | compare the vendored version to upstream's |
+| `bundle exec rake 'bootstrap:update[, assets]'` | re-download at the pinned version          |

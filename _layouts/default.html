@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <title>{% if page.title == site.title %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
-    <link rel="stylesheet" href="{{ "/vendor/stylesheets/bootstrap.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/vendor/stylesheets/bootstrap.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
   <body>
     <main>
       {{ content }}
     </main>
-    <script src="{{ "/vendor/javascript/bootstrap.bundle.js" | relative_url }}"></script>
+    <script src="{{ "/assets/vendor/javascript/bootstrap.bundle.js" | relative_url }}"></script>
   </body>
 </html>
