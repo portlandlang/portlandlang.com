@@ -59,7 +59,7 @@ details.directory summary {
   cursor: pointer;
   display: grid;
   gap: 1rem;
-  grid-template-columns: 17rem 3rem 1fr 1rem;
+  grid-template-columns: 17rem 3rem 1fr;
   padding: 0.4rem 0;
 }
 
@@ -73,6 +73,12 @@ details.directory summary {
 .anchor:hover, .anchor:focus { opacity: 1; }
 details.area, details.directory, tr[id] { scroll-margin-top: 1rem; }
 tr:target > td { background-color: var(--bs-warning-bg-subtle); }
+/* The name, then its `#`: a long name ellipsizes and the `#` stays put. */
+details.directory .directory-label {
+  display: flex;
+  gap: 0.3rem;
+  min-width: 0;
+}
 details.directory .directory-name {
   overflow: hidden;
   text-overflow: ellipsis;

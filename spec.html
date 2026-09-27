@@ -47,10 +47,12 @@ wide: true
     <summary>
       {%- assign area_prefix = area.name | append: "/" %}
       {%- assign short_name = directory.name | remove_first: area_prefix %}
-      <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
+      <span class="directory-label">
+        <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
+        <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
+      </span>
       <span class="directory-count text-body-secondary">{{ directory.totals.files }}</span>
       {% include status_bar.html totals=directory.totals size="small" %}
-      <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
     </summary>
     {% include spec_files.html files=directory.files %}
   </details>
