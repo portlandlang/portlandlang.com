@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **The legend is a table** — color, file count (right-aligned), status, and what it means, one row per status and a total row beneath, in place of the bulleted list.
 - **File rows align to the top** — every cell starts on the row's first line, so the swatch, name, count, and pdx link line up when a reason wraps below.
 - **A directory's `#` sits after its name** — as a file's and an area's already did, rather than after its bar; a long name ellipsizes and the `#` stays beside it.
 - **Linkable, collapsed dashboard** — every level of the spec tree is a link target with a `#` beside its name: `#core`, `#core-array`, `#core-array-each_index` (a file named like a sibling directory takes `_spec`, `#core-string-unpack_spec`). Areas are `<details>` too, and everything starts closed; a few lines of script open every level around a linked spot on load and on each anchor change, and the linked row is highlighted. `language/`'s own files list straight under the area, with no extra level. File rows moved into `_includes/spec_files.html`.

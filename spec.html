@@ -19,15 +19,34 @@ wide: true
 
 {% include status_bar.html totals=dashboard.totals size="large" %}
 
-<ul class="list-unstyled status-legend mt-3">
-  {%- for status in site.data.statuses %}
-  <li>
-    <span class="status-swatch status-{{ status.color }}"></span>
-    <strong>{{ dashboard.totals[status.key] }}</strong> {{ status.label | downcase }}
-    <span class="text-body-secondary">— {{ status.description }}</span>
-  </li>
-  {%- endfor %}
-</ul>
+<table class="table table-sm align-top status-legend mt-3">
+  <thead>
+    <tr>
+      <th scope="col"><span class="visually-hidden">Color</span></th>
+      <th scope="col" class="legend-count text-end">Files</th>
+      <th scope="col" class="legend-label">Status</th>
+      <th scope="col">Means</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%- for status in site.data.statuses %}
+    <tr>
+      <td class="legend-swatch"><span class="status-swatch status-{{ status.color }}"></span></td>
+      <td class="legend-count text-end">{{ dashboard.totals[status.key] }}</td>
+      <td class="legend-label">{{ status.label }}</td>
+      <td class="text-body-secondary">{{ status.description }}</td>
+    </tr>
+    {%- endfor %}
+  </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td class="legend-count text-end">{{ dashboard.totals.files }}</td>
+      <td class="legend-label">All</td>
+      <td class="text-body-secondary">Every spec file in the checkout.</td>
+    </tr>
+  </tfoot>
+</table>
 
 {% for area in dashboard.areas %}
 <details class="area" id="{{ area.anchor }}">
