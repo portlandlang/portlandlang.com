@@ -38,7 +38,8 @@ wide: true
         <td class="legend-swatch"><span class="status-swatch d-inline-block rounded-1 status-{{ status.color }}"></span></td>
         <td class="legend-label">{{ status.label }}</td>
         <td class="legend-means text-body-secondary">{{ status.description }}</td>
-        <td class="legend-count text-end">{{ dashboard.totals[status.key] }}</td>
+        {%- assign status_files = dashboard.totals[status.key] %}
+        <td class="legend-count text-end">{% include number.html value=status_files %}</td>
       </tr>
     {%- endfor %}
   </tbody>
@@ -48,7 +49,7 @@ wide: true
       <td></td>
       <td class="legend-label">All</td>
       <td class="legend-means text-body-secondary">Every spec file in the checkout</td>
-      <td class="legend-count text-end">{{ dashboard.totals.files }}</td>
+      <td class="legend-count text-end">{% include number.html value=dashboard.totals.files %}</td>
     </tr>
   </tfoot>
 </table>
@@ -59,7 +60,7 @@ wide: true
       <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
 
       <span class="area-name h3">{{ area.name }}</span>
-      <span class="text-body-secondary">{{ area.totals.files }} files</span>
+      <span class="text-body-secondary">{% include number.html value=area.totals.files %} files</span>
 
       {% include status_bar.html totals=area.totals %}
     </summary>

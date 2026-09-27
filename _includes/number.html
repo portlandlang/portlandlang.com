@@ -1,0 +1,16 @@
+{%- comment -%}
+include.value with thousands commas: 3840 becomes 3,840.
+Liquid has no number formatter,
+This splits off the thousands and pads the rest to three digits.
+Good to 999,999, far past ruby/spec's size.
+{%- endcomment -%}
+
+{%- assign number = include.value | plus: 0 -%}
+
+{%- if number >= 1000 -%}
+  {%- assign thousands = number | divided_by: 1000 -%}
+  {%- assign rest = number | modulo: 1000 | prepend: "00" | slice: -3, 3 -%}
+  {{- thousands }},{{ rest -}}
+{%- else -%}
+  {{- number -}}
+{%- endif -%}
