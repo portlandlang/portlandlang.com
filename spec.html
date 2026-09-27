@@ -1,0 +1,65 @@
+---
+layout: default
+title: "The spec"
+permalink: /spec/
+wide: true
+---
+{%- assign dashboard = site.data.ruby_spec %}
+
+<h1 class="display-5">The spec</h1>
+
+<p class="lead">Every spec file in <a href="https://github.com/ruby/spec">ruby/spec</a>, Ruby's executable specification, and how far Portland's own spec suite has taken it in.</p>
+
+<p class="text-body-secondary small">
+  ruby/spec at <a href="https://github.com/ruby/spec/tree/{{ dashboard.ruby_spec_commit }}"><code>{{ dashboard.ruby_spec_commit }}</code></a> ({{ dashboard.ruby_spec_date }}),
+  Portland at <a href="https://github.com/portlandlang/portland/tree/{{ dashboard.portland_commit }}"><code>{{ dashboard.portland_commit }}</code></a>,
+  generated {{ dashboard.generated_at | date: "%Y-%m-%d" }}.
+  The mapping lives in <a href="https://github.com/portlandlang/portland/blob/main/spec/ruby_spec.yml"><code>spec/ruby_spec.yml</code></a>.
+</p>
+
+{% include status_bar.html totals=dashboard.totals size="large" %}
+
+<ul class="list-unstyled status-legend mt-3">
+  {%- for status in site.data.statuses %}
+  <li>
+    <span class="status-swatch status-{{ status.color }}"></span>
+    <strong>{{ dashboard.totals[status.key] }}</strong> {{ status.label | downcase }}
+    <span class="text-body-secondary">— {{ status.description }}</span>
+  </li>
+  {%- endfor %}
+</ul>
+
+{% for area in dashboard.areas %}
+<section class="mt-5">
+  <h2 class="h3">{{ area.name }} <span class="text-body-secondary fs-6">{{ area.totals.files }} files</span></h2>
+  {% include status_bar.html totals=area.totals %}
+
+  {% for directory in area.directories %}
+  <details class="directory">
+    <summary>
+      {%- assign area_prefix = area.name | append: "/" %}
+      {%- assign short_name = directory.name | remove_first: area_prefix %}
+      <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
+      <span class="directory-count text-body-secondary">{{ directory.totals.files }}</span>
+      {% include status_bar.html totals=directory.totals size="small" %}
+    </summary>
+    <table class="table table-sm align-middle">
+      <tbody>
+        {%- for file in directory.files %}
+        {%- assign status = site.data.statuses | where: "key", file.status | first %}
+        <tr>
+          <td class="file-status"><span class="status-swatch status-{{ status.color }}" title="{{ status.label }}"></span></td>
+          <td class="file-name"><a href="{{ file.url }}">{{ file.name }}</a></td>
+          <td class="file-examples text-body-secondary">{{ file.examples }}</td>
+          <td class="file-detail">
+            {%- for pdx in file.pdx %}<a class="pdx" href="{{ pdx.url }}"><code>{{ pdx.path | remove_first: "spec/" }}</code></a>{% endfor %}
+            {%- if file.reason %}<div class="reason">{{ file.reason }}{% if file.link %} <a href="{{ file.link.url }}">{{ file.link.label }}</a>{% endif %}</div>{% endif %}
+          </td>
+        </tr>
+        {%- endfor %}
+      </tbody>
+    </table>
+  </details>
+  {% endfor %}
+</section>
+{% endfor %}

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **The spec dashboard** — `/spec/` shows every spec file in ruby/spec and how far Portland has taken it in: an overall bar, a bar per area, and a row per directory that expands into its files, each with a status swatch, a link to the upstream file, its example count, the pdx specs that hold it, and for a partial or a skip the reason and the ledger page. Six statuses on five colors, kept in `_data/statuses.yml`: green passing, striped green partial by design, yellow partial with more planned, red failing, orange missing, grey skipped. The data is `_data/ruby_spec.json`, generated in the language repo by `script/ruby_spec_dashboard`; the layout takes `wide: true` for pages that need the room. Linked from the home page.
 - **Auto dark/light mode** — added Bootstrap JS to auto-detect and auto-switch dark and light mode styles, based on the user's system setting.
 - **LICENSE.md stays in the repo, off the site** — added to Jekyll's exclude list, so it is no longer published as a page.
 - **Bootstrap moved under assets/** — the vendored files and `.bootstrap-version` now live in `assets/`, published with the rest of the assets, and the root `vendor/` is excluded whole as bundler's. The bootstrap-vendor tasks take the `assets` path. This deploy also rebuilds the site for the custom domain: the live page was built while the site still sat at the github.io subpath, so its asset URLs carried a `/portlandlang.com` prefix that portlandlang.com does not have, and it rendered unstyled.

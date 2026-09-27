@@ -1,0 +1,29 @@
+# How the spec dashboard draws each status. The statuses themselves, and
+# which file has which, come from _data/ruby_spec.json, generated in the
+# language repo by script/ruby_spec_dashboard. Listed in bar order: done
+# first, then in progress, then broken, then not started, then never.
+
+- key: passing
+  label: Passing
+  color: green
+  description: Imported, and every example passes on both oracles.
+- key: partial_intentional
+  label: Partial, by design
+  color: green-striped
+  description: Imported in part; the rest stays behind on purpose, and the ledger says why.
+- key: partial_planned
+  label: Partial, more planned
+  color: yellow
+  description: Imported in part; the rest is owed.
+- key: failing
+  label: Failing
+  color: red
+  description: Imported, and an example fails.
+- key: missing
+  label: Missing
+  color: orange
+  description: Not imported yet.
+- key: skipped
+  label: Skipped
+  color: grey
+  description: Not imported, by design; the ledger says why.
