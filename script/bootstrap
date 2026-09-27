@@ -1,0 +1,5 @@
+#!/bin/sh
+# Install the site's dependencies.
+set -e
+cd "$(dirname "$0")/.."
+bundle install

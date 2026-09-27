@@ -1,0 +1,5 @@
+#!/bin/sh
+# Build the site the way the Pages workflow does; a failed build fails this.
+set -e
+cd "$(dirname "$0")/.."
+JEKYLL_ENV=production bundle exec jekyll build --strict_front_matter

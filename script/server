@@ -1,0 +1,6 @@
+#!/bin/sh
+# Serve the site locally at http://localhost:4000, rebuilding on change.
+set -e
+cd "$(dirname "$0")/.."
+script/bootstrap
+bundle exec jekyll serve --livereload

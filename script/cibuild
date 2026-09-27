@@ -1,0 +1,6 @@
+#!/bin/sh
+# What CI runs: dependencies, then the build.
+set -e
+cd "$(dirname "$0")/.."
+script/bootstrap
+script/test

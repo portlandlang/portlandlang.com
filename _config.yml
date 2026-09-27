@@ -1,0 +1,13 @@
+url: "https://portlandlang.com"
+baseurl: ""
+title: "Portland"
+description: "A joyous programming language for Apple silicon. Close to the metal, on Metal."
+lang: "en-US"
+
+exclude:
+  - CHANGELOG.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - script
+  - vendor
