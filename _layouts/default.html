@@ -7,11 +7,26 @@
     <title>{% if page.title == site.title %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
     <link rel="stylesheet" href="{{ "/assets/vendor/stylesheets/bootstrap.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+
+    <!--
+    Bootstrap color mode: follow the OS light/dark preference, live.
+    Inline and before the stylesheet so there's no flash of wrong theme.
+    -->
+    <script>
+      (() => {
+        const media = window.matchMedia("(prefers-color-scheme: dark)")
+        const apply = () => document.documentElement.setAttribute("data-bs-theme", media.matches ? "dark" : "light")
+        apply()
+        media.addEventListener("change", apply)
+      })()
+    </script>
   </head>
+
   <body>
     <main>
       {{ content }}
     </main>
+
     <script src="{{ "/assets/vendor/javascript/bootstrap.bundle.js" | relative_url }}"></script>
   </body>
 </html>
