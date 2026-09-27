@@ -12,3 +12,12 @@ Built with [Jekyll](https://jekyllrb.com) and deployed to GitHub Pages by the wo
 | `script/server`    | serve at http://localhost:4000, rebuilding on change   |
 | `script/test`      | build the site the way the Pages workflow does         |
 | `script/cibuild`   | bootstrap, then test                                   |
+
+## Styles
+
+Plain CSS in `assets/css/main.css`, on top of [Bootstrap](https://getbootstrap.com) vendored into `vendor/stylesheets/` and `vendor/javascript/` by [bootstrap-vendor](https://github.com/xoengineering/bootstrap-vendor). No preprocessor, no npm. The pinned version lives in `.bootstrap-version`:
+
+|                                   |                                               |
+| --------------------------------- | --------------------------------------------- |
+| `bundle exec rake bootstrap:status` | compare the vendored version to upstream's  |
+| `bundle exec rake bootstrap:update` | re-download at the pinned version           |

@@ -4,10 +4,17 @@ title: "Portland"
 description: "A joyous programming language for Apple silicon. Close to the metal, on Metal."
 lang: "en-US"
 
+# Replaces Jekyll's default list, so the bundler paths are repeated here;
+# vendor/stylesheets and vendor/javascript (the vendored Bootstrap) are
+# published, and the rest of vendor/ is not.
 exclude:
   - CHANGELOG.md
   - Gemfile
   - Gemfile.lock
+  - Rakefile
   - README.md
   - script
-  - vendor
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

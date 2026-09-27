@@ -1,0 +1,8 @@
+/* The site's own styles, on top of the vendored Bootstrap. Plain CSS: no
+   preprocessor, served exactly as written. */
+
+main {
+  margin: 4rem auto;
+  max-width: 40rem;
+  padding: 0 1.5rem;
+}
