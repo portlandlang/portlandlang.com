@@ -1,0 +1,25 @@
+# How the gems dashboard draws each grade.
+# A gem's grade is the hardest listed difference its source touches, from `_data/gem_readiness.json`.
+# The .json is generated in ruby_research by `script/report gem-readiness`.
+#
+# Listed easiest first.
+
+- key: runs as is
+  label: Runs as is
+  color: green
+  description: Touches none of the listed Ruby differences
+
+- key: taste only
+  label: Taste only
+  color: green-striped
+  description: Touches only spellings Portland removed, each one a mechanical rewrite
+
+- key: thesis
+  label: Thesis
+  color: yellow
+  description: Touches a difference Portland exists for, such as mutation or raise/rescue
+
+- key: gap or undecided
+  label: Open question
+  color: orange
+  description: Touches something Portland hasn't decided or built yet, such as require by name or regex

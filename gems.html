@@ -1,0 +1,94 @@
+---
+layout: default
+title: The gems
+permalink: /gems/
+wide: true
+---
+{%- assign readiness = site.data.gem_readiness %}
+
+<h1 class="display-5">The gems</h1>
+
+<p class="lead">Which gems on RubyGems.org Portland can read today, and what stands between the rest and running</p>
+
+<p class="alert alert-light text-body-secondary">
+  Generated <time datetime="{{ readiness.generated_at }}">{{ readiness.generated_at | date: "%Y-%m-%d %H:%M UTC" }}</time>
+  by <a href="https://github.com/portlandlang/ruby_research" target="_blank" class="text-body-secondary">ruby_research</a>'s
+  <code>pdx-parse</code> and <code>portland-compatibility</code> reports.
+
+  Every grade here is read off the source, not a run: a gem that parses and touches no listed difference may still call something Portland doesn't have yet.
+</p>
+
+<h2 class="h4 mt-4">How far the corpus gets</h2>
+
+<table class="table table-striped align-top gem-funnel">
+  <tbody>
+    <tr>
+      <td>Gems on RubyGems.org</td>
+      <td class="text-end">{% include number.html value=readiness.corpus_size %}</td>
+    </tr>
+
+    <tr>
+      <td>with Ruby files under <code>lib/</code></td>
+      <td class="text-end">{% include number.html value=readiness.gems_with_lib_files %}</td>
+    </tr>
+
+    <tr>
+      <td>whose every <code>lib/</code> file parses under Portland, unedited</td>
+      <td class="text-end">{% include number.html value=readiness.gems_parsing %}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="h4 mt-4">The {{ readiness.gems.size }} most downloaded that parse</h2>
+
+<table class="table table-striped align-top status-legend mt-3">
+  <thead>
+    <tr>
+      <th scope="col"><span class="visually-hidden">Color</span></th>
+      <th scope="col" class="text-body-secondary fw-light legend-label">Grade</th>
+      <th scope="col" class="text-body-secondary fw-light legend-means">Means</th>
+      <th scope="col" class="text-body-secondary fw-light legend-count text-end">Gems</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {%- for grade in site.data.grades %}
+      {%- assign graded = readiness.gems | where: "grade", grade.key %}
+      <tr>
+        <td class="legend-swatch"><span class="status-swatch d-inline-block rounded-1 status-{{ grade.color }}"></span></td>
+        <td class="legend-label">{{ grade.label }}</td>
+        <td class="legend-means text-body-secondary">{{ grade.description }}</td>
+        <td class="legend-count text-end">{% include number.html value=graded.size %}</td>
+      </tr>
+    {%- endfor %}
+  </tbody>
+</table>
+
+<table class="table table-striped align-top gem-list mt-4">
+  <thead>
+    <tr>
+      <th scope="col" class="text-body-secondary fw-light">Gem</th>
+      <th scope="col" class="text-body-secondary fw-light">Version</th>
+      <th scope="col" class="text-body-secondary fw-light text-end">Downloads</th>
+      <th scope="col" class="text-body-secondary fw-light">Grade</th>
+      <th scope="col" class="text-body-secondary fw-light">What it touches</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {%- for gem in readiness.gems %}
+      {%- assign grade = site.data.grades | where: "key", gem.grade | first %}
+      <tr id="{{ gem.name }}">
+        <td><a href="https://rubygems.org/gems/{{ gem.name }}" target="_blank">{{ gem.name }}</a></td>
+        <td class="text-body-secondary">{{ gem.version }}</td>
+        <td class="text-end">{% include number.html value=gem.downloads %}</td>
+        <td class="text-nowrap"><span class="status-swatch d-inline-block rounded-1 status-{{ grade.color }}"></span> {{ grade.label }}</td>
+        <td class="text-body-secondary">
+          {%- if gem.open_questions.size > 0 %}<span class="d-block">Open: {{ gem.open_questions | join: ", " }}</span>{% endif %}
+          {%- if gem.thesis.size > 0 %}<span class="d-block">Thesis: {{ gem.thesis | join: ", " }}</span>{% endif %}
+          {%- if gem.taste.size > 0 %}<span class="d-block">Taste: {{ gem.taste | join: ", " }}</span>{% endif %}
+        </td>
+      </tr>
+    {%- endfor %}
+  </tbody>
+</table>

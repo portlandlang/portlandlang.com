@@ -1,13 +1,18 @@
 {%- comment -%}
 include.value with thousands commas: 3840 becomes 3,840.
 Liquid has no number formatter,
-This splits off the thousands and pads the rest to three digits.
-Good to 999,999, far past ruby/spec's size.
+This splits off the millions and the thousands and pads each group after the first to three digits.
+Good to 999,999,999, past the most downloaded gem's count.
 {%- endcomment -%}
 
 {%- assign number = include.value | plus: 0 -%}
 
-{%- if number >= 1000 -%}
+{%- if number >= 1000000 -%}
+  {%- assign millions = number | divided_by: 1000000 -%}
+  {%- assign thousands = number | modulo: 1000000 | divided_by: 1000 | prepend: "00" | slice: -3, 3 -%}
+  {%- assign rest = number | modulo: 1000 | prepend: "00" | slice: -3, 3 -%}
+  {{- millions }},{{ thousands }},{{ rest -}}
+{%- elsif number >= 1000 -%}
   {%- assign thousands = number | divided_by: 1000 -%}
   {%- assign rest = number | modulo: 1000 | prepend: "00" | slice: -3, 3 -%}
   {{- thousands }},{{ rest -}}

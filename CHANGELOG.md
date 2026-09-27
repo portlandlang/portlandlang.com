@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- **The gems dashboard** (#2) — `/gems/` shows how far RubyGems.org gets under Portland: the corpus, the gems with `lib/` files, and the gems whose every `lib/` file parses unedited (10,426 of 196,982 today); then the 500 most downloaded of those, each graded by the hardest listed Ruby difference it touches — runs as is, taste only, thesis, or open question, drawn from `_data/grades.yml` in the spec page's colors — with what it touches listed beside it. The data is `_data/gem_readiness.json`, from ruby_research's `script/report gem-readiness`. The page says plainly that grades are read off the source, not a run. `_includes/number.html` now groups millions too, for download counts; the home page links the page.
 - **One big bar for examples taken in** (#1) — atop `/spec/`, a thermometer of upstream examples, out of every example in a file not skipped: green for files passing whole, striped green for files taken in part, with the numbers written out beneath (976 of 24,271, 4.0%, today). It reads `progress` from `_data/ruby_spec.json` (portland#130). The file bar and legend follow under their own heading.
 - **Counts take thousands commas** — the area and legend counts read 2,151 and 3,840, formatted by `_includes/number.html`, since Liquid has no number formatter.
 - **File tables indent under their directory** — an open directory's table starts 1.5rem in and narrows by as much, so it reads as held by the folder above it.
