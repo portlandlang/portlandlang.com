@@ -1,11 +1,9 @@
-url: "https://portlandlang.com"
-baseurl: ""
-title: "Portland"
-description: "A joyous programming language for Apple silicon. Close to the metal, on Metal."
-lang: "en-US"
+url: https://portlandlang.com
+baseurl: ''
+title: Portland
+description: A joyous programming language for Apple silicon
+lang: en-US
 
-# The vendored Bootstrap lives under assets/vendor/ and publishes with the
-# rest of assets/; the root vendor/ is only ever bundler's, and stays out.
 exclude:
   - CHANGELOG.md
   - Gemfile
