@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-09-27T16:33:14Z",
-  "portland_commit": "4877fa3",
+  "generated_at": "2026-09-27T19:49:15Z",
+  "portland_commit": "1e167ad",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 43,
-    "partial_intentional": 41,
-    "partial_planned": 5,
+    "passing": 49,
+    "partial_intentional": 91,
+    "partial_planned": 10,
     "failing": 0,
-    "missing": 3525,
-    "skipped": 226,
+    "missing": 3424,
+    "skipped": 266,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 24240,
-    "examples_passing": 406,
-    "examples_partial": 586
+    "examples_portable": 23992,
+    "examples_passing": 433,
+    "examples_partial": 835
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 43,
-        "partial_intentional": 40,
-        "partial_planned": 4,
+        "passing": 49,
+        "partial_intentional": 90,
+        "partial_planned": 9,
         "failing": 0,
-        "missing": 1843,
-        "skipped": 221,
+        "missing": 1742,
+        "skipped": 261,
         "files": 2151
       },
       "directories": [
@@ -365,12 +365,12 @@
           "name": "core/array",
           "anchor": "core-array",
           "totals": {
-            "passing": 7,
-            "partial_intentional": 7,
-            "partial_planned": 1,
+            "passing": 8,
+            "partial_intentional": 16,
+            "partial_planned": 0,
             "failing": 0,
-            "missing": 90,
-            "skipped": 0,
+            "missing": 63,
+            "skipped": 18,
             "files": 105
           },
           "files": [
@@ -416,7 +416,12 @@
               "path": "core/array/append_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/append_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "append mutates its receiver, and values never mutate (ADR 0015); list << item rebinds a mutable name instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-append"
             },
@@ -470,7 +475,12 @@
               "path": "core/array/clear_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/clear_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "clear mutates its receiver, and values never mutate (ADR 0015); list = [] rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-clear"
             },
@@ -479,7 +489,12 @@
               "path": "core/array/clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/clone_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clone has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-clone"
             },
@@ -544,7 +559,12 @@
               "path": "core/array/concat_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/concat_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "concat mutates its receiver, and values never mutate (ADR 0015); list += other rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-concat"
             },
@@ -594,7 +614,12 @@
               "path": "core/array/delete_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/delete_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete mutates its receiver, and values never mutate (ADR 0015); list = list.reject { it == item } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-delete"
             },
@@ -603,7 +628,12 @@
               "path": "core/array/delete_at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/delete_at_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete_at mutates its receiver, and values never mutate (ADR 0015); rebinding the slices either side is the rewrite.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-delete_at"
             },
@@ -612,7 +642,12 @@
               "path": "core/array/delete_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/delete_if_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete_if mutates its receiver, and values never mutate (ADR 0015); list = list.reject { ... } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-delete_if"
             },
@@ -648,8 +683,18 @@
               "path": "core/array/drop_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/drop_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A negative count refuses where Ruby raises ArgumentError; no to_int conversion (ADR 0036); values never mutate, so there is no shift corner; no subclasses.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/take_drop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/take_drop_spec.pdx"
+                }
+              ],
               "anchor": "core-array-drop"
             },
             {
@@ -657,8 +702,18 @@
               "path": "core/array/drop_while_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/drop_while_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The block answers true or false, so the rows where an element's own truthiness stops the walk stay behind; values never mutate, so the array cannot grow mid-walk; no subclasses.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/take_drop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/take_drop_spec.pdx"
+                }
+              ],
               "anchor": "core-array-drop_while"
             },
             {
@@ -666,7 +721,12 @@
               "path": "core/array/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/dup_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-dup"
             },
@@ -711,8 +771,13 @@
               "path": "core/array/empty_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/empty_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/array/empty_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/empty_spec.pdx"
+                }
+              ],
               "anchor": "core-array-empty"
             },
             {
@@ -756,7 +821,12 @@
               "path": "core/array/fill_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/fill_spec.rb",
               "examples": 47,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "fill mutates its receiver, and values never mutate (ADR 0015); list = list.map { value } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-fill"
             },
@@ -839,7 +909,12 @@
               "path": "core/array/frozen_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/frozen_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every value is frozen, so frozen? asks nothing and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-frozen"
             },
@@ -857,8 +932,18 @@
               "path": "core/array/include_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/include_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A mock's own == never takes over a builtin's answer here.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/include_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/include_spec.pdx"
+                }
+              ],
               "anchor": "core-array-include"
             },
             {
@@ -889,7 +974,12 @@
               "path": "core/array/insert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/insert_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "insert mutates its receiver, and values never mutate (ADR 0015); rebinding the slices either side with the item between is the rewrite.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-insert"
             },
@@ -934,7 +1024,12 @@
               "path": "core/array/keep_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/keep_if_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "keep_if mutates its receiver, and values never mutate (ADR 0015); list = list.select { ... } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-keep_if"
             },
@@ -966,8 +1061,18 @@
               "path": "core/array/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/length_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/length_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/length_spec.pdx"
+                }
+              ],
               "anchor": "core-array-length"
             },
             {
@@ -1083,7 +1188,12 @@
               "path": "core/array/pop_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/pop_spec.rb",
               "examples": 16,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "pop mutates its receiver, and values never mutate (ADR 0015); read list.last, then rebind the rest.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-pop"
             },
@@ -1092,7 +1202,12 @@
               "path": "core/array/prepend_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/prepend_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "prepend mutates its receiver, and values never mutate (ADR 0015); list = [item] + list rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-prepend"
             },
@@ -1110,7 +1225,12 @@
               "path": "core/array/push_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/push_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "push mutates its receiver, and values never mutate (ADR 0015); list << item rebinds a mutable name instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-push"
             },
@@ -1155,7 +1275,12 @@
               "path": "core/array/replace_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/replace_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "replace mutates its receiver in place, and values never mutate (ADR 0015); list = other rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-replace"
             },
@@ -1237,7 +1362,12 @@
               "path": "core/array/shift_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/shift_spec.rb",
               "examples": 15,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "shift mutates its receiver, and values never mutate (ADR 0015); read list.first, then rebind the rest.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-shift"
             },
@@ -1255,8 +1385,18 @@
               "path": "core/array/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/size_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so no array can hold itself and the recursive examples stay behind.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/length_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/length_spec.pdx"
+                }
+              ],
               "anchor": "core-array-size"
             },
             {
@@ -1273,11 +1413,11 @@
               "path": "core/array/sort_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/sort_spec.rb",
               "examples": 36,
-              "status": "partial_planned",
-              "reason": "sort with a comparator block is not built.",
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so recursive arrays, identity and frozen? checks, and sort! stay behind; a block's nil or String answer and an uncomparable pair refuse where Ruby raises; break with a value waits on ADR 0012; no bignums or subclasses.",
               "link": {
-                "label": "issues/99",
-                "url": "https://github.com/portlandlang/portland/issues/99"
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
               },
               "pdx": [
                 {
@@ -1315,8 +1455,18 @@
               "path": "core/array/take_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/take_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A negative count refuses where Ruby raises ArgumentError; no subclasses.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/take_drop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/take_drop_spec.pdx"
+                }
+              ],
               "anchor": "core-array-take"
             },
             {
@@ -1324,8 +1474,18 @@
               "path": "core/array/take_while_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/take_while_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The block answers true or false, so the rows where an element's own truthiness stops the walk stay behind; values never mutate, so the array cannot grow mid-walk; no subclasses.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/take_drop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/take_drop_spec.pdx"
+                }
+              ],
               "anchor": "core-array-take_while"
             },
             {
@@ -1333,8 +1493,18 @@
               "path": "core/array/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/to_a_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so identity is not observable and no array can hold itself; no subclasses.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/conversion_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/conversion_spec.pdx"
+                }
+              ],
               "anchor": "core-array-to_a"
             },
             {
@@ -1415,7 +1585,12 @@
               "path": "core/array/unshift_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/unshift_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "unshift mutates its receiver, and values never mutate (ADR 0015); list = [item] + list rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-unshift"
             },
@@ -7767,12 +7942,12 @@
           "name": "core/float",
           "anchor": "core-float",
           "totals": {
-            "passing": 11,
-            "partial_intentional": 7,
-            "partial_planned": 0,
+            "passing": 16,
+            "partial_intentional": 20,
+            "partial_planned": 1,
             "failing": 0,
-            "missing": 32,
-            "skipped": 0,
+            "missing": 10,
+            "skipped": 3,
             "files": 50
           },
           "files": [
@@ -7781,8 +7956,18 @@
               "path": "core/float/abs_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/abs_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "infinite? answers true or false here, so upstream's 1 is asked as a sign.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-abs"
             },
             {
@@ -7808,8 +7993,18 @@
               "path": "core/float/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/case_compare_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-case_compare"
             },
             {
@@ -7859,8 +8054,18 @@
               "path": "core/float/constants_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/constants_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "infinite? answers true or false here, so INFINITY's 1 is asked as a sign.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/constants_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/constants_spec.pdx"
+                }
+              ],
               "anchor": "core-float-constants"
             },
             {
@@ -7892,8 +8097,18 @@
               "path": "core/float/divmod_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/divmod_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), and a zero divisor or a NaN or infinite quotient refuses where Ruby raises ZeroDivisionError or FloatDomainError; failures are values, not exceptions.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/division_spec.pdx"
+                }
+              ],
               "anchor": "core-float-divmod"
             },
             {
@@ -7901,7 +8116,12 @@
               "path": "core/float/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-float-dup"
             },
@@ -7919,8 +8139,18 @@
               "path": "core/float/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/equal_value_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), and a mock's own == never takes over a builtin's answer here.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-equal_value"
             },
             {
@@ -7928,8 +8158,18 @@
               "path": "core/float/exponent_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/exponent_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "A negative float to a fractional power is a Complex in Ruby; whether Portland has Complex is #124.",
+              "link": {
+                "label": "issues/124",
+                "url": "https://github.com/portlandlang/portland/issues/124"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/division_spec.pdx"
+                }
+              ],
               "anchor": "core-float-exponent"
             },
             {
@@ -7937,8 +8177,18 @@
               "path": "core/float/fdiv_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/fdiv_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums, Rational, or Complex; a non-number or a second argument refuses where Ruby raises; infinite? answers true or false, so upstream's 1 and -1 are asked as a sign.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/division_spec.pdx"
+                }
+              ],
               "anchor": "core-float-fdiv"
             },
             {
@@ -7960,7 +8210,12 @@
               "path": "core/float/float_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/float_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Float class object to allocate from or ask about its ancestors; a float is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-float-float"
             },
@@ -8043,8 +8298,18 @@
               "path": "core/float/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(4.5), not a method (ADR 0026), so the example compares its answer rather than method objects.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-inspect"
             },
             {
@@ -8080,8 +8345,18 @@
               "path": "core/float/magnitude_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/magnitude_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-magnitude"
             },
             {
@@ -8104,8 +8379,18 @@
               "path": "core/float/modulo_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/modulo_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums and no coercion protocol, and a zero modulus refuses where Ruby raises ZeroDivisionError; modulo's alias check compares answers rather than method objects.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/division_spec.pdx"
+                }
+              ],
               "anchor": "core-float-modulo"
             },
             {
@@ -8142,8 +8427,13 @@
               "path": "core/float/negative_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/negative_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-negative"
             },
             {
@@ -8151,8 +8441,13 @@
               "path": "core/float/next_float_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/next_float_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/steps_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/steps_spec.pdx"
+                }
+              ],
               "anchor": "core-float-next_float"
             },
             {
@@ -8193,8 +8488,13 @@
               "path": "core/float/positive_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/positive_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-positive"
             },
             {
@@ -8202,8 +8502,13 @@
               "path": "core/float/prev_float_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/prev_float_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/steps_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/steps_spec.pdx"
+                }
+              ],
               "anchor": "core-float-prev_float"
             },
             {
@@ -8211,8 +8516,18 @@
               "path": "core/float/quo_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/quo_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/division_spec.pdx"
+                }
+              ],
               "anchor": "core-float-quo"
             },
             {
@@ -8243,8 +8558,13 @@
               "path": "core/float/to_f_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/to_f_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-to_f"
             },
             {
@@ -8252,8 +8572,18 @@
               "path": "core/float/to_i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/to_i_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), and NaN's to_i refuses where Ruby raised FloatDomainError; failures are values, not exceptions.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-to_i"
             },
             {
@@ -8261,7 +8591,12 @@
               "path": "core/float/to_int_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/to_int_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_int is Ruby's implicit-conversion protocol, a false alias that refuses naming to_i (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-float-to_int"
             },
@@ -8312,8 +8647,18 @@
               "path": "core/float/uminus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/uminus_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "-x is spelled as the operator rather than send(:-@), and infinite? answers true or false, so upstream's 1 and -1 are asked as a sign.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-uminus"
             },
             {
@@ -8321,8 +8666,18 @@
               "path": "core/float/uplus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/uplus_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "+x is spelled as the operator rather than send(:+@), and -0.0's sign is asked of 1.0 divided by it.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/sign_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/sign_spec.pdx"
+                }
+              ],
               "anchor": "core-float-uplus"
             },
             {
@@ -9199,11 +9554,11 @@
           "anchor": "core-integer",
           "totals": {
             "passing": 11,
-            "partial_intentional": 9,
-            "partial_planned": 1,
+            "partial_intentional": 30,
+            "partial_planned": 4,
             "failing": 0,
-            "missing": 49,
-            "skipped": 0,
+            "missing": 20,
+            "skipped": 5,
             "files": 70
           },
           "files": [
@@ -9213,7 +9568,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/abs_spec.rb",
               "examples": 2,
               "status": "partial_intentional",
-              "reason": "No bignums (integers are i64), and unary plus does not parse.",
+              "reason": "No bignums (integers are i64).",
               "pdx": [
                 {
                   "path": "spec/number/integer/abs_spec.pdx",
@@ -9290,8 +9645,18 @@
               "path": "core/integer/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/case_compare_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-case_compare"
             },
             {
@@ -9299,8 +9664,14 @@
               "path": "core/integer/ceil_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/ceil_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), so the 10**70 rows and the precisions past 64 bits stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/rounding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/rounding_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-ceil"
             },
             {
@@ -9308,8 +9679,14 @@
               "path": "core/integer/ceildiv_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/ceildiv_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums or Rational, so the 6/5r and 10**100 rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/division_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-ceildiv"
             },
             {
@@ -9363,7 +9740,12 @@
               "path": "core/integer/constants_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/constants_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Asks Object.const_defined? — reflection a closed runtime has none of; Portland never had Fixnum or Bignum to retire.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-integer-constants"
             },
@@ -9381,8 +9763,18 @@
               "path": "core/integer/digits_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/digits_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A bad radix or a negative self refuses in Ruby's words where Ruby raises ArgumentError or Math::DomainError; no to_int conversion of the radix (ADR 0036).",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/digits_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/digits_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-digits"
             },
             {
@@ -9390,8 +9782,18 @@
               "path": "core/integer/div_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/div_spec.rb",
               "examples": 18,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums, Rational, or coercion protocol; a zero divisor or a non-number refuses where Ruby raises ZeroDivisionError or TypeError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/division_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-div"
             },
             {
@@ -9414,8 +9816,18 @@
               "path": "core/integer/divmod_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/divmod_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums; a zero divisor, a NaN, or a non-number refuses where Ruby raises ZeroDivisionError, FloatDomainError, or TypeError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/division_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-divmod"
             },
             {
@@ -9423,8 +9835,18 @@
               "path": "core/integer/downto_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/downto_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A non-number endpoint refuses where Ruby raises ArgumentError; a blockless walk answers an array, not an Enumerator (ADR 0055).",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/walks_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/walks_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-downto"
             },
             {
@@ -9432,7 +9854,12 @@
               "path": "core/integer/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/dup_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-integer-dup"
             },
@@ -9459,8 +9886,18 @@
               "path": "core/integer/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/equal_value_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums, and a mock's own == never takes over a builtin's answer here.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-equal_value"
             },
             {
@@ -9498,8 +9935,18 @@
               "path": "core/integer/fdiv_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/fdiv_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums or coercion protocol; a non-number or a second argument refuses where Ruby raises TypeError or ArgumentError; infinite? answers true or false, so upstream's 1 and -1 are asked as a sign.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/division_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-fdiv"
             },
             {
@@ -9507,8 +9954,14 @@
               "path": "core/integer/floor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/floor_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), so the 10**70 rows and the precisions past 64 bits stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/rounding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/rounding_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-floor"
             },
             {
@@ -9530,8 +9983,18 @@
               "path": "core/integer/gcdlcm_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/gcdlcm_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums; a missing, extra, or non-Integer argument refuses where Ruby raises ArgumentError or TypeError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/gcd_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/gcd_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-gcdlcm"
             },
             {
@@ -9567,8 +10030,18 @@
               "path": "core/integer/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(-42), not a method (ADR 0026), so the example compares its answer rather than method objects.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-inspect"
             },
             {
@@ -9576,7 +10049,12 @@
               "path": "core/integer/integer_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/integer_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Integer class object to ask about its ancestors or its instances; an integer is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-integer-integer"
             },
@@ -9585,8 +10063,18 @@
               "path": "core/integer/lcm_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/lcm_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums; a missing, extra, or non-Integer argument refuses where Ruby raises ArgumentError or TypeError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/gcd_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/gcd_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-lcm"
             },
             {
@@ -9631,8 +10119,18 @@
               "path": "core/integer/magnitude_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/magnitude_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-magnitude"
             },
             {
@@ -9684,8 +10182,18 @@
               "path": "core/integer/next_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/next_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-next"
             },
             {
@@ -9726,8 +10234,18 @@
               "path": "core/integer/ord_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/ord_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The ?a rows are String#ord, owed to core/string (#106); the bignum rows stay upstream.",
+              "link": {
+                "label": "issues/106",
+                "url": "https://github.com/portlandlang/portland/issues/106"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/digits_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/digits_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-ord"
             },
             {
@@ -9788,8 +10306,18 @@
               "path": "core/integer/remainder_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/remainder_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums or Rational; a zero divisor or a non-number refuses where Ruby raises ZeroDivisionError or TypeError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/division_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/division_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-remainder"
             },
             {
@@ -9806,8 +10334,18 @@
               "path": "core/integer/round_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/round_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "round's half: option waits for builtins to take keyword arguments; no bignums; a bad precision refuses where Ruby raises RangeError or TypeError.",
+              "link": {
+                "label": "issues/107",
+                "url": "https://github.com/portlandlang/portland/issues/107"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/rounding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/rounding_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-round"
             },
             {
@@ -9815,8 +10353,14 @@
               "path": "core/integer/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/size_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums, so the byte counts past 64 bits stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/digits_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/digits_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-size"
             },
             {
@@ -9847,8 +10391,18 @@
               "path": "core/integer/times_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/times_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "break with a value waits on real demand (ADR 0012); the rest is ported, a blockless walk answering an array (ADR 0055).",
+              "link": {
+                "label": "0012-2026-07-22-branchless-if-is-nil",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/adr/0012-2026-07-22-branchless-if-is-nil.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/walks_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/walks_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-times"
             },
             {
@@ -9870,8 +10424,14 @@
               "path": "core/integer/to_i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/to_i_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64).",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-to_i"
             },
             {
@@ -9879,7 +10439,12 @@
               "path": "core/integer/to_int_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/to_int_spec.rb",
               "examples": 0,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_int is Ruby's implicit-conversion protocol, a false alias that refuses naming to_i (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-integer-to_int"
             },
@@ -9911,8 +10476,14 @@
               "path": "core/integer/truncate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/truncate_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums (integers are i64), so the 10**70 rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/integer/rounding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/rounding_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-truncate"
             },
             {
@@ -9920,7 +10491,12 @@
               "path": "core/integer/try_convert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/try_convert_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Integer.try_convert is the implicit-conversion protocol's entry point, and to_int is a false alias that refuses naming to_i (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-integer-try_convert"
             },
@@ -9943,8 +10519,18 @@
               "path": "core/integer/upto_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/upto_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A non-number endpoint refuses where Ruby raises ArgumentError; a blockless walk answers an array, not an Enumerator (ADR 0055).",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/walks_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/walks_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-upto"
             },
             {
@@ -9952,8 +10538,18 @@
               "path": "core/integer/zero_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/zero_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Asking a method object for its owner is reflection a closed runtime does not have.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/identity_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/identity_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-zero"
             }
           ]
@@ -19961,11 +20557,11 @@
           "anchor": "core-symbol",
           "totals": {
             "passing": 1,
-            "partial_intentional": 0,
-            "partial_planned": 0,
+            "partial_intentional": 7,
+            "partial_planned": 2,
             "failing": 0,
-            "missing": 28,
-            "skipped": 0,
+            "missing": 5,
+            "skipped": 14,
             "files": 29
           },
           "files": [
@@ -19974,7 +20570,12 @@
               "path": "core/symbol/all_symbols_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/all_symbols_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The symbol table is runtime reflection; every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-all_symbols"
             },
@@ -19983,7 +20584,12 @@
               "path": "core/symbol/capitalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/capitalize_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-capitalize"
             },
@@ -19992,8 +20598,18 @@
               "path": "core/symbol/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/case_compare_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-case_compare"
             },
             {
@@ -20001,7 +20617,12 @@
               "path": "core/symbol/casecmp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/casecmp_spec.rb",
               "examples": 13,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Symbols are not ordered (ADR 0023), and casecmp? asks through casecmp's ordering.",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-casecmp"
             },
@@ -20010,7 +20631,12 @@
               "path": "core/symbol/comparison_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/comparison_spec.rb",
               "examples": 10,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Symbols are not ordered (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-comparison"
             },
@@ -20019,7 +20645,12 @@
               "path": "core/symbol/downcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/downcase_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-downcase"
             },
@@ -20028,7 +20659,12 @@
               "path": "core/symbol/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-dup"
             },
@@ -20046,8 +20682,13 @@
               "path": "core/symbol/empty_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/empty_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-empty"
             },
             {
@@ -20064,8 +20705,18 @@
               "path": "core/symbol/end_with_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/end_with_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "end_with? takes one argument here; the several-argument and to_str forms come with the string port, and regexps wait on #74.",
+              "link": {
+                "label": "issues/106",
+                "url": "https://github.com/portlandlang/portland/issues/106"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-end_with"
             },
             {
@@ -20073,8 +20724,18 @@
               "path": "core/symbol/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/equal_value_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "@-symbols don't exist, and :ruby == \"ruby\" is a compile error rather than false (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-equal_value"
             },
             {
@@ -20082,8 +20743,18 @@
               "path": "core/symbol/id2name_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/id2name_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-id2name"
             },
             {
@@ -20100,7 +20771,12 @@
               "path": "core/symbol/intern_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/intern_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_sym and intern are cut: a symbol is written literally, never made from text (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-intern"
             },
@@ -20109,8 +20785,18 @@
               "path": "core/symbol/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/length_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Byte-escaped names (a NUL, raw UTF-8 bytes) don't lex: a double-quoted string takes only its six escapes.",
+              "link": {
+                "label": "string-escapes",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-escapes.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-length"
             },
             {
@@ -20127,8 +20813,18 @@
               "path": "core/symbol/name_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/name_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A bare non-ASCII symbol like :ルビー doesn't lex (names are ASCII outside a string), and a string's frozenness or identity can't be observed where values never mutate.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-name"
             },
             {
@@ -20136,7 +20832,12 @@
               "path": "core/symbol/next_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/next_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-next"
             },
@@ -20145,8 +20846,18 @@
               "path": "core/symbol/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-size"
             },
             {
@@ -20163,8 +20874,18 @@
               "path": "core/symbol/start_with_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/start_with_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "start_with? takes one argument here; the several-argument and to_str forms come with the string port, and regexps wait on #74.",
+              "link": {
+                "label": "issues/106",
+                "url": "https://github.com/portlandlang/portland/issues/106"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-start_with"
             },
             {
@@ -20172,7 +20893,12 @@
               "path": "core/symbol/succ_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/succ_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-succ"
             },
@@ -20181,7 +20907,12 @@
               "path": "core/symbol/swapcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/swapcase_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-swapcase"
             },
@@ -20190,7 +20921,12 @@
               "path": "core/symbol/symbol_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/symbol_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Symbols are not ordered, so not Comparable (ADR 0023), and there is no Symbol class object to allocate from.",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-symbol"
             },
@@ -20199,7 +20935,12 @@
               "path": "core/symbol/to_proc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/to_proc_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Symbol-to-proc is gone with method references; a block says it, { it.name } (ADR 0023, ADR 0017).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-to_proc"
             },
@@ -20208,11 +20949,20 @@
               "path": "core/symbol/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/to_s_spec.rb",
               "examples": 5,
-              "status": "passing",
+              "status": "partial_intentional",
+              "reason": "Operator and @-symbols (:[], :@ruby) don't exist (ADR 0023); the encoding and frozen-string examples stay behind.",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [
                 {
                   "path": "spec/symbol/text_boundary_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_boundary_spec.pdx"
+                },
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
                 }
               ],
               "anchor": "core-symbol-to_s"
@@ -20222,7 +20972,12 @@
               "path": "core/symbol/to_sym_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/to_sym_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_sym and intern are cut: a symbol is written literally, never made from text (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-to_sym"
             },
@@ -20231,7 +20986,12 @@
               "path": "core/symbol/upcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/upcase_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Builds a symbol from computed text, and every Portland symbol is written literally (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-symbol-upcase"
             }
