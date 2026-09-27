@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
+
     <title>{% if page.title == site.title %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+
     <link rel="stylesheet" href="{{ "/assets/vendor/stylesheets/bootstrap.css" | relative_url }}">
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
 
@@ -22,8 +25,8 @@
     </script>
   </head>
 
-  <body>
-    <main{% if page.wide %} class="wide"{% endif %}>
+  <body class="py-5 mb-5">
+    <main class="container">
       {{ content }}
     </main>
 

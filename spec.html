@@ -8,14 +8,16 @@ wide: true
 
 <h1 class="display-5">The spec</h1>
 
-<p class="lead">Every spec file in <a href="https://github.com/ruby/spec">ruby/spec</a>, Ruby's executable specification, and how far Portland's own spec suite has taken it in.</p>
+<p class="lead">Every spec file in Ruby's executable specification <a href="https://github.com/ruby/spec" target="_blank">ruby/spec</a> and how far Portland's own spec suite has taken it in</p>
 
-<p class="text-body-secondary small">
-  ruby/spec at <a href="https://github.com/ruby/spec/tree/{{ dashboard.ruby_spec_commit }}"><code>{{ dashboard.ruby_spec_commit }}</code></a> ({{ dashboard.ruby_spec_date }}),
-  Portland at <a href="https://github.com/portlandlang/portland/tree/{{ dashboard.portland_commit }}"><code>{{ dashboard.portland_commit }}</code></a>,
-  generated {{ dashboard.generated_at | date: "%Y-%m-%d" }}.
-  The mapping lives in <a href="https://github.com/portlandlang/portland/blob/main/spec/ruby_spec.yml"><code>spec/ruby_spec.yml</code></a>.
-</p>
+<p class="alert alert-light text-body-secondary">
+  Generated {{ dashboard.generated_at | date: "%Y-%m-%d" }}
+
+  with ruby/spec at <a href="https://github.com/ruby/spec/tree/{{ dashboard.ruby_spec_commit }}" target="_blank" class="text-body-secondary"><code>{{ dashboard.ruby_spec_commit }}</code></a> ({{ dashboard.ruby_spec_date }}),
+  and Portland at <a href="https://github.com/portlandlang/portland/tree/{{ dashboard.portland_commit }}" target="_blank" class="text-body-secondary"><code>{{ dashboard.portland_commit }}</code></a>.
+
+  The ruby/spec to portland/spec mapping is at <a href="https://github.com/portlandlang/portland/blob/main/spec/ruby_spec.yml" target="_blank" class="text-body-secondary"><code>spec/ruby_spec.yml</code></a>.
+  </p>
 
 {% include status_bar.html totals=dashboard.totals size="large" %}
 
@@ -23,9 +25,9 @@ wide: true
   <thead>
     <tr>
       <th scope="col"><span class="visually-hidden">Color</span></th>
-      <th scope="col" class="legend-label">Status</th>
-      <th scope="col" class="legend-means">Means</th>
-      <th scope="col" class="legend-count text-end">Files</th>
+      <th scope="col" class="text-body-secondary fw-light legend-label">Status</th>
+      <th scope="col" class="text-body-secondary fw-light legend-means">Means</th>
+      <th scope="col" class="text-body-secondary fw-light legend-count text-end">Files</th>
     </tr>
   </thead>
 

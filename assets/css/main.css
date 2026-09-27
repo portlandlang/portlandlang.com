@@ -3,17 +3,6 @@ The site's own styles, on top of the vendored Bootstrap.
 Plain CSS: no preprocessor, served exactly as written.
 */
 
-main {
-  margin: 4rem auto;
-  max-width: 40rem;
-  padding: 0 1.5rem;
-}
-
-/* A page that needs the room, like the spec dashboard, says `wide: true`. */
-main.wide {
-  max-width: 72rem;
-}
-
 /*
 The spec dashboard's status colors:
 grey, red, yellow, orange, green, and green striped
@@ -36,10 +25,10 @@ Bootstrap's own palette variables, so dark mode follows.
   );
 }
 
-.status-green  { background-color: var(--bs-success); }
-.status-yellow { background-color: var(--bs-warning); }
-.status-red    { background-color: var(--bs-danger); }
-.status-orange { background-color: var(--bs-orange); }
+.status-green  { background-color: var(--bs-success);   }
+.status-yellow { background-color: var(--bs-warning);   }
+.status-red    { background-color: var(--bs-danger);    }
+.status-orange { background-color: var(--bs-orange);    }
 .status-grey   { background-color: var(--bs-secondary); }
 
 .status-bar               { height: 0.75rem; }
@@ -56,7 +45,7 @@ Bootstrap's own palette variables, so dark mode follows.
 }
 
 .status-legend .legend-swatch { width: 1.5rem; }
-.status-legend .legend-count  { font-variant-numeric: tabular-nums; font-weight: 600; }
+.status-legend .legend-count  { font-variant-numeric: tabular-nums; }
 .status-legend .legend-label  { padding-right: 1.5rem; white-space: nowrap; }
 .status-legend .legend-means  { padding-right: 1.5rem; }
 .status-legend tfoot td       { border-bottom: 0; }
