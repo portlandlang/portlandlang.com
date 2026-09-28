@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-09-27T19:49:15Z",
-  "portland_commit": "1e167ad",
+  "generated_at": "2026-09-28T00:06:21Z",
+  "portland_commit": "36abcdb",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
     "passing": 49,
-    "partial_intentional": 91,
-    "partial_planned": 10,
+    "partial_intentional": 121,
+    "partial_planned": 12,
     "failing": 0,
-    "missing": 3424,
-    "skipped": 266,
+    "missing": 3382,
+    "skipped": 276,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 23992,
+    "examples_portable": 23934,
     "examples_passing": 433,
-    "examples_partial": 835
+    "examples_partial": 1076
   },
   "areas": [
     {
@@ -23,11 +23,11 @@
       "anchor": "core",
       "totals": {
         "passing": 49,
-        "partial_intentional": 90,
-        "partial_planned": 9,
+        "partial_intentional": 120,
+        "partial_planned": 11,
         "failing": 0,
-        "missing": 1742,
-        "skipped": 261,
+        "missing": 1700,
+        "skipped": 271,
         "files": 2151
       },
       "directories": [
@@ -366,11 +366,11 @@
           "anchor": "core-array",
           "totals": {
             "passing": 8,
-            "partial_intentional": 16,
-            "partial_planned": 0,
+            "partial_intentional": 46,
+            "partial_planned": 2,
             "failing": 0,
-            "missing": 63,
-            "skipped": 18,
+            "missing": 21,
+            "skipped": 28,
             "files": 105
           },
           "files": [
@@ -393,7 +393,12 @@
               "path": "core/array/allocate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/allocate_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Array class object to allocate from; an array is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-array-allocate"
             },
@@ -430,7 +435,12 @@
               "path": "core/array/array_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/array_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Asks the Array class for its ancestors — reflection a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-array-array"
             },
@@ -439,8 +449,18 @@
               "path": "core/array/assoc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/assoc_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Identity checks compare by value, since values never mutate; a mock's own == never takes over; no to_ary conversion (ADR 0036).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-assoc"
             },
             {
@@ -448,8 +468,18 @@
               "path": "core/array/at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/at_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_int conversion (ADR 0036), so a Float or mock index refuses; a bad index or a second argument refuses where Ruby raises.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-at"
             },
             {
@@ -503,8 +533,18 @@
               "path": "core/array/collect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/collect_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects; collect! stays behind with map!, since values never mutate.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-collect"
             },
             {
@@ -605,7 +645,12 @@
               "path": "core/array/deconstruct_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/deconstruct_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "deconstruct is the pattern-matching protocol's hook for user types; array patterns match arrays directly, with no hook to call.",
+              "link": {
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
+              },
               "pdx": [],
               "anchor": "core-array-deconstruct"
             },
@@ -656,8 +701,18 @@
               "path": "core/array/detect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/detect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-detect"
             },
             {
@@ -665,8 +720,18 @@
               "path": "core/array/difference_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/difference_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Mocks stubbing hash and eql? stay behind; no to_ary conversion (ADR 0036); values never mutate, so identity and recursive arrays are unobservable; no subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/set_arithmetic_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/set_arithmetic_spec.pdx"
+                }
+              ],
               "anchor": "core-array-difference"
             },
             {
@@ -674,8 +739,18 @@
               "path": "core/array/dig_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/dig_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A non-numeric index, a non-diggable step, or no arguments refuses where Ruby raises; a mock's own dig never takes over.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-dig"
             },
             {
@@ -735,8 +810,18 @@
               "path": "core/array/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/each_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The multi-parameter row waits on #158 (does |a, b| destructure a yielded array); the mid-walk mutation rows stay behind, since values never mutate.",
+              "link": {
+                "label": "issues/158",
+                "url": "https://github.com/portlandlang/portland/issues/158"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-each"
             },
             {
@@ -744,8 +829,18 @@
               "path": "core/array/each_index_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/each_index_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so the shift and mid-walk-growth examples stay behind; a blockless walk answers no Enumerator (ADR 0055).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/positions_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/positions_spec.pdx"
+                }
+              ],
               "anchor": "core-array-each_index"
             },
             {
@@ -803,7 +898,12 @@
               "path": "core/array/fetch_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/fetch_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "fetch is retired: a lookup miss answers a maybe, and the default is the or-guard.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
               "pdx": [],
               "anchor": "core-array-fetch"
             },
@@ -812,7 +912,12 @@
               "path": "core/array/fetch_values_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/fetch_values_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "fetch is retired, fetch_values with it: a lookup miss answers a maybe, and the default is the or-guard.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
               "pdx": [],
               "anchor": "core-array-fetch_values"
             },
@@ -835,8 +940,18 @@
               "path": "core/array/filter_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/filter_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects; filter! stays behind with select!, since values never mutate.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-filter"
             },
             {
@@ -858,8 +973,18 @@
               "path": "core/array/find_index_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/find_index_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A mock's own == never takes over a builtin's answer; values never mutate, so the array cannot grow mid-walk; a blockless search answers no Enumerator (ADR 0055).",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/find_index_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/find_index_spec.pdx"
+                }
+              ],
               "anchor": "core-array-find_index"
             },
             {
@@ -965,7 +1090,12 @@
               "path": "core/array/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/initialize_spec.rb",
               "examples": 24,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "initialize's privacy and its calls on subclasses are the class object's; an array is a value with no subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-array-initialize"
             },
@@ -997,8 +1127,18 @@
               "path": "core/array/intersect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/intersect_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Mocks stubbing hash and eql? stay behind; no to_ary conversion (ADR 0036); no subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/set_arithmetic_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/set_arithmetic_spec.pdx"
+                }
+              ],
               "anchor": "core-array-intersect"
             },
             {
@@ -1006,8 +1146,18 @@
               "path": "core/array/intersection_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/intersection_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Array#& group stays behind: & is out of the grammar and intersection is its spelling (ADR 0003); mocks, to_ary, recursive arrays, and subclasses stay behind too.",
+              "link": {
+                "label": "bitwise-operators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/bitwise-operators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/set_arithmetic_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/set_arithmetic_spec.pdx"
+                }
+              ],
               "anchor": "core-array-intersection"
             },
             {
@@ -1080,8 +1230,18 @@
               "path": "core/array/map_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/map_spec.rb",
               "examples": 16,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so map!, identity, and mid-walk growth stay behind; break with a value waits on ADR 0012; no blockless Enumerator (ADR 0055); no subclasses.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-map"
             },
             {
@@ -1089,8 +1249,18 @@
               "path": "core/array/max_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/max_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The method-owner check is reflection; a comparator takes two parameters, so the one-parameter block stays behind; the nil-holding row orders through truthiness; incomparable elements refuse where Ruby raises.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/extremes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/extremes_spec.pdx"
+                }
+              ],
               "anchor": "core-array-max"
             },
             {
@@ -1098,8 +1268,18 @@
               "path": "core/array/min_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/min_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The method-owner check is reflection; a comparator takes two parameters, so the one-parameter block stays behind; the nil-holding row orders through truthiness; incomparable elements refuse where Ruby raises.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/extremes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/extremes_spec.pdx"
+                }
+              ],
               "anchor": "core-array-min"
             },
             {
@@ -1107,8 +1287,18 @@
               "path": "core/array/minmax_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/minmax_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "An incomparable or incompatible pair refuses where Ruby raises NoMethodError or ArgumentError.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/partition_minmax_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/partition_minmax_spec.pdx"
+                }
+              ],
               "anchor": "core-array-minmax"
             },
             {
@@ -1116,8 +1306,18 @@
               "path": "core/array/minus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/minus_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Mocks stubbing hash and eql? stay behind; no to_ary conversion (ADR 0036); values never mutate, so no array can hold itself; no subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/set_arithmetic_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/set_arithmetic_spec.pdx"
+                }
+              ],
               "anchor": "core-array-minus"
             },
             {
@@ -1125,8 +1325,18 @@
               "path": "core/array/multiply_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/multiply_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "* with a string is Ruby's join by another name, one spelling with two behaviors (principle 3), so join is its spelling; no to_str or to_int conversion; a negative count refuses where Ruby raises; no subclasses.",
+              "link": {
+                "label": "principles",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/principles.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/operators_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/operators_spec.pdx"
+                }
+              ],
               "anchor": "core-array-multiply"
             },
             {
@@ -1143,7 +1353,12 @@
               "path": "core/array/none_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/none_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Its examples grow the array mid-walk and pass a pattern beside a block; values never mutate, and none? takes a true-or-false block.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-none"
             },
@@ -1152,7 +1367,12 @@
               "path": "core/array/one_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/one_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Its examples grow the array mid-walk and pass a pattern beside a block; values never mutate, and one? takes a true-or-false block.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-array-one"
             },
@@ -1161,8 +1381,18 @@
               "path": "core/array/partition_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/partition_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The block answers true or false, so the rows where 5 or nil stands for a truth stay behind; values never mutate, so no array can hold itself; no subclasses.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/partition_minmax_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/partition_minmax_spec.pdx"
+                }
+              ],
               "anchor": "core-array-partition"
             },
             {
@@ -1179,8 +1409,18 @@
               "path": "core/array/plus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/plus_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_ary conversion (ADR 0036), so a non-array refuses where Ruby raises TypeError; values never mutate, so no array can hold itself; no subclasses.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/operators_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/operators_spec.pdx"
+                }
+              ],
               "anchor": "core-array-plus"
             },
             {
@@ -1239,8 +1479,18 @@
               "path": "core/array/rassoc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/rassoc_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so no array can hold itself; a mock's own == never takes over; no to_ary conversion (ADR 0036).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-rassoc"
             },
             {
@@ -1248,8 +1498,18 @@
               "path": "core/array/reject_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/reject_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The block answers true or false, so the nil and 5 rows stay behind; values never mutate, so reject!, identity, and recursive arrays stay behind too; no subclasses.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-reject"
             },
             {
@@ -1308,8 +1568,18 @@
               "path": "core/array/reverse_each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/reverse_each_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so recursive arrays and mid-walk growth stay behind; a blockless walk answers no Enumerator (ADR 0055).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-reverse_each"
             },
             {
@@ -1317,8 +1587,18 @@
               "path": "core/array/rfind_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/rfind_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The ifnone proc waits on #77 (can a block be held in a value); blockless Enumerators and mid-walk mutation stay behind.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-rfind"
             },
             {
@@ -1326,8 +1606,18 @@
               "path": "core/array/rindex_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/rindex_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A mock's own == never takes over a builtin's answer; values never mutate, so there are no recursive arrays and no mid-walk changes; a blockless search answers no Enumerator (ADR 0055).",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/find_index_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/find_index_spec.pdx"
+                }
+              ],
               "anchor": "core-array-rindex"
             },
             {
@@ -1335,8 +1625,18 @@
               "path": "core/array/rotate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/rotate_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so rotate! and the frozen and identity checks stay behind; no to_int conversion (ADR 0036); no subclasses.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/positions_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/positions_spec.pdx"
+                }
+              ],
               "anchor": "core-array-rotate"
             },
             {
@@ -1353,8 +1653,18 @@
               "path": "core/array/select_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/select_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Values never mutate, so select!, recursive arrays, and mid-walk growth stay behind; no blockless Enumerator (ADR 0055); no subclasses.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/iteration_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/iteration_spec.pdx"
+                }
+              ],
               "anchor": "core-array-select"
             },
             {
@@ -1446,8 +1756,18 @@
               "path": "core/array/sum_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/sum_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "An addend + cannot take refuses where Ruby raises TypeError; a mock's own + never takes over a builtin's; values never mutate, so the array cannot grow mid-walk.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/sum_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/sum_spec.pdx"
+                }
+              ],
               "anchor": "core-array-sum"
             },
             {
@@ -1512,7 +1832,12 @@
               "path": "core/array/to_ary_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/to_ary_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_ary is Ruby's implicit-conversion protocol, a false alias that refuses naming to_a (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-array-to_ary"
             },
@@ -1521,8 +1846,18 @@
               "path": "core/array/to_h_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/to_h_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_ary conversion (ADR 0036); a non-pair element refuses in Ruby's words where Ruby raises; the splat-parameter block row waits on splats (ADR 0014).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-to_h"
             },
             {
@@ -1539,8 +1874,18 @@
               "path": "core/array/transpose_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/transpose_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_ary conversion (ADR 0036); values never mutate, so no array can hold itself; a ragged or non-array row refuses where Ruby raises; no subclasses.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-array-transpose"
             },
             {
@@ -1548,7 +1893,12 @@
               "path": "core/array/try_convert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/try_convert_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Array.try_convert is the implicit-conversion protocol's entry point, and to_ary is a false alias that refuses naming to_a (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-array-try_convert"
             },
@@ -1557,8 +1907,18 @@
               "path": "core/array/union_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/union_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Array#| group stays behind: | is out of the grammar and union is its spelling (ADR 0003); mocks, to_ary, recursive arrays, and subclasses stay behind too.",
+              "link": {
+                "label": "bitwise-operators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/bitwise-operators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/set_arithmetic_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/set_arithmetic_spec.pdx"
+                }
+              ],
               "anchor": "core-array-union"
             },
             {
@@ -1599,8 +1959,18 @@
               "path": "core/array/values_at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/values_at_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_int conversion (ADR 0036); values never mutate, so no array can hold itself; no subclasses.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/positions_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/positions_spec.pdx"
+                }
+              ],
               "anchor": "core-array-values_at"
             },
             {
