@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-16T13:41:52Z",
-  "portland_commit": "9a1107f",
+  "generated_at": "2026-10-16T14:13:34Z",
+  "portland_commit": "fd27ffc",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
     "passing": 84,
-    "partial_intentional": 215,
-    "partial_planned": 29,
+    "partial_intentional": 218,
+    "partial_planned": 30,
     "failing": 0,
-    "missing": 3162,
+    "missing": 3158,
     "skipped": 350,
     "files": 3840
   },
   "progress": {
     "examples_portable": 23027,
     "examples_passing": 685,
-    "examples_partial": 2632
+    "examples_partial": 2970
   },
   "areas": [
     {
@@ -24893,10 +24893,10 @@
       "anchor": "language",
       "totals": {
         "passing": 2,
-        "partial_intentional": 13,
-        "partial_planned": 10,
+        "partial_intentional": 16,
+        "partial_planned": 11,
         "failing": 0,
-        "missing": 37,
+        "missing": 33,
         "skipped": 18,
         "files": 80
       },
@@ -24906,10 +24906,10 @@
           "anchor": "language",
           "totals": {
             "passing": 2,
-            "partial_intentional": 13,
-            "partial_planned": 10,
+            "partial_intentional": 16,
+            "partial_planned": 11,
             "failing": 0,
-            "missing": 24,
+            "missing": 20,
             "skipped": 18,
             "files": 67
           },
@@ -25013,8 +25013,22 @@
               "path": "language/block_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/block_spec.rb",
               "examples": 176,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Two or more parameters spread a yielded array, and where Ruby nil-fills a parameter the array cannot Portland refuses (ADR 0057); splat, optional, and keyword parameters, the to_ary protocol, rescue clauses, procs, and the rows whose parameter shadows a local stay upstream.",
+              "link": {
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/block/parameters_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/block/parameters_spec.pdx"
+                },
+                {
+                  "path": "spec/block/it_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/block/it_spec.pdx"
+                }
+              ],
               "anchor": "language-block"
             },
             {
@@ -25374,8 +25388,22 @@
               "path": "language/module_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/module_spec.rb",
               "examples": 16,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A module is a namespace, not a value: there is no Module.new, no reopening, no instance_of?, and no constant that is a class; the qualified spelling nests, which the house rows pin.",
+              "link": {
+                "label": "namespaces",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/namespaces.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/namespace/resolution_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/namespace/resolution_spec.pdx"
+                },
+                {
+                  "path": "spec/namespace/constant_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/namespace/constant_spec.pdx"
+                }
+              ],
               "anchor": "language-module"
             },
             {
@@ -25501,8 +25529,18 @@
               "path": "language/pattern_matching_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/pattern_matching_spec.rb",
               "examples": 114,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "Hash patterns, unless guards, the => capture, reused _ names, and pinning a name bound earlier in the pattern wait on #168; the find pattern, positional and Constant[...] forms, the deconstruct protocols, refinements, and the eval, lambda, regexp, and side-effect rows stay upstream, and an arm that did not match binds nothing.",
+              "link": {
+                "label": "issues/168",
+                "url": "https://github.com/portlandlang/portland/issues/168"
+              },
+              "pdx": [
+                {
+                  "path": "spec/pattern_matching/language_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/pattern_matching/language_spec.pdx"
+                }
+              ],
               "anchor": "language-pattern_matching"
             },
             {
@@ -25510,8 +25548,18 @@
               "path": "language/precedence_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/precedence_spec.rb",
               "examples": 32,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bitwise and shift operators are out of the grammar (ADR 0003); the logical operators take booleans only; assignment is a statement, so the chained-assignment rows stay upstream, with the rescue, defined?, flip-flop, class-defining, and eval rows; a bare ternary does not nest.",
+              "link": {
+                "label": "bitwise-operators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/bitwise-operators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/precedence_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/precedence_spec.pdx"
+                }
+              ],
               "anchor": "language-precedence"
             },
             {
