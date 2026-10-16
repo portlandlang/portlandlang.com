@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-09-28T00:06:21Z",
-  "portland_commit": "36abcdb",
+  "generated_at": "2026-10-16T10:28:30Z",
+  "portland_commit": "2400ba0",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 49,
-    "partial_intentional": 121,
-    "partial_planned": 12,
+    "passing": 51,
+    "partial_intentional": 180,
+    "partial_planned": 11,
     "failing": 0,
-    "missing": 3382,
-    "skipped": 276,
+    "missing": 3296,
+    "skipped": 302,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 23934,
-    "examples_passing": 433,
-    "examples_partial": 1076
+    "examples_portable": 23797,
+    "examples_passing": 440,
+    "examples_partial": 1516
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 49,
-        "partial_intentional": 120,
-        "partial_planned": 11,
+        "passing": 51,
+        "partial_intentional": 179,
+        "partial_planned": 10,
         "failing": 0,
-        "missing": 1700,
-        "skipped": 271,
+        "missing": 1614,
+        "skipped": 297,
         "files": 2151
       },
       "directories": [
@@ -366,10 +366,10 @@
           "anchor": "core-array",
           "totals": {
             "passing": 8,
-            "partial_intentional": 46,
-            "partial_planned": 2,
+            "partial_intentional": 48,
+            "partial_planned": 1,
             "failing": 0,
-            "missing": 21,
+            "missing": 20,
             "skipped": 28,
             "files": 105
           },
@@ -810,11 +810,11 @@
               "path": "core/array/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/each_spec.rb",
               "examples": 8,
-              "status": "partial_planned",
-              "reason": "The multi-parameter row waits on #158 (does |a, b| destructure a yielded array); the mid-walk mutation rows stay behind, since values never mutate.",
+              "status": "partial_intentional",
+              "reason": "The multi-parameter row leans on nil-filling a parameter from :a, which ADR 0057 refuses; the mid-walk mutation rows stay behind, since values never mutate.",
               "link": {
-                "label": "issues/158",
-                "url": "https://github.com/portlandlang/portland/issues/158"
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
               },
               "pdx": [
                 {
@@ -1344,8 +1344,18 @@
               "path": "core/array/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/new_spec.rb",
               "examples": 20,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No instance_of?, identity, or subclasses; no to_int or to_ary conversion (ADR 0036); a negative or too-large size refuses where Ruby raises; a fill beside a block refuses rather than the block winning; break with a value waits on ADR 0012.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/array/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/array/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-array-new"
             },
             {
@@ -9262,12 +9272,12 @@
           "name": "core/hash",
           "anchor": "core-hash",
           "totals": {
-            "passing": 2,
-            "partial_intentional": 1,
+            "passing": 4,
+            "partial_intentional": 38,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 65,
-            "skipped": 1,
+            "missing": 7,
+            "skipped": 20,
             "files": 69
           },
           "files": [
@@ -9276,7 +9286,12 @@
               "path": "core/hash/allocate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/allocate_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Hash class object to allocate from; a hash is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-hash-allocate"
             },
@@ -9285,8 +9300,13 @@
               "path": "core/hash/any_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/any_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-any"
             },
             {
@@ -9294,8 +9314,18 @@
               "path": "core/hash/assoc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/assoc_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The instance_of? check is reflection; compare_by_identity and Hash.new defaults stay behind.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-assoc"
             },
             {
@@ -9303,7 +9333,12 @@
               "path": "core/hash/clear_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/clear_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "clear mutates its receiver, and values never mutate (ADR 0015); table = {} rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-clear"
             },
@@ -9312,7 +9347,12 @@
               "path": "core/hash/clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/clone_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clone has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-clone"
             },
@@ -9321,8 +9361,18 @@
               "path": "core/hash/compact_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/compact_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "compact! stays behind, since values never mutate; no defaults, default_proc, compare_by_identity, or frozen hashes; identity is unobservable; a nil key stays behind.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-compact"
             },
             {
@@ -9330,7 +9380,12 @@
               "path": "core/hash/compare_by_identity_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/compare_by_identity_spec.rb",
               "examples": 20,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Identity is unobservable where values never mutate (ADR 0015): two equal keys are the same key.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-compare_by_identity"
             },
@@ -9348,7 +9403,12 @@
               "path": "core/hash/deconstruct_keys_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/deconstruct_keys_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "deconstruct_keys is the pattern-matching protocol's hook for user types; struct patterns are keyword-only with no hook to call.",
+              "link": {
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
+              },
               "pdx": [],
               "anchor": "core-hash-deconstruct_keys"
             },
@@ -9375,7 +9435,12 @@
               "path": "core/hash/delete_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/delete_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete mutates its receiver, and values never mutate (ADR 0015); table = table.except(key) rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-delete"
             },
@@ -9384,7 +9449,12 @@
               "path": "core/hash/delete_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/delete_if_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete_if mutates its receiver, and values never mutate (ADR 0015); table = table.reject { ... } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-delete_if"
             },
@@ -9407,8 +9477,18 @@
               "path": "core/hash/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/each_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-each"
             },
             {
@@ -9416,8 +9496,18 @@
               "path": "core/hash/each_key_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/each_key_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Blockless Enumerators stay behind (ADR 0055).",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-each_key"
             },
             {
@@ -9425,8 +9515,18 @@
               "path": "core/hash/each_pair_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/each_pair_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "|*args| and |k,| do not parse (no splats, ADR 0014; no trailing comma); callables of a given arity and subclasses are method objects; blockless Enumerators stay behind (ADR 0055).",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-each_pair"
             },
             {
@@ -9434,8 +9534,18 @@
               "path": "core/hash/each_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/each_value_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Blockless Enumerators stay behind (ADR 0055).",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-each_value"
             },
             {
@@ -9443,8 +9553,18 @@
               "path": "core/hash/element_reference_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/element_reference_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults or default procs: a miss answers a maybe (ADR 0010); mocks stubbing hash and eql? stay behind.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/transforms_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/transforms_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-element_reference"
             },
             {
@@ -9452,8 +9572,18 @@
               "path": "core/hash/element_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/element_set_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "[]= is rebinding sugar on a mutable name (ADR 0015), so the rows about send, dup, freeze, and mocks stubbing hash stay behind.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-element_set"
             },
             {
@@ -9461,8 +9591,22 @@
               "path": "core/hash/empty_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/empty_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults, so the default-value rows stay behind.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/empty_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/empty_spec.pdx"
+                },
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-empty"
             },
             {
@@ -9479,8 +9623,18 @@
               "path": "core/hash/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/equal_value_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Mocks counting their == and eql? calls, recursive hashes, to_hash, subclasses, and Hash.new defaults stay behind.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-equal_value"
             },
             {
@@ -9488,8 +9642,18 @@
               "path": "core/hash/except_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/except_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults, default_proc, or compare_by_identity; identity is unobservable.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-except"
             },
             {
@@ -9511,7 +9675,12 @@
               "path": "core/hash/fetch_values_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/fetch_values_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "fetch is retired, fetch_values with it: a lookup miss answers a maybe, and the default is the or-guard.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
               "pdx": [],
               "anchor": "core-hash-fetch_values"
             },
@@ -9520,8 +9689,18 @@
               "path": "core/hash/filter_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/filter_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects; filter! stays behind with select!, since values never mutate.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-filter"
             },
             {
@@ -9529,8 +9708,18 @@
               "path": "core/hash/flatten_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/flatten_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The instance_of? check is reflection; a non-Integer depth refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-flatten"
             },
             {
@@ -9538,8 +9727,18 @@
               "path": "core/hash/gt_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/gt_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_hash conversion (ADR 0036): a non-hash operand refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-gt"
             },
             {
@@ -9547,8 +9746,18 @@
               "path": "core/hash/gte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/gte_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_hash conversion (ADR 0036): a non-hash operand refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-gte"
             },
             {
@@ -9556,8 +9765,18 @@
               "path": "core/hash/has_key_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/has_key_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-has_key"
             },
             {
@@ -9565,8 +9784,18 @@
               "path": "core/hash/has_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/has_value_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-has_value"
             },
             {
@@ -9583,8 +9812,18 @@
               "path": "core/hash/include_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/include_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Mocks stubbing hash and eql? stay behind; a nil key stays behind.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-include"
             },
             {
@@ -9592,7 +9831,12 @@
               "path": "core/hash/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/initialize_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "initialize's privacy and its calls on subclasses are the class object's; a hash is a value with no subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-hash-initialize"
             },
@@ -9601,8 +9845,18 @@
               "path": "core/hash/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/inspect_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(table), not a method (ADR 0026); mocks answering their own inspect, recursive hashes, and a nil key stay behind.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/transforms_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/transforms_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-inspect"
             },
             {
@@ -9610,8 +9864,18 @@
               "path": "core/hash/invert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/invert_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults, default_proc, compare_by_identity, or subclasses.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-invert"
             },
             {
@@ -9619,7 +9883,12 @@
               "path": "core/hash/keep_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/keep_if_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "keep_if mutates its receiver, and values never mutate (ADR 0015); table = table.select { ... } rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-keep_if"
             },
@@ -9628,8 +9897,18 @@
               "path": "core/hash/key_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/key_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The key? alias check compares method objects, which a closed runtime has none of; no Hash.new defaults; a mock's own == never takes over.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-key"
             },
             {
@@ -9637,8 +9916,18 @@
               "path": "core/hash/keys_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/keys_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults; the is_a? checks are reflection; a nil key stays behind.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-keys"
             },
             {
@@ -9646,8 +9935,18 @@
               "path": "core/hash/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/length_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-length"
             },
             {
@@ -9655,8 +9954,18 @@
               "path": "core/hash/lt_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/lt_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_hash conversion (ADR 0036): a non-hash operand refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-lt"
             },
             {
@@ -9664,8 +9973,18 @@
               "path": "core/hash/lte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/lte_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No to_hash conversion (ADR 0036): a non-hash operand refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-lte"
             },
             {
@@ -9673,8 +9992,18 @@
               "path": "core/hash/member_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/member_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-member"
             },
             {
@@ -9710,8 +10039,18 @@
               "path": "core/hash/rassoc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/rassoc_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The instance_of? check is reflection; Hash.new defaults stay behind.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/pairs_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/pairs_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-rassoc"
             },
             {
@@ -9719,7 +10058,12 @@
               "path": "core/hash/rehash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/rehash_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "rehash repairs a hash whose keys mutated after insertion; keys never mutate here (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-rehash"
             },
@@ -9728,8 +10072,18 @@
               "path": "core/hash/reject_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/reject_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "|*args| does not parse (no splats, ADR 0014); reject! and delete_if stay behind, since values never mutate; no defaults, default_proc, compare_by_identity, subclasses, or blockless Enumerators.",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-reject"
             },
             {
@@ -9737,7 +10091,12 @@
               "path": "core/hash/replace_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/replace_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "replace mutates its receiver in place, and values never mutate (ADR 0015); table = other rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-replace"
             },
@@ -9746,7 +10105,12 @@
               "path": "core/hash/ruby2_keywords_hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/ruby2_keywords_hash_spec.rb",
               "examples": 11,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "ruby2_keywords_hash is a flag on the interpreter's keyword-splat plumbing; keyword arguments are Ruby 3's here with no splats (ADR 0014).",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
               "pdx": [],
               "anchor": "core-hash-ruby2_keywords_hash"
             },
@@ -9755,8 +10119,18 @@
               "path": "core/hash/select_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/select_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "|*args| does not parse (no splats, ADR 0014); select! stays behind, since values never mutate; no defaults, default_proc, compare_by_identity, frozen hashes, or blockless Enumerators.",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-select"
             },
             {
@@ -9764,7 +10138,12 @@
               "path": "core/hash/shift_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/shift_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "shift mutates its receiver, and values never mutate (ADR 0015); read table.first, then rebind table.except(key).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-shift"
             },
@@ -9773,8 +10152,18 @@
               "path": "core/hash/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults; the in-place write is the rebinding sugar here, so the size question it asks stays behind.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-size"
             },
             {
@@ -9782,8 +10171,18 @@
               "path": "core/hash/slice_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/slice_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults, default_proc, subclasses, or identity.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-slice"
             },
             {
@@ -9791,8 +10190,13 @@
               "path": "core/hash/sort_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/sort_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-sort"
             },
             {
@@ -9800,7 +10204,12 @@
               "path": "core/hash/store_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/store_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "store mutates its receiver, and values never mutate (ADR 0015); table[key] = value rebinds a mutable name instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-store"
             },
@@ -9814,6 +10223,10 @@
                 {
                   "path": "spec/hash/queries_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/queries_spec.pdx"
+                },
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
                 }
               ],
               "anchor": "core-hash-to_a"
@@ -9823,8 +10236,18 @@
               "path": "core/hash/to_h_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/to_h_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Identity is unobservable, since values never mutate; |*args| does not parse (no splats, ADR 0014); a wrong pair refuses where Ruby raises; no to_ary, subclasses, defaults, or compare_by_identity.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/transforms_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/transforms_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-to_h"
             },
             {
@@ -9832,7 +10255,12 @@
               "path": "core/hash/to_hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/to_hash_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_hash is Ruby's implicit-conversion protocol, a false alias that refuses naming to_h (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-hash-to_hash"
             },
@@ -9841,7 +10269,12 @@
               "path": "core/hash/to_proc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/to_proc_spec.rb",
               "examples": 11,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_proc answers a Proc, and whether a block can be held in a value is #77; a hash is not a callable.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-hash-to_proc"
             },
@@ -9859,8 +10292,18 @@
               "path": "core/hash/transform_keys_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/transform_keys_spec.rb",
               "examples": 25,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "transform_keys! stays behind, since values never mutate; a hash argument and its nil refusal, identity, instance_of?, defaults, default_proc, compare_by_identity, subclasses, and blockless Enumerators stay behind too.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/transforms_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/transforms_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-transform_keys"
             },
             {
@@ -9868,8 +10311,18 @@
               "path": "core/hash/transform_values_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/transform_values_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "transform_values! stays behind, since values never mutate; identity, instance_of?, defaults, default_proc, compare_by_identity, subclasses, and blockless Enumerators stay behind too.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/transforms_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/transforms_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-transform_values"
             },
             {
@@ -9877,7 +10330,12 @@
               "path": "core/hash/try_convert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/try_convert_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Hash.try_convert is the implicit-conversion protocol's entry point, and to_hash is a false alias that refuses naming to_h (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-hash-try_convert"
             },
@@ -9886,7 +10344,12 @@
               "path": "core/hash/update_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/update_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "update is merge! — it mutates its receiver, and values never mutate (ADR 0015); table = table.merge(other) rebinds instead.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-hash-update"
             },
@@ -9895,8 +10358,18 @@
               "path": "core/hash/value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/value_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No Hash.new defaults, so the default-value rows stay behind.",
+              "link": {
+                "label": "lookups",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-value"
             },
             {
@@ -9904,8 +10377,18 @@
               "path": "core/hash/values_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/values_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The is_a? check is reflection a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/lookups_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/lookups_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-values"
             },
             {
@@ -9913,8 +10396,18 @@
               "path": "core/hash/values_at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/hash/values_at_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The is_a? checks are reflection a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/selection_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/selection_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-values_at"
             }
           ]
@@ -9924,10 +10417,10 @@
           "anchor": "core-integer",
           "totals": {
             "passing": 11,
-            "partial_intentional": 30,
+            "partial_intentional": 31,
             "partial_planned": 4,
             "failing": 0,
-            "missing": 20,
+            "missing": 19,
             "skipped": 5,
             "files": 70
           },
@@ -10738,8 +11231,18 @@
               "path": "core/integer/sqrt_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/sqrt_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No bignums, so the 10**400 row stays upstream; a Float, mock, or String argument refuses where Ruby converts or raises (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/sqrt_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/sqrt_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-sqrt"
             },
             {
@@ -17349,11 +17852,11 @@
           "anchor": "core-range",
           "totals": {
             "passing": 2,
-            "partial_intentional": 1,
+            "partial_intentional": 20,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 32,
-            "skipped": 0,
+            "missing": 6,
+            "skipped": 7,
             "files": 35
           },
           "files": [
@@ -17362,8 +17865,18 @@
               "path": "core/range/begin_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/begin_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-begin"
             },
             {
@@ -17380,8 +17893,18 @@
               "path": "core/range/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/case_compare_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string, float, mock, and nil..nil rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/overlap_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/overlap_spec.pdx"
+                }
+              ],
               "anchor": "core-range-case_compare"
             },
             {
@@ -17398,7 +17921,12 @@
               "path": "core/range/clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/clone_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clone has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-range-clone"
             },
@@ -17407,7 +17935,12 @@
               "path": "core/range/count_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/count_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "A beginless range's count is Infinity in Ruby; here an open range refuses to be walked (ADR 0055).",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
               "pdx": [],
               "anchor": "core-range-count"
             },
@@ -17416,8 +17949,18 @@
               "path": "core/range/cover_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/cover_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string, float, subrange, and mock rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-cover"
             },
             {
@@ -17425,7 +17968,12 @@
               "path": "core/range/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/dup_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-range-dup"
             },
@@ -17434,8 +17982,18 @@
               "path": "core/range/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/each_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, and an endless range refuses to be walked (ADR 0055); mocks, Time, and blockless Enumerators stay upstream.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-each"
             },
             {
@@ -17443,8 +18001,18 @@
               "path": "core/range/end_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/end_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-end"
             },
             {
@@ -17452,8 +18020,18 @@
               "path": "core/range/entries_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/entries_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-entries"
             },
             {
@@ -17470,8 +18048,18 @@
               "path": "core/range/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/equal_value_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string, float, struct-endpoint, Range.new, subclass, and mock rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-equal_value"
             },
             {
@@ -17479,8 +18067,18 @@
               "path": "core/range/exclude_end_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/exclude_end_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, and Range.new waits on builtin type functions beyond ADR 0058's two.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-exclude_end"
             },
             {
@@ -17488,8 +18086,18 @@
               "path": "core/range/first_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/first_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here; no to_int, Float, nil, or String count (ADR 0036); a negative count or a beginless range refuses where Ruby raises.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-first"
             },
             {
@@ -17497,7 +18105,12 @@
               "path": "core/range/frozen_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/frozen_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every value is frozen, so frozen? asks nothing and refuses (ADR 0015); there are no subclasses and no allocate.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-range-frozen"
             },
@@ -17515,8 +18128,18 @@
               "path": "core/range/include_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/include_spec.rb",
               "examples": 64,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string, float, endless-float, nil, and mock rows stay upstream; a missing or extra argument refuses where Ruby raises.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-include"
             },
             {
@@ -17524,7 +18147,12 @@
               "path": "core/range/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/initialize_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "initialize's privacy and Range.allocate are the class object's; a range is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-range-initialize"
             },
@@ -17533,8 +18161,18 @@
               "path": "core/range/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/inspect_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(range), not a method (ADR 0026); ranges hold integers here, and a nil..nil range has no spelling.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-inspect"
             },
             {
@@ -17542,8 +18180,18 @@
               "path": "core/range/last_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/last_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here; no to_int, Float, nil, or String count (ADR 0036); a negative count or an endless range refuses where Ruby raises.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-last"
             },
             {
@@ -17565,8 +18213,18 @@
               "path": "core/range/member_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/member_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Compares the two answers rather than method objects, which a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-member"
             },
             {
@@ -17588,8 +18246,18 @@
               "path": "core/range/minmax_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/minmax_spec.rb",
               "examples": 17,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here; the mock, infinite, open-range, and comparator rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-minmax"
             },
             {
@@ -17606,8 +18274,18 @@
               "path": "core/range/overlap_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/overlap_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string rows stay upstream; nil..nil has no spelling; a non-range argument refuses where Ruby raises TypeError.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/overlap_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/overlap_spec.pdx"
+                }
+              ],
               "anchor": "core-range-overlap"
             },
             {
@@ -17615,7 +18293,12 @@
               "path": "core/range/percent_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/percent_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "% answers an Enumerator::ArithmeticSequence, and there are no enumerators (ADR 0055); step answers the finished array.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
               "pdx": [],
               "anchor": "core-range-percent"
             },
@@ -17624,7 +18307,12 @@
               "path": "core/range/range_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/range_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Asks the Range class for its ancestors — reflection a closed runtime has none of.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-range-range"
             },
@@ -17633,8 +18321,18 @@
               "path": "core/range/reverse_each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/reverse_each_spec.rb",
               "examples": 16,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, and an open range refuses to be walked (ADR 0055); mocks and blockless Enumerators stay upstream.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-reverse_each"
             },
             {
@@ -17642,8 +18340,18 @@
               "path": "core/range/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/size_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here: no Float::INFINITY, float, string, or symbol ends, and no beginless or endless size.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-size"
             },
             {
@@ -17670,8 +18378,18 @@
               "path": "core/range/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/to_a_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string, symbol, and non-ASCII rows stay upstream; a float, endless, or beginless range refuses where Ruby raises.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-to_a"
             },
             {
@@ -17679,8 +18397,18 @@
               "path": "core/range/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/to_s_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-range-to_s"
             },
             {
