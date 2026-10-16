@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-10-16T11:50:31Z",
-  "portland_commit": "d2fdeb6",
+  "generated_at": "2026-10-16T13:41:52Z",
+  "portland_commit": "9a1107f",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 75,
-    "partial_intentional": 193,
-    "partial_planned": 19,
+    "passing": 84,
+    "partial_intentional": 215,
+    "partial_planned": 29,
     "failing": 0,
-    "missing": 3250,
-    "skipped": 303,
+    "missing": 3162,
+    "skipped": 350,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 23796,
-    "examples_passing": 652,
-    "examples_partial": 1880
+    "examples_portable": 23027,
+    "examples_passing": 685,
+    "examples_partial": 2632
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 75,
-        "partial_intentional": 192,
-        "partial_planned": 18,
+        "passing": 82,
+        "partial_intentional": 202,
+        "partial_planned": 19,
         "failing": 0,
-        "missing": 1568,
-        "skipped": 298,
+        "missing": 1516,
+        "skipped": 332,
         "files": 2151
       },
       "directories": [
@@ -19910,12 +19910,12 @@
           "name": "core/string",
           "anchor": "core-string",
           "totals": {
-            "passing": 29,
-            "partial_intentional": 15,
-            "partial_planned": 9,
+            "passing": 30,
+            "partial_intentional": 18,
+            "partial_planned": 10,
             "failing": 0,
-            "missing": 70,
-            "skipped": 1,
+            "missing": 41,
+            "skipped": 25,
             "files": 124
           },
           "files": [
@@ -19924,7 +19924,12 @@
               "path": "core/string/allocate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/allocate_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no String class object to allocate from; a string is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-string-allocate"
             },
@@ -19933,7 +19938,12 @@
               "path": "core/string/append_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/append_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so << on a string has nothing to grow and refuses (ADR 0015); + builds a new string.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-append"
             },
@@ -19942,7 +19952,12 @@
               "path": "core/string/append_as_bytes_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/append_as_bytes_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so append_as_bytes has nothing to grow and refuses (ADR 0015); + builds a new string.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-append_as_bytes"
             },
@@ -20119,7 +20134,12 @@
               "path": "core/string/bytesplice_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/bytesplice_spec.rb",
               "examples": 40,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so bytesplice has nothing to splice and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-bytesplice"
             },
@@ -20208,7 +20228,12 @@
               "path": "core/string/chilled_string_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/chilled_string_spec.rb",
               "examples": 17,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string is frozen, so there is nothing chilled to warn about or thaw (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-chilled_string"
             },
@@ -20259,7 +20284,12 @@
               "path": "core/string/clear_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/clear_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clear has nothing to empty and refuses (ADR 0015); the empty string is a literal.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-clear"
             },
@@ -20268,7 +20298,12 @@
               "path": "core/string/clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/clone_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clone has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-clone"
             },
@@ -20315,7 +20350,12 @@
               "path": "core/string/concat_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/concat_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so concat has nothing to grow and refuses (ADR 0015); + builds a new string.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-concat"
             },
@@ -20352,7 +20392,12 @@
               "path": "core/string/dedup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/dedup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string is frozen, so dedup and -@ have nothing to deduplicate (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-dedup"
             },
@@ -20426,7 +20471,12 @@
               "path": "core/string/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/dup_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-dup"
             },
@@ -20530,8 +20580,22 @@
               "path": "core/string/element_reference_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/element_reference_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A slice past the end answers the empty string, never nil (ADR 0019), and a negative length refuses; the regex and string-pattern rows wait on the regex decision (#74).",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/index_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/index_spec.pdx"
+                },
+                {
+                  "path": "spec/string/slice_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/slice_spec.pdx"
+                }
+              ],
               "anchor": "core-string-element_reference"
             },
             {
@@ -20539,7 +20603,12 @@
               "path": "core/string/element_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/element_set_spec.rb",
               "examples": 86,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so []= on a string has nothing to overwrite and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-element_set"
             },
@@ -20631,7 +20700,12 @@
               "path": "core/string/freeze_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/freeze_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every value is frozen, so freeze asks nothing and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-freeze"
             },
@@ -20743,7 +20817,12 @@
               "path": "core/string/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/initialize_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no String class object; a string is a literal, and String.new has no spelling.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-string-initialize"
             },
@@ -20752,7 +20831,12 @@
               "path": "core/string/insert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/insert_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so insert has nothing to splice into and refuses (ADR 0015); slices and + build the new string.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-insert"
             },
@@ -20761,8 +20845,18 @@
               "path": "core/string/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/inspect_spec.rb",
               "examples": 19,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The escape set is closed: \\a \\b \\v \\f \\e and the \\x and \\u notation for non-printing characters have no spelling, so those rows stay upstream.",
+              "link": {
+                "label": "string-escapes",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-escapes.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/inspect_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/inspect_spec.pdx"
+                }
+              ],
               "anchor": "core-string-inspect"
             },
             {
@@ -20770,7 +20864,12 @@
               "path": "core/string/intern_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/intern_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_sym and intern are cut: a symbol is written literally, never made from text (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-string-intern"
             },
@@ -20867,7 +20966,12 @@
               "path": "core/string/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/new_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no String class object; a string is a literal, and String.new has no spelling.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-string-new"
             },
@@ -20951,7 +21055,12 @@
               "path": "core/string/prepend_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/prepend_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so prepend has nothing to grow and refuses (ADR 0015); + builds a new string.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-prepend"
             },
@@ -20960,7 +21069,12 @@
               "path": "core/string/replace_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/replace_spec.rb",
               "examples": 0,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so replace has nothing to overwrite and refuses (ADR 0015); rebinding is the spelling.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-replace"
             },
@@ -21067,7 +21181,12 @@
               "path": "core/string/setbyte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/setbyte_spec.rb",
               "examples": 14,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so setbyte has nothing to overwrite and refuses (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-setbyte"
             },
@@ -21090,8 +21209,22 @@
               "path": "core/string/slice_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/slice_spec.rb",
               "examples": 44,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A slice past the end answers the empty string, never nil (ADR 0019), and a negative length refuses; slice! is a mutator (ADR 0015); the regex and string-pattern rows wait on the regex decision (#74).",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/index_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/index_spec.pdx"
+                },
+                {
+                  "path": "spec/string/slice_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/slice_spec.pdx"
+                }
+              ],
               "anchor": "core-string-slice"
             },
             {
@@ -21099,8 +21232,18 @@
               "path": "core/string/split_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/split_spec.rb",
               "examples": 60,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows and the block form wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/split_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/split_spec.pdx"
+                }
+              ],
               "anchor": "core-string-split"
             },
             {
@@ -21136,7 +21279,12 @@
               "path": "core/string/string_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/string_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Kernel#String is the implicit-conversion protocol's entry point, and to_str is a false alias that refuses naming to_s (ADR 0036); to_s is the spelling.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-string-string"
             },
@@ -21229,8 +21377,13 @@
               "path": "core/string/to_f_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_f_spec.rb",
               "examples": 21,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/conversion_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/conversion_spec.pdx"
+                }
+              ],
               "anchor": "core-string-to_f"
             },
             {
@@ -21284,7 +21437,12 @@
               "path": "core/string/to_sym_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_sym_spec.rb",
               "examples": 10,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_sym and intern are cut: a symbol is written literally, never made from text (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
               "pdx": [],
               "anchor": "core-string-to_sym"
             },
@@ -21311,7 +21469,12 @@
               "path": "core/string/try_convert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/try_convert_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "String.try_convert is the implicit-conversion protocol's entry point, and to_str is a false alias that refuses naming to_s (ADR 0036).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-string-try_convert"
             },
@@ -21320,7 +21483,12 @@
               "path": "core/string/uminus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/uminus_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string is frozen, so -@ has nothing to freeze or deduplicate (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-uminus"
             },
@@ -21393,7 +21561,12 @@
               "path": "core/string/uplus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/uplus_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string is frozen, so +@ has no mutable copy to hand back (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-string-uplus"
             },
@@ -21704,12 +21877,12 @@
           "name": "core/struct",
           "anchor": "core-struct",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
+            "passing": 6,
+            "partial_intentional": 7,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 30,
-            "skipped": 0,
+            "missing": 7,
+            "skipped": 10,
             "files": 30
           },
           "files": [
@@ -21718,7 +21891,12 @@
               "path": "core/struct/clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/clone_spec.rb",
               "examples": 0,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so clone has nothing to copy and refuses (ADR 0015); there are no class objects to clone either.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-struct-clone"
             },
@@ -21727,7 +21905,12 @@
               "path": "core/struct/constants_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/constants_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Struct class object to hold Struct::Group or Struct::Passwd; the rows assert their absence from Ruby.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-constants"
             },
@@ -21763,7 +21946,12 @@
               "path": "core/struct/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so dup has nothing to copy and refuses (ADR 0015); there are no class objects to dup either.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-struct-dup"
             },
@@ -21772,8 +21960,18 @@
               "path": "core/struct/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/each_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-each"
             },
             {
@@ -21781,8 +21979,18 @@
               "path": "core/struct/each_pair_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/each_pair_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each_pair without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-each_pair"
             },
             {
@@ -21799,7 +22007,12 @@
               "path": "core/struct/element_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/element_set_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Values never mutate, so []= on a struct has nothing to assign and refuses (ADR 0015); with answers an updated copy.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-struct-element_set"
             },
@@ -21817,8 +22030,13 @@
               "path": "core/struct/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/equal_value_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-equal_value"
             },
             {
@@ -21826,8 +22044,13 @@
               "path": "core/struct/filter_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/filter_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-filter"
             },
             {
@@ -21844,7 +22067,12 @@
               "path": "core/struct/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/initialize_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no initialize to override and no instance variables; a struct is built by its fields, or by a defined new (ADR 0031).",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-initialize"
             },
@@ -21853,8 +22081,18 @@
               "path": "core/struct/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A struct renders as its constructor reads — Car(make: \"Ford\") — not as #<struct ...>, and inspect is a function (ADR 0026).",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/inspect_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/inspect_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-inspect"
             },
             {
@@ -21862,7 +22100,12 @@
               "path": "core/struct/instance_variable_get_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/instance_variable_get_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There are no instance variables to read; a struct's fields are its whole state (ADR 0028).",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-instance_variable_get"
             },
@@ -21871,7 +22114,12 @@
               "path": "core/struct/instance_variables_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/instance_variables_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There are no instance variables to list; a struct's fields are its whole state (ADR 0028).",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-instance_variables"
             },
@@ -21880,7 +22128,12 @@
               "path": "core/struct/keyword_init_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/keyword_init_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every struct takes its fields by keyword; there is no keyword_init flag to ask about and no class object to ask.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-keyword_init"
             },
@@ -21889,8 +22142,13 @@
               "path": "core/struct/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/length_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-length"
             },
             {
@@ -21898,8 +22156,18 @@
               "path": "core/struct/members_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/members_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "members is the instance's; there is no class object to ask and no subclass to withhold it from.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-members"
             },
             {
@@ -21907,7 +22175,12 @@
               "path": "core/struct/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/new_spec.rb",
               "examples": 34,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Struct.new builds a class at runtime; a struct is declared with the struct keyword (ADR 0028), and its name is a literal.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-new"
             },
@@ -21916,8 +22189,18 @@
               "path": "core/struct/select_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/select_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "select without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-select"
             },
             {
@@ -21925,8 +22208,13 @@
               "path": "core/struct/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-size"
             },
             {
@@ -21934,7 +22222,12 @@
               "path": "core/struct/struct_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/struct_spec.rb",
               "examples": 7,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The rows ask the Struct class object about Enumerable, subclasses, and writers; a struct has none of those (ADR 0015, ADR 0028).",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-struct-struct"
             },
@@ -21943,8 +22236,13 @@
               "path": "core/struct/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/to_a_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-to_a"
             },
             {
@@ -21952,8 +22250,18 @@
               "path": "core/struct/to_h_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/to_h_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The to_ary coercion rows are the implicit-conversion protocol (ADR 0036); the row interpolating a nil field is written with a year, since nil has no to_s (ADR 0006).",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-to_h"
             },
             {
@@ -21961,8 +22269,18 @@
               "path": "core/struct/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/to_s_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A struct renders as its constructor reads — Car(make: \"Ford\") — not as #<struct ...> (ADR 0026); there are no anonymous structs.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/inspect_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/inspect_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-to_s"
             },
             {
@@ -21970,8 +22288,13 @@
               "path": "core/struct/values_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/struct/values_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/struct/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-struct-values"
             },
             {
@@ -24569,12 +24892,12 @@
       "name": "language",
       "anchor": "language",
       "totals": {
-        "passing": 0,
-        "partial_intentional": 1,
-        "partial_planned": 1,
+        "passing": 2,
+        "partial_intentional": 13,
+        "partial_planned": 10,
         "failing": 0,
-        "missing": 73,
-        "skipped": 5,
+        "missing": 37,
+        "skipped": 18,
         "files": 80
       },
       "directories": [
@@ -24582,12 +24905,12 @@
           "name": "language",
           "anchor": "language",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 1,
-            "partial_planned": 1,
+            "passing": 2,
+            "partial_intentional": 13,
+            "partial_planned": 10,
             "failing": 0,
-            "missing": 60,
-            "skipped": 5,
+            "missing": 24,
+            "skipped": 18,
             "files": 67
           },
           "files": [
@@ -24624,8 +24947,18 @@
               "path": "language/alias_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/alias_spec.rb",
               "examples": 30,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "alias takes two bare names (ADR 0039), so the symbol-spelling rows refuse; there is no redefinition to reverse, no metaclass, eval, attr, splat, or superclass, and no globals to alias.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/method/alias_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/method/alias_spec.pdx"
+                }
+              ],
               "anchor": "language-alias"
             },
             {
@@ -24633,8 +24966,18 @@
               "path": "language/and_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/and_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The logical operators take booleans only, so the rows with strings, integers, nil, or () as operands refuse; assignment is a statement, so the assignment-in-expression rows stay upstream.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/word_operators/truth_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/word_operators/truth_spec.pdx"
+                }
+              ],
               "anchor": "language-and"
             },
             {
@@ -24679,8 +25022,18 @@
               "path": "language/break_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/break_spec.rb",
               "examples": 39,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "break out of a method's own yield waits on #166 and the lambda rows on the proc question (#77); break carries no value (ADR 0012), the ensure rows have no begin to attach to, splats are deferred (ADR 0014), and there are no threads.",
+              "link": {
+                "label": "issues/166",
+                "url": "https://github.com/portlandlang/portland/issues/166"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/unwinding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/unwinding_spec.pdx"
+                }
+              ],
               "anchor": "language-break"
             },
             {
@@ -24688,8 +25041,22 @@
               "path": "language/case_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/case_spec.rb",
               "examples": 51,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "when asks equality and a type test is an in pattern, so the class rows stay upstream; so do the regex rows (#74), the splat rows (ADR 0014), the bignum rows (#156), the subjectless case (#84), the def-in-expression, eval, and private-=== rows, and the rows whose matching when has an empty body.",
+              "link": {
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/case_when_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/case_when_spec.pdx"
+                },
+                {
+                  "path": "spec/control_flow/then_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/then_spec.pdx"
+                }
+              ],
               "anchor": "language-case"
             },
             {
@@ -24706,7 +25073,12 @@
               "path": "language/class_variable_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/class_variable_spec.rb",
               "examples": 14,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Class variables do not exist: a value lives in a local, a field, or a constant, and @@name refuses naming those (ADR 0056).",
+              "link": {
+                "label": "classes",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+              },
               "pdx": [],
               "anchor": "language-class_variable"
             },
@@ -24715,8 +25087,13 @@
               "path": "language/comment_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/comment_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/method/fluent_chain_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/method/fluent_chain_spec.pdx"
+                }
+              ],
               "anchor": "language-comment"
             },
             {
@@ -24769,7 +25146,12 @@
               "path": "language/ensure_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/ensure_spec.rb",
               "examples": 31,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "ensure rides begin/rescue, which do not exist: a fallible operation returns its failure.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
               "pdx": [],
               "anchor": "language-ensure"
             },
@@ -24778,7 +25160,12 @@
               "path": "language/execution_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/execution_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Backticks and %x spawn a shell: %x refuses by name, and backticks have no spelling — the runtime kind is gone.",
+              "link": {
+                "label": "percent-literals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/percent-literals.md"
+              },
               "pdx": [],
               "anchor": "language-execution"
             },
@@ -24787,7 +25174,12 @@
               "path": "language/file_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/file_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every row reaches __FILE__ through eval, require, or load, none of which exist: the runtime kind is gone.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "language-file"
             },
@@ -24810,8 +25202,18 @@
               "path": "language/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/hash_spec.rb",
               "examples": 41,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The omitted-value form {a:} waits on #167; the shorthand is the only symbol-key spelling, so :a => 1 refuses, ** is a splat (ADR 0014), and the empty-expression, frozen-key, duplicate-key-warning, and a= key rows stay upstream.",
+              "link": {
+                "label": "issues/167",
+                "url": "https://github.com/portlandlang/portland/issues/167"
+              },
+              "pdx": [
+                {
+                  "path": "spec/hash/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/hash/literal_spec.pdx"
+                }
+              ],
               "anchor": "language-hash"
             },
             {
@@ -24819,8 +25221,18 @@
               "path": "language/heredoc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/heredoc_spec.rb",
               "examples": 16,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Squiggly only (ADR 0020): the plain and dash openers refuse; the backslash-continuation row and the line-number row stay upstream.",
+              "link": {
+                "label": "heredocs",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/heredocs.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/heredoc_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/heredoc_spec.pdx"
+                }
+              ],
               "anchor": "language-heredoc"
             },
             {
@@ -24828,8 +25240,22 @@
               "path": "language/if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/if_spec.rb",
               "examples": 52,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Conditions take booleans only, so the nil, zero, and object rows refuse; the multiple-assignment rows go through eval, the ; spellings are newlines, and the flip-flop rows are removed syntax.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/if_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/if_spec.pdx"
+                },
+                {
+                  "path": "spec/control_flow/then_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/then_spec.pdx"
+                }
+              ],
               "anchor": "language-if"
             },
             {
@@ -24837,8 +25263,18 @@
               "path": "language/it_parameter_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/it_parameter_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "it is the single parameter of a block that names none (ADR 0017): a nested it is a shadow and refuses, and there are no procs or lambdas to call, no arity to ask, and no eval.",
+              "link": {
+                "label": "language",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/language.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/block/it_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/block/it_spec.pdx"
+                }
+              ],
               "anchor": "language-it_parameter"
             },
             {
@@ -24864,7 +25300,12 @@
               "path": "language/line_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/line_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every row reaches __LINE__ through eval, require, or load, none of which exist: the runtime kind is gone.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "language-line"
             },
@@ -24873,8 +25314,18 @@
               "path": "language/loop_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/loop_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "loop is a keyword, not an expression (ADR 0037): break carries no value out of it, the scope row's miss is a compile-time refusal, and redo has no spelling.",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/loop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/loop_spec.pdx"
+                }
+              ],
               "anchor": "language-loop"
             },
             {
@@ -24900,7 +25351,12 @@
               "path": "language/metaclass_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/metaclass_spec.rb",
               "examples": 21,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "class << obj opens a singleton class, which does not exist; the runtime kind is gone, and class << self refuses naming the type-function rewrite (ADR 0056).",
+              "link": {
+                "label": "classes",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md"
+              },
               "pdx": [],
               "anchor": "language-metaclass"
             },
@@ -24927,8 +25383,18 @@
               "path": "language/next_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/next_spec.rb",
               "examples": 35,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The lambda rows wait on the proc question; the ensure rows have no begin to attach to, next with several values is a splat (ADR 0014), and next in a method is a compile-time refusal.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/next_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/next_spec.pdx"
+                }
+              ],
               "anchor": "language-next"
             },
             {
@@ -24936,8 +25402,18 @@
               "path": "language/not_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/not_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "not and ! take booleans only: the string and nil rows refuse.",
+              "link": {
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/word_operators/truth_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/word_operators/truth_spec.pdx"
+                }
+              ],
               "anchor": "language-not"
             },
             {
@@ -24978,8 +25454,18 @@
               "path": "language/optional_assignments_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/optional_assignments_spec.rb",
               "examples": 74,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "||= is the or-guard as a rebind: a declared maybe or boolean takes it, a false non-boolean refuses, an undeclared name refuses; the accessor, constant, and index forms, the value-of-assignment rows, and the undecided &&= stay upstream.",
+              "link": {
+                "label": "0043-2026-08-19-or-equals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/adr/0043-2026-08-19-or-equals.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/optionals/or_equals_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/optionals/or_equals_spec.pdx"
+                }
+              ],
               "anchor": "language-optional_assignments"
             },
             {
@@ -24987,8 +25473,18 @@
               "path": "language/or_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/or_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "or and || are dead-identical, so the precedence rows diverge on purpose; the rows with nil, integers, or () as operands refuse, and break, next, and return carry no value out of a lambda.",
+              "link": {
+                "label": "word-operators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/word-operators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/word_operators/truth_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/word_operators/truth_spec.pdx"
+                }
+              ],
               "anchor": "language-or"
             },
             {
@@ -25023,7 +25519,12 @@
               "path": "language/predefined_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/predefined_spec.rb",
               "examples": 163,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The predefined globals ($_, $0, $:, $!, $~ and the rest) are removed syntax; the handful of legitimate uses return as named APIs.",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
               "pdx": [],
               "anchor": "language-predefined_spec"
             },
@@ -25050,8 +25551,18 @@
               "path": "language/range_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/range_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "Range.new has no spelling yet; the rows compare literals and ask the ends.",
+              "link": {
+                "label": "issues/111",
+                "url": "https://github.com/portlandlang/portland/issues/111"
+              },
+              "pdx": [
+                {
+                  "path": "spec/range/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/literal_spec.pdx"
+                }
+              ],
               "anchor": "language-range"
             },
             {
@@ -25091,7 +25602,12 @@
               "path": "language/retry_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/retry_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "retry rides begin/rescue, which do not exist: a fallible operation returns its failure.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
               "pdx": [],
               "anchor": "language-retry"
             },
@@ -25100,8 +25616,18 @@
               "path": "language/return_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/return_spec.rb",
               "examples": 43,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The lambda and define_method rows wait on the proc question; the ensure rows have no begin to attach to, splats are deferred (ADR 0014), a bare return answers no value rather than nil (ADR 0012), and there are no threads or loaded files.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/unwinding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/unwinding_spec.pdx"
+                }
+              ],
               "anchor": "language-return"
             },
             {
@@ -25109,7 +25635,12 @@
               "path": "language/safe_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/safe_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "$SAFE is a global, and globals are removed syntax.",
+              "link": {
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
+              },
               "pdx": [],
               "anchor": "language-safe"
             },
@@ -25118,8 +25649,18 @@
               "path": "language/safe_navigator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/safe_navigator_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "There are no assignment methods or operators behind &. — a field does not assign — and no eval.",
+              "link": {
+                "label": "nil-and-optionals",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/nil-and-optionals.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/optionals/safe_navigation_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/optionals/safe_navigation_spec.pdx"
+                }
+              ],
               "anchor": "language-safe_navigator"
             },
             {
@@ -25127,7 +25668,12 @@
               "path": "language/send_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/send_spec.rb",
               "examples": 78,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "send, public_send, and __send__ call a method by a runtime name; the runtime kind is gone, and there are no operator symbols to send.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "language-send"
             },
@@ -25136,7 +25682,12 @@
               "path": "language/singleton_class_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/singleton_class_spec.rb",
               "examples": 53,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Singleton classes do not exist; the runtime kind is gone, and every value is a value.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "language-singleton_class"
             },
@@ -25154,8 +25705,18 @@
               "path": "language/string_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/string_spec.rb",
               "examples": 40,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "Unicode escapes and adjacent-literal concatenation wait on the string-semantics decision; only #{} interpolates (no instance, class, or global variables), the % delimiters refuse by name, the escape set is closed, and the frozen-comment and encoding rows stay upstream.",
+              "link": {
+                "label": "issues/75",
+                "url": "https://github.com/portlandlang/portland/issues/75"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/literal_spec.pdx"
+                }
+              ],
               "anchor": "language-string"
             },
             {
@@ -25163,7 +25724,12 @@
               "path": "language/super_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/super_spec.rb",
               "examples": 61,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no inheritance — declined, not deferred — so super has nothing to reach; traits carry shared behavior (ADR 0028).",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
               "pdx": [],
               "anchor": "language-super"
             },
@@ -25172,8 +25738,18 @@
               "path": "language/symbol_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/symbol_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No operator symbols, no globals or instance variables to name, no %s or %I, no symbol from text (so no interpolation in a quoted symbol), and no encodings (ADR 0023).",
+              "link": {
+                "label": "symbols",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/symbols.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/spellings_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/spellings_spec.pdx"
+                }
+              ],
               "anchor": "language-symbol"
             },
             {
@@ -25190,7 +25766,12 @@
               "path": "language/undef_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/undef_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "undef removes a method at runtime; the runtime kind is gone, and a type's method set is declared whole.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "language-undef"
             },
@@ -25199,8 +25780,13 @@
               "path": "language/unless_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/unless_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/control_flow/unless_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/unless_spec.pdx"
+                }
+              ],
               "anchor": "language-unless"
             },
             {
@@ -25208,8 +25794,18 @@
               "path": "language/until_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/until_spec.rb",
               "examples": 28,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The optional do after the condition waits on #165; a loop is a statement (ADR 0037), so the value and break-value rows, the begin...end do-while rows, and the redo rows stay upstream, and a name first bound in the body dies each iteration (ADR 0001).",
+              "link": {
+                "label": "issues/165",
+                "url": "https://github.com/portlandlang/portland/issues/165"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/until_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/until_spec.pdx"
+                }
+              ],
               "anchor": "language-until"
             },
             {
@@ -25226,8 +25822,18 @@
               "path": "language/while_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/while_spec.rb",
               "examples": 37,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The optional do after the condition waits on #165; a loop is a statement (ADR 0037), so the value and break-value rows, the begin...end do-while rows, and the redo rows stay upstream, and a name first bound in the body dies each iteration (ADR 0001).",
+              "link": {
+                "label": "issues/165",
+                "url": "https://github.com/portlandlang/portland/issues/165"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/while_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/while_spec.pdx"
+                }
+              ],
               "anchor": "language-while"
             },
             {
@@ -25235,8 +25841,18 @@
               "path": "language/yield_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/yield_spec.rb",
               "examples": 39,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The lambda rows wait on the proc question; splats are deferred (ADR 0014), and a method called without the block it yields to is a compile-time refusal.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
+              "pdx": [
+                {
+                  "path": "spec/method/yield_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/method/yield_spec.pdx"
+                }
+              ],
               "anchor": "language-yield"
             }
           ]
