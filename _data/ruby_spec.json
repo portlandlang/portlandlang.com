@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-10-16T10:28:30Z",
-  "portland_commit": "2400ba0",
+  "generated_at": "2026-10-16T11:50:31Z",
+  "portland_commit": "d2fdeb6",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 51,
-    "partial_intentional": 180,
-    "partial_planned": 11,
+    "passing": 75,
+    "partial_intentional": 193,
+    "partial_planned": 19,
     "failing": 0,
-    "missing": 3296,
-    "skipped": 302,
+    "missing": 3250,
+    "skipped": 303,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 23797,
-    "examples_passing": 440,
-    "examples_partial": 1516
+    "examples_portable": 23796,
+    "examples_passing": 652,
+    "examples_partial": 1880
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 51,
-        "partial_intentional": 179,
-        "partial_planned": 10,
+        "passing": 75,
+        "partial_intentional": 192,
+        "partial_planned": 18,
         "failing": 0,
-        "missing": 1614,
-        "skipped": 297,
+        "missing": 1568,
+        "skipped": 298,
         "files": 2151
       },
       "directories": [
@@ -19910,12 +19910,12 @@
           "name": "core/string",
           "anchor": "core-string",
           "totals": {
-            "passing": 5,
-            "partial_intentional": 2,
-            "partial_planned": 1,
+            "passing": 29,
+            "partial_intentional": 15,
+            "partial_planned": 9,
             "failing": 0,
-            "missing": 116,
-            "skipped": 0,
+            "missing": 70,
+            "skipped": 1,
             "files": 124
           },
           "files": [
@@ -20077,8 +20077,18 @@
               "path": "core/string/bytes_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/bytes_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "bytes answers an array and takes no block; the block form is each_byte's job in Ruby and a walk's here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-bytes"
             },
             {
@@ -20086,8 +20096,13 @@
               "path": "core/string/bytesize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/bytesize_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-bytesize"
             },
             {
@@ -20113,8 +20128,18 @@
               "path": "core/string/capitalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/capitalize_spec.rb",
               "examples": 34,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Casing is full Unicode, locale-independent (ADR 0038): the :ascii, :turkic, :lithuanian, and :fold options are decided out.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/case_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/case_spec.pdx"
+                }
+              ],
               "anchor": "core-string-capitalize"
             },
             {
@@ -20122,8 +20147,13 @@
               "path": "core/string/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/case_compare_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-string-case_compare"
             },
             {
@@ -20131,8 +20161,13 @@
               "path": "core/string/casecmp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/casecmp_spec.rb",
               "examples": 33,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/casecmp_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/casecmp_spec.pdx"
+                }
+              ],
               "anchor": "core-string-casecmp"
             },
             {
@@ -20140,8 +20175,13 @@
               "path": "core/string/center_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/center_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/padding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/padding_spec.pdx"
+                }
+              ],
               "anchor": "core-string-center"
             },
             {
@@ -20149,8 +20189,18 @@
               "path": "core/string/chars_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/chars_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "chars answers an array and takes no block; its block form is deprecated Ruby, and each_char's job.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/chars_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/chars_spec.pdx"
+                }
+              ],
               "anchor": "core-string-chars"
             },
             {
@@ -20181,8 +20231,13 @@
               "path": "core/string/chop_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/chop_spec.rb",
               "examples": 26,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-string-chop"
             },
             {
@@ -20190,8 +20245,13 @@
               "path": "core/string/chr_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/chr_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-string-chr"
             },
             {
@@ -20217,8 +20277,18 @@
               "path": "core/string/codepoints_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/codepoints_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "codepoints answers an array and takes no block; the block form is each_codepoint's job in Ruby and a walk's here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-codepoints"
             },
             {
@@ -20300,8 +20370,13 @@
               "path": "core/string/delete_prefix_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/delete_prefix_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-string-delete_prefix"
             },
             {
@@ -20309,8 +20384,13 @@
               "path": "core/string/delete_suffix_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/delete_suffix_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/ends_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/ends_spec.pdx"
+                }
+              ],
               "anchor": "core-string-delete_suffix"
             },
             {
@@ -20318,8 +20398,18 @@
               "path": "core/string/downcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/downcase_spec.rb",
               "examples": 32,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Casing is full Unicode, locale-independent (ADR 0038): the :ascii, :turkic, :lithuanian, and :fold options are decided out; fold lives in casecmp?.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/case_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/case_spec.pdx"
+                }
+              ],
               "anchor": "core-string-downcase"
             },
             {
@@ -20345,8 +20435,18 @@
               "path": "core/string/each_byte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/each_byte_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each_byte without a block is an enumerator in Ruby and nothing here; the mid-walk mutation rows have nothing to mutate.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-each_byte"
             },
             {
@@ -20354,8 +20454,18 @@
               "path": "core/string/each_char_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/each_char_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each_char without a block is an enumerator in Ruby and nothing here; chars is the array.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/chars_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/chars_spec.pdx"
+                }
+              ],
               "anchor": "core-string-each_char"
             },
             {
@@ -20363,8 +20473,18 @@
               "path": "core/string/each_codepoint_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/each_codepoint_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each_codepoint without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-each_codepoint"
             },
             {
@@ -20372,8 +20492,18 @@
               "path": "core/string/each_grapheme_cluster_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/each_grapheme_cluster_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "each_grapheme_cluster without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/chars_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/chars_spec.pdx"
+                }
+              ],
               "anchor": "core-string-each_grapheme_cluster"
             },
             {
@@ -20381,8 +20511,18 @@
               "path": "core/string/each_line_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/each_line_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "each_line takes no separator or chomp argument yet; without a block it is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "issues/106",
+                "url": "https://github.com/portlandlang/portland/issues/106"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/search_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/search_spec.pdx"
+                }
+              ],
               "anchor": "core-string-each_line"
             },
             {
@@ -20408,8 +20548,13 @@
               "path": "core/string/empty_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/empty_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/empty_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/empty_spec.pdx"
+                }
+              ],
               "anchor": "core-string-empty"
             },
             {
@@ -20435,8 +20580,18 @@
               "path": "core/string/end_with_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/end_with_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/predicates_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/predicates_spec.pdx"
+                }
+              ],
               "anchor": "core-string-end_with"
             },
             {
@@ -20453,8 +20608,13 @@
               "path": "core/string/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/equal_value_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-string-equal_value"
             },
             {
@@ -20489,8 +20649,18 @@
               "path": "core/string/grapheme_clusters_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/grapheme_clusters_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "grapheme_clusters answers an array and takes no block; its block form is each_grapheme_cluster's job.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/chars_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/chars_spec.pdx"
+                }
+              ],
               "anchor": "core-string-grapheme_clusters"
             },
             {
@@ -20498,8 +20668,18 @@
               "path": "core/string/gsub_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/gsub_spec.rb",
               "examples": 77,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex patterns, the hash replacement, and the backslash escapes in a replacement (#161) wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/search_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/search_spec.pdx"
+                }
+              ],
               "anchor": "core-string-gsub"
             },
             {
@@ -20516,8 +20696,13 @@
               "path": "core/string/hex_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/hex_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/radix_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/radix_spec.pdx"
+                }
+              ],
               "anchor": "core-string-hex"
             },
             {
@@ -20525,8 +20710,13 @@
               "path": "core/string/include_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/include_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/predicates_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/predicates_spec.pdx"
+                }
+              ],
               "anchor": "core-string-include"
             },
             {
@@ -20589,8 +20779,13 @@
               "path": "core/string/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/length_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/length_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/length_spec.pdx"
+                }
+              ],
               "anchor": "core-string-length"
             },
             {
@@ -20612,8 +20807,13 @@
               "path": "core/string/ljust_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/ljust_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/padding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/padding_spec.pdx"
+                }
+              ],
               "anchor": "core-string-ljust"
             },
             {
@@ -20653,8 +20853,13 @@
               "path": "core/string/multiply_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/multiply_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/operators_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/operators_spec.pdx"
+                }
+              ],
               "anchor": "core-string-multiply"
             },
             {
@@ -20671,8 +20876,13 @@
               "path": "core/string/next_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/next_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/successor_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/successor_spec.pdx"
+                }
+              ],
               "anchor": "core-string-next"
             },
             {
@@ -20680,8 +20890,13 @@
               "path": "core/string/oct_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/oct_spec.rb",
               "examples": 17,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/radix_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/radix_spec.pdx"
+                }
+              ],
               "anchor": "core-string-oct"
             },
             {
@@ -20689,8 +20904,13 @@
               "path": "core/string/ord_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/ord_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/bytes_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/bytes_spec.pdx"
+                }
+              ],
               "anchor": "core-string-ord"
             },
             {
@@ -20698,8 +20918,18 @@
               "path": "core/string/partition_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/partition_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/partition_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/partition_spec.pdx"
+                }
+              ],
               "anchor": "core-string-partition"
             },
             {
@@ -20707,8 +20937,13 @@
               "path": "core/string/plus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/plus_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/operators_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/operators_spec.pdx"
+                }
+              ],
               "anchor": "core-string-plus"
             },
             {
@@ -20734,8 +20969,13 @@
               "path": "core/string/reverse_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/reverse_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/reverse_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/reverse_spec.pdx"
+                }
+              ],
               "anchor": "core-string-reverse"
             },
             {
@@ -20743,8 +20983,18 @@
               "path": "core/string/rindex_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/rindex_spec.rb",
               "examples": 29,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/search_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/search_spec.pdx"
+                }
+              ],
               "anchor": "core-string-rindex"
             },
             {
@@ -20752,8 +21002,13 @@
               "path": "core/string/rjust_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/rjust_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/padding_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/padding_spec.pdx"
+                }
+              ],
               "anchor": "core-string-rjust"
             },
             {
@@ -20761,8 +21016,18 @@
               "path": "core/string/rpartition_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/rpartition_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/partition_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/partition_spec.pdx"
+                }
+              ],
               "anchor": "core-string-rpartition"
             },
             {
@@ -20811,8 +21076,13 @@
               "path": "core/string/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/length_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/length_spec.pdx"
+                }
+              ],
               "anchor": "core-string-size"
             },
             {
@@ -20847,8 +21117,18 @@
               "path": "core/string/start_with_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/start_with_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex rows wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/predicates_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/predicates_spec.pdx"
+                }
+              ],
               "anchor": "core-string-start_with"
             },
             {
@@ -20879,8 +21159,18 @@
               "path": "core/string/sub_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/sub_spec.rb",
               "examples": 66,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The regex patterns, the hash replacement, and the backslash escapes in a replacement (#161) wait on the regex decision.",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/search_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/search_spec.pdx"
+                }
+              ],
               "anchor": "core-string-sub"
             },
             {
@@ -20888,8 +21178,13 @@
               "path": "core/string/succ_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/succ_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/successor_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/successor_spec.pdx"
+                }
+              ],
               "anchor": "core-string-succ"
             },
             {
@@ -20906,8 +21201,18 @@
               "path": "core/string/swapcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/swapcase_spec.rb",
               "examples": 32,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Casing is full Unicode, locale-independent (ADR 0038): the :ascii, :turkic, :lithuanian, and :fold options are decided out.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/case_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/case_spec.pdx"
+                }
+              ],
               "anchor": "core-string-swapcase"
             },
             {
@@ -20951,8 +21256,13 @@
               "path": "core/string/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_s_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/conversion_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/conversion_spec.pdx"
+                }
+              ],
               "anchor": "core-string-to_s"
             },
             {
@@ -20960,7 +21270,12 @@
               "path": "core/string/to_str_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_str_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "to_str is the implicit-conversion protocol, which Portland refuses (ADR 0036); to_s is the spelling.",
+              "link": {
+                "label": "aliases",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/aliases.md"
+              },
               "pdx": [],
               "anchor": "core-string-to_str"
             },
@@ -21059,8 +21374,18 @@
               "path": "core/string/upcase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/upcase_spec.rb",
               "examples": 32,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Casing is full Unicode, locale-independent (ADR 0038): the :ascii, :turkic, :lithuanian, and :fold options are decided out.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/case_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/case_spec.pdx"
+                }
+              ],
               "anchor": "core-string-upcase"
             },
             {
@@ -21077,8 +21402,18 @@
               "path": "core/string/upto_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/upto_spec.rb",
               "examples": 17,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "upto without a block is an enumerator in Ruby and nothing here.",
+              "link": {
+                "label": "enumerators",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/successor_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/successor_spec.pdx"
+                }
+              ],
               "anchor": "core-string-upto"
             },
             {
