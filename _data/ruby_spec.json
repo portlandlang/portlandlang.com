@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-26T00:52:22Z",
-  "portland_commit": "ca39c21",
+  "generated_at": "2026-10-26T01:56:20Z",
+  "portland_commit": "40dc250",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
     "passing": 86,
-    "partial_intentional": 318,
+    "partial_intentional": 327,
     "partial_planned": 33,
     "failing": 0,
-    "missing": 2641,
-    "skipped": 762,
+    "missing": 2629,
+    "skipped": 765,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 19067,
+    "examples_portable": 19076,
     "examples_passing": 689,
-    "examples_partial": 4476
+    "examples_partial": 4595
   },
   "areas": [
     {
@@ -23,11 +23,11 @@
       "anchor": "core",
       "totals": {
         "passing": 84,
-        "partial_intentional": 295,
+        "partial_intentional": 304,
         "partial_planned": 22,
         "failing": 0,
-        "missing": 1206,
-        "skipped": 544,
+        "missing": 1194,
+        "skipped": 547,
         "files": 2151
       },
       "directories": [
@@ -366,10 +366,10 @@
           "anchor": "core-array",
           "totals": {
             "passing": 8,
-            "partial_intentional": 62,
+            "partial_intentional": 64,
             "partial_planned": 1,
             "failing": 0,
-            "missing": 2,
+            "missing": 0,
             "skipped": 32,
             "files": 105
           },
@@ -1803,8 +1803,18 @@
               "path": "core/array/sample_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/sample_spec.rb",
               "examples": 24,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The fairness measurement, the mocks of rand and to_int, random: Random the class, and subclasses stay upstream; a negative count refuses where Ruby raises; a single sample is a maybe.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-array-sample"
             },
             {
@@ -1845,8 +1855,18 @@
               "path": "core/array/shuffle_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/shuffle_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mocks of rand and to_int and random: Random the class stay upstream; values never mutate, so shuffle! stays behind too; the CRuby sequences are pinned by value.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-array-shuffle"
             },
             {
@@ -4500,11 +4520,11 @@
           "anchor": "core-enumerable",
           "totals": {
             "passing": 2,
-            "partial_intentional": 52,
+            "partial_intentional": 54,
             "partial_planned": 0,
             "failing": 0,
             "missing": 0,
-            "skipped": 7,
+            "skipped": 5,
             "files": 61
           },
           "files": [
@@ -4514,7 +4534,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/all_spec.rb",
               "examples": 20,
               "status": "partial_intentional",
-              "reason": "The block answers true or false, so the blockless and the 5-or-nil rows stay behind; the pattern argument waits on #171; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
+              "reason": "The block answers true or false, so the blockless and the 5-or-nil rows stay behind; a pattern argument takes the when rule (ADR 0066), so the === mocks stay behind; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
               "link": {
                 "label": "truthiness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
@@ -4533,7 +4553,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/any_spec.rb",
               "examples": 20,
               "status": "partial_intentional",
-              "reason": "The block answers true or false, so the blockless and the 0-or-1 rows stay behind; the pattern argument waits on #171; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
+              "reason": "The block answers true or false, so the blockless and the 0-or-1 rows stay behind; a pattern argument takes the when rule (ADR 0066), so the === mocks stay behind; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
               "link": {
                 "label": "truthiness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
@@ -4987,13 +5007,18 @@
               "path": "core/enumerable/grep_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/grep_spec.rb",
               "examples": 11,
-              "status": "skipped",
-              "reason": "grep takes a pattern, asking ===; the pattern argument waits on #171, and the regex rows on #74.",
+              "status": "partial_intentional",
+              "reason": "A pattern argument takes the when rule (ADR 0066), so the === mocks and grep(Object) stay behind, a type not being a value; the regex and $~ rows wait on #74.",
               "link": {
-                "label": "issues/171",
-                "url": "https://github.com/portlandlang/portland/issues/171"
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/enumerable/grep_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/enumerable/grep_spec.pdx"
+                }
+              ],
               "anchor": "core-enumerable-grep"
             },
             {
@@ -5001,13 +5026,18 @@
               "path": "core/enumerable/grep_v_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/grep_v_spec.rb",
               "examples": 10,
-              "status": "skipped",
-              "reason": "grep_v takes a pattern, asking ===; the pattern argument waits on #171, and the regex rows on #74.",
+              "status": "partial_intentional",
+              "reason": "A pattern argument takes the when rule (ADR 0066), so the === mocks stay behind; the regex and $~ rows wait on #74.",
               "link": {
-                "label": "issues/171",
-                "url": "https://github.com/portlandlang/portland/issues/171"
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/enumerable/grep_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/enumerable/grep_spec.pdx"
+                }
+              ],
               "anchor": "core-enumerable-grep_v"
             },
             {
@@ -5239,7 +5269,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/none_spec.rb",
               "examples": 21,
               "status": "partial_intentional",
-              "reason": "The block answers true or false, so the blockless rows stay behind; the pattern argument waits on #171; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
+              "reason": "The block answers true or false, so the blockless rows stay behind; a pattern argument takes the when rule (ADR 0066), so the === mocks stay behind; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
               "link": {
                 "label": "truthiness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
@@ -5258,7 +5288,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/one_spec.rb",
               "examples": 22,
               "status": "partial_intentional",
-              "reason": "The block answers true or false, so the blockless rows stay behind; the pattern argument waits on #171; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
+              "reason": "The block answers true or false, so the blockless rows stay behind; a pattern argument takes the when rule (ADR 0066), so the === mocks stay behind; no exceptions, no splat parameter, and a one-parameter block sees the packed array.",
               "link": {
                 "label": "truthiness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
@@ -5372,7 +5402,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/slice_after_spec.rb",
               "examples": 7,
               "status": "partial_intentional",
-              "reason": "slice_after answers its runs as an array (ADR 0055); the pattern argument waits on #171, so the mocked === rows stay behind.",
+              "reason": "slice_after answers its runs as an array (ADR 0055); a pattern argument takes the when rule (ADR 0066), so the mocked === rows stay behind.",
               "link": {
                 "label": "enumerators",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
@@ -5391,7 +5421,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/slice_before_spec.rb",
               "examples": 7,
               "status": "partial_intentional",
-              "reason": "slice_before answers its runs as an array (ADR 0055); the pattern argument waits on #171, so the mocked === rows stay behind.",
+              "reason": "slice_before answers its runs as an array (ADR 0055); a pattern argument takes the when rule (ADR 0066), so the mocked === rows stay behind.",
               "link": {
                 "label": "enumerators",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
@@ -19403,11 +19433,11 @@
           "anchor": "core-random",
           "totals": {
             "passing": 0,
-            "partial_intentional": 0,
+            "partial_intentional": 5,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 10,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 5,
             "files": 10
           },
           "files": [
@@ -19416,7 +19446,12 @@
               "path": "core/random/bytes_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/bytes_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Random bytes wait on what a byte string is here (#119).",
+              "link": {
+                "label": "issues/119",
+                "url": "https://github.com/portlandlang/portland/issues/119"
+              },
               "pdx": [],
               "anchor": "core-random-bytes"
             },
@@ -19425,7 +19460,12 @@
               "path": "core/random/default_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/default_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Random::DEFAULT is the ambient generator, which the bare rand, sample, and shuffle draw from (ADR 0065).",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
               "pdx": [],
               "anchor": "core-random-default"
             },
@@ -19434,8 +19474,18 @@
               "path": "core/random/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/equal_value_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Two generators are equal by seed and position, which is what the state rows ask without reaching into it.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-random-equal_value"
             },
             {
@@ -19443,8 +19493,18 @@
               "path": "core/random/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/new_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Rationals and Complex wait on #124, so their seed rows stay upstream.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-random-new"
             },
             {
@@ -19452,7 +19512,12 @@
               "path": "core/random/new_seed_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/new_seed_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Random.new_seed is spelled Random.new.seed here (ADR 0065).",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
               "pdx": [],
               "anchor": "core-random-new_seed"
             },
@@ -19461,8 +19526,18 @@
               "path": "core/random/rand_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/rand_spec.rb",
               "examples": 35,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Random.rand and Random.srand as class methods are the bare rand and srand here; bignum bounds (#156), float ranges (#149), the to_int mocks, and the custom range types stay upstream.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-random-rand"
             },
             {
@@ -19470,7 +19545,12 @@
               "path": "core/random/random_number_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/random_number_spec.rb",
               "examples": 0,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Random::Formatter is a mixin for byte sources (#119); its random_number is rand.",
+              "link": {
+                "label": "issues/119",
+                "url": "https://github.com/portlandlang/portland/issues/119"
+              },
               "pdx": [],
               "anchor": "core-random-random_number"
             },
@@ -19479,8 +19559,18 @@
               "path": "core/random/seed_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/seed_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The to_int mock stays upstream.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-random-seed"
             },
             {
@@ -19488,8 +19578,18 @@
               "path": "core/random/srand_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/srand_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Random.srand is the bare srand here, and the arbitrary-seed rows compare two draws of entropy.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-random-srand"
             },
             {
@@ -19497,7 +19597,12 @@
               "path": "core/random/urandom_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/urandom_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The OS's entropy is where an unseeded generator's seed comes from; it is not a method (ADR 0065).",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
               "pdx": [],
               "anchor": "core-random-urandom"
             }
