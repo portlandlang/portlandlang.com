@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-11-06T10:42:38Z",
-  "portland_commit": "a2f168b",
+  "generated_at": "2026-11-06T12:46:22Z",
+  "portland_commit": "a4e1a7e",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 128,
-    "partial_intentional": 453,
+    "passing": 132,
+    "partial_intentional": 484,
     "partial_planned": 26,
     "failing": 0,
-    "missing": 2148,
-    "skipped": 1085,
+    "missing": 2091,
+    "skipped": 1107,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 16410,
-    "examples_passing": 789,
-    "examples_partial": 5368
+    "examples_portable": 16282,
+    "examples_passing": 803,
+    "examples_partial": 5665
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 126,
-        "partial_intentional": 425,
+        "passing": 130,
+        "partial_intentional": 456,
         "partial_planned": 19,
         "failing": 0,
-        "missing": 713,
-        "skipped": 868,
+        "missing": 656,
+        "skipped": 890,
         "files": 2151
       },
       "directories": [
@@ -10141,12 +10141,12 @@
           "name": "core/float",
           "anchor": "core-float",
           "totals": {
-            "passing": 17,
-            "partial_intentional": 20,
+            "passing": 20,
+            "partial_intentional": 22,
             "partial_planned": 1,
             "failing": 0,
-            "missing": 8,
-            "skipped": 4,
+            "missing": 0,
+            "skipped": 7,
             "files": 50
           },
           "files": [
@@ -10174,7 +10174,12 @@
               "path": "core/float/angle_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/angle_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-float-angle"
             },
@@ -10183,8 +10188,13 @@
               "path": "core/float/arg_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/arg_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-float-arg"
             },
             {
@@ -10225,7 +10235,12 @@
               "path": "core/float/coerce_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/coerce_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no coercion protocol yet (#155): a float does not answer coerce, and the bignum rows stay upstream, integers being 64-bit.",
+              "link": {
+                "label": "numbers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/numbers.md"
+              },
               "pdx": [],
               "anchor": "core-float-coerce"
             },
@@ -10272,8 +10287,13 @@
               "path": "core/float/denominator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/denominator_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-float-denominator"
             },
             {
@@ -10664,8 +10684,18 @@
               "path": "core/float/numerator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/numerator_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Integers are 64-bit, so the numerators of Float::MAX and 999.1 ** 99.928888 refuse as overflows and stay upstream.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-float-numerator"
             },
             {
@@ -10673,7 +10703,12 @@
               "path": "core/float/phase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/phase_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-float-phase"
             },
@@ -10744,8 +10779,18 @@
               "path": "core/float/rationalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/rationalize_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "NaN, infinity, and a second argument refuse where Ruby raises FloatDomainError or ArgumentError; failures are values, so the rows are pinned by the two-oracle test instead.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/float/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-float-rationalize"
             },
             {
@@ -10814,8 +10859,17 @@
               "path": "core/float/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/to_r_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/float/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/float/tower_spec.pdx"
+                },
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-float-to_r"
             },
             {
@@ -14643,11 +14697,11 @@
           "anchor": "core-kernel",
           "totals": {
             "passing": 0,
-            "partial_intentional": 2,
+            "partial_intentional": 19,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 49,
-            "skipped": 67,
+            "missing": 14,
+            "skipped": 85,
             "files": 118
           },
           "files": [
@@ -14665,8 +14719,18 @@
               "path": "core/kernel/Complex_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/Complex_spec.rb",
               "examples": 36,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A string argument waits on the conversion functions' page (conversions.md); the bignums, the mocks, the to_c and real? protocols, and exception: false stay upstream; nil and a symbol refuse where Ruby raises.",
+              "link": {
+                "label": "numbers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/numbers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-Complex"
             },
             {
@@ -14701,8 +14765,18 @@
               "path": "core/kernel/Rational_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/Rational_spec.rb",
               "examples": 36,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A string argument waits on the conversion functions' page (conversions.md); the bignums, the mocks, the to_r and to_int protocols, and exception: false stay upstream; nil, a symbol, and a zero denominator refuse where Ruby raises.",
+              "link": {
+                "label": "numbers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/numbers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-Rational"
             },
             {
@@ -14807,7 +14881,12 @@
               "path": "core/kernel/backtick_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/backtick_spec.rb",
               "examples": 9,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Shell execution and process spawning wait on #179, the decision ADR 0051 deferred.",
+              "link": {
+                "label": "issues/179",
+                "url": "https://github.com/portlandlang/portland/issues/179"
+              },
               "pdx": [],
               "anchor": "core-kernel-backtick"
             },
@@ -14867,7 +14946,12 @@
               "path": "core/kernel/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/case_compare_spec.rb",
               "examples": 10,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every row drives dup, object_id, and equal? — object identity, which values never have (ADR 0015); a struct's === is its == (#151).",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
               "pdx": [],
               "anchor": "core-kernel-case_compare"
             },
@@ -14918,8 +15002,18 @@
               "path": "core/kernel/class_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/class_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Object.new has no Portland form, a type has no class (ADR 0074), and there are no singleton methods.",
+              "link": {
+                "label": "types",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/types.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/struct/class_answers_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/struct/class_answers_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-class"
             },
             {
@@ -15011,8 +15105,18 @@
               "path": "core/kernel/eql_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/eql_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Object.new and the mocks have no identity to compare here; the bignum stays upstream, integers being 64-bit.",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/eql_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/eql_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-eql"
             },
             {
@@ -15020,7 +15124,12 @@
               "path": "core/kernel/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/equal_value_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every row compares mocks by identity; values compare by value here (ADR 0015), and nil == nil is spec/optionals/nil_spec.pdx's.",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
               "pdx": [],
               "anchor": "core-kernel-equal_value"
             },
@@ -15043,7 +15152,12 @@
               "path": "core/kernel/exec_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/exec_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Shell execution and process spawning wait on #179, the decision ADR 0051 deferred.",
+              "link": {
+                "label": "issues/179",
+                "url": "https://github.com/portlandlang/portland/issues/179"
+              },
               "pdx": [],
               "anchor": "core-kernel-exec"
             },
@@ -15089,7 +15203,12 @@
               "path": "core/kernel/fork_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/fork_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Shell execution and process spawning wait on #179, the decision ADR 0051 deferred.",
+              "link": {
+                "label": "issues/179",
+                "url": "https://github.com/portlandlang/portland/issues/179"
+              },
               "pdx": [],
               "anchor": "core-kernel-fork"
             },
@@ -15145,7 +15264,12 @@
               "path": "core/kernel/gets_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/gets_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "gets reads a handle, which waits on the handle model (#177) and the process rows (#178).",
+              "link": {
+                "label": "issues/177",
+                "url": "https://github.com/portlandlang/portland/issues/177"
+              },
               "pdx": [],
               "anchor": "core-kernel-gets"
             },
@@ -15224,7 +15348,12 @@
               "path": "core/kernel/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/inspect_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every row inspects Object.new or stubs its instance variables; inspect is a function here (ADR 0026) and there is no Object.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
               "pdx": [],
               "anchor": "core-kernel-inspect"
             },
@@ -15340,7 +15469,12 @@
               "path": "core/kernel/lambda_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/lambda_spec.rb",
               "examples": 15,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "-> refuses with its rewrite; the proc question (#77) holds the rest.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
               "pdx": [],
               "anchor": "core-kernel-lambda"
             },
@@ -15377,8 +15511,18 @@
               "path": "core/kernel/loop_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/loop_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "loop is a keyword form, not a method (ADR 0037): break carries no value, there is no enumerator without a block, and nothing raises StopIteration.",
+              "link": {
+                "label": "0037-2026-08-18-the-loop-spellings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/adr/0037-2026-08-18-the-loop-spellings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/control_flow/loop_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/control_flow/loop_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-loop"
             },
             {
@@ -15386,7 +15530,12 @@
               "path": "core/kernel/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/match_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "=~ waits on the regex decision (#74).",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
               "pdx": [],
               "anchor": "core-kernel-match"
             },
@@ -15423,8 +15572,18 @@
               "path": "core/kernel/nil_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/nil_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Object and Object.new have no Portland form; the builtin values answer.",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/optionals/nil_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/optionals/nil_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-nil"
             },
             {
@@ -15432,7 +15591,12 @@
               "path": "core/kernel/not_match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/not_match_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "!~ waits on the regex decision (#74).",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
               "pdx": [],
               "anchor": "core-kernel-not_match"
             },
@@ -15455,7 +15619,12 @@
               "path": "core/kernel/open_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/open_spec.rb",
               "examples": 24,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "open reads a handle, which waits on the handle model (#177) and the process rows (#178).",
+              "link": {
+                "label": "issues/177",
+                "url": "https://github.com/portlandlang/portland/issues/177"
+              },
               "pdx": [],
               "anchor": "core-kernel-open"
             },
@@ -15464,8 +15633,18 @@
               "path": "core/kernel/p_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/p_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "What p writes is pinned by the two-oracle test; the privacy and reflection rows, the File receiver, the mocks, and the output-separator globals stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-p"
             },
             {
@@ -15473,8 +15652,18 @@
               "path": "core/kernel/pp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/pp_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "pp is p here — there is no pretty-printer to load; the row shells out to ruby.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-pp"
             },
             {
@@ -15482,8 +15671,18 @@
               "path": "core/kernel/print_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/print_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "What print writes is pinned by the two-oracle test; the privacy and reflection rows and $_ stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-print"
             },
             {
@@ -15491,8 +15690,18 @@
               "path": "core/kernel/printf_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/printf_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "printf is format then print (ADR 0067); the formatting rows are format's in spec/string/format_spec.pdx, and the IO-first-argument, to_str mock, and privacy rows stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-printf"
             },
             {
@@ -15514,7 +15723,12 @@
               "path": "core/kernel/proc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/proc_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "proc refuses with its rewrite; the proc question (#77) holds the rest.",
+              "link": {
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
+              },
               "pdx": [],
               "anchor": "core-kernel-proc"
             },
@@ -15579,8 +15793,18 @@
               "path": "core/kernel/putc_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/putc_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "What putc writes is pinned by the two-oracle test; nil, true, and false refuse where Ruby raises TypeError, and the to_int mock, the closed stream, and the privacy rows stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-putc"
             },
             {
@@ -15588,8 +15812,18 @@
               "path": "core/kernel/puts_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/puts_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "puts answers no value (ADR 0012), so its rows are the two-oracle test's; the privacy and reflection rows and the $stdout reassignment stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-puts"
             },
             {
@@ -15611,8 +15845,18 @@
               "path": "core/kernel/rand_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/rand_spec.rb",
               "examples": 28,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The range rows draw 100 times, not 1000; a backwards range refuses as Random#rand's does where Kernel#rand answers nil; the to_int mock, the custom range types, Time, and the ruby_exe row stay upstream.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-rand"
             },
             {
@@ -15620,7 +15864,12 @@
               "path": "core/kernel/readline_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/readline_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "readline reads a handle, which waits on the handle model (#177) and the process rows (#178).",
+              "link": {
+                "label": "issues/177",
+                "url": "https://github.com/portlandlang/portland/issues/177"
+              },
               "pdx": [],
               "anchor": "core-kernel-readline"
             },
@@ -15629,7 +15878,12 @@
               "path": "core/kernel/readlines_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/readlines_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "readlines reads a handle, which waits on the handle model (#177) and the process rows (#178).",
+              "link": {
+                "label": "issues/177",
+                "url": "https://github.com/portlandlang/portland/issues/177"
+              },
               "pdx": [],
               "anchor": "core-kernel-readlines"
             },
@@ -15652,8 +15906,18 @@
               "path": "core/kernel/require_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/require_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "require by name is pinned by the seed's load-path fixtures; $LOADED_FEATURES, $LOAD_PATH, .so and C extensions, the mocks, and the LoadError rows stay upstream, a missing file refusing at build.",
+              "link": {
+                "label": "requires",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/requires.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/require/relative_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/require/relative_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-require"
             },
             {
@@ -15661,8 +15925,18 @@
               "path": "core/kernel/require_relative_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/require_relative_spec.rb",
               "examples": 55,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "$LOADED_FEATURES, symlinks, instance_eval, the to_str and to_path mocks, C extensions, and the LoadError rows stay upstream, a missing file refusing at build.",
+              "link": {
+                "label": "requires",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/requires.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/require/relative_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/require/relative_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-require_relative"
             },
             {
@@ -15698,7 +15972,12 @@
               "path": "core/kernel/select_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/select_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "select reads a handle, which waits on the handle model (#177) and the process rows (#178).",
+              "link": {
+                "label": "issues/177",
+                "url": "https://github.com/portlandlang/portland/issues/177"
+              },
               "pdx": [],
               "anchor": "core-kernel-select"
             },
@@ -15786,7 +16065,12 @@
               "path": "core/kernel/spawn_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/spawn_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Shell execution and process spawning wait on #179, the decision ADR 0051 deferred.",
+              "link": {
+                "label": "issues/179",
+                "url": "https://github.com/portlandlang/portland/issues/179"
+              },
               "pdx": [],
               "anchor": "core-kernel-spawn"
             },
@@ -15814,8 +16098,18 @@
               "path": "core/kernel/srand_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/srand_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "srand(0) draws a fresh seed, as no argument does; a float, nil, or string seed refuses where Ruby coerces or raises; the bignum seed and the ruby_exe row stay upstream.",
+              "link": {
+                "label": "randomness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/random/random_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/random/random_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-srand"
             },
             {
@@ -15851,7 +16145,12 @@
               "path": "core/kernel/system_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/system_spec.rb",
               "examples": 17,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Shell execution and process spawning wait on #179, the decision ADR 0051 deferred.",
+              "link": {
+                "label": "issues/179",
+                "url": "https://github.com/portlandlang/portland/issues/179"
+              },
               "pdx": [],
               "anchor": "core-kernel-system"
             },
@@ -15948,7 +16247,12 @@
               "path": "core/kernel/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/to_s_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "The one row matches Object.new's to_s against a regex; there is no Object and no regex.",
+              "link": {
+                "label": "inspect",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
+              },
               "pdx": [],
               "anchor": "core-kernel-to_s"
             },
@@ -16055,8 +16359,18 @@
               "path": "core/kernel/warn_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/kernel/warn_spec.rb",
               "examples": 34,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "What warn writes is pinned by the two-oracle test; $VERBOSE, the uplevel and category keywords, the mocks, Warning.warn, and the privacy rows stay upstream.",
+              "link": {
+                "label": "system",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/system.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/system/output_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/system/output_spec.pdx"
+                }
+              ],
               "anchor": "core-kernel-warn"
             },
             {
@@ -19104,11 +19418,11 @@
           "name": "core/numeric",
           "anchor": "core-numeric",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 5,
+            "passing": 1,
+            "partial_intentional": 15,
             "partial_planned": 1,
             "failing": 0,
-            "missing": 11,
+            "missing": 0,
             "skipped": 29,
             "files": 46
           },
@@ -19132,8 +19446,18 @@
               "path": "core/numeric/abs2_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/abs2_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock-Numeric row has no Numeric to subclass, and the bignum stays upstream, integers being 64-bit.",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-abs2"
             },
             {
@@ -19155,8 +19479,18 @@
               "path": "core/numeric/arg_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/arg_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Numeric-subclass rows have no Numeric to subclass, and the bignum stays upstream, integers being 64-bit.",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-arg"
             },
             {
@@ -19234,8 +19568,18 @@
               "path": "core/numeric/conjugate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/conjugate_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Integers are 64-bit, so the bignum stays upstream; equal? is asked as ==.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-conjugate"
             },
             {
@@ -19243,8 +19587,18 @@
               "path": "core/numeric/denominator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/denominator_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock-Numeric row has no Numeric to subclass, and the bignum stays upstream, integers being 64-bit.",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-denominator"
             },
             {
@@ -19359,8 +19713,13 @@
               "path": "core/numeric/i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/i_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-i"
             },
             {
@@ -19382,8 +19741,18 @@
               "path": "core/numeric/imaginary_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/imaginary_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "An argument to imaginary refuses where Ruby raises ArgumentError; failures are values, so the row is pinned by the two-oracle test instead, and the bignum stays upstream.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-imaginary"
             },
             {
@@ -19484,8 +19853,18 @@
               "path": "core/numeric/numerator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/numerator_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Integers are 64-bit, so the bignum and Float::MAX's numerator stay upstream; the mock-Numeric row has no Numeric to subclass.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-numerator"
             },
             {
@@ -19521,8 +19900,18 @@
               "path": "core/numeric/polar_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/polar_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Integers are 64-bit, so the bignum stays upstream.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-polar"
             },
             {
@@ -19572,8 +19961,18 @@
               "path": "core/numeric/real_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/real_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "An argument to real refuses where Ruby raises ArgumentError, the real? row drives a Numeric subclass, and the bignum stays upstream; real? is asked of the builtins.",
+              "link": {
+                "label": "mixins-and-inheritance",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-real"
             },
             {
@@ -19595,8 +19994,18 @@
               "path": "core/numeric/rectangular_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/rectangular_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "An argument to rectangular refuses where Ruby raises ArgumentError; failures are values, and the bignum stays upstream.",
+              "link": {
+                "label": "errors",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-rectangular"
             },
             {
@@ -19665,8 +20074,18 @@
               "path": "core/numeric/to_c_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/to_c_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Integers are 64-bit, so the bignum stays upstream.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-numeric-to_c"
             },
             {
@@ -21774,10 +22193,10 @@
           "anchor": "core-range",
           "totals": {
             "passing": 2,
-            "partial_intentional": 24,
+            "partial_intentional": 25,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 1,
+            "missing": 0,
             "skipped": 8,
             "files": 35
           },
@@ -22447,8 +22866,18 @@
               "path": "core/range/to_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/to_set_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A beginless or endless range refuses to be walked in Portland's words (ADR 0055) where Ruby raises TypeError or RangeError, and there is no Set subclass to hand to_set.",
+              "link": {
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-range-to_set"
             }
           ]
@@ -27020,11 +27449,11 @@
           "anchor": "core-symbol",
           "totals": {
             "passing": 7,
-            "partial_intentional": 12,
+            "partial_intentional": 13,
             "partial_planned": 2,
             "failing": 0,
-            "missing": 2,
-            "skipped": 6,
+            "missing": 0,
+            "skipped": 7,
             "files": 29
           },
           "files": [
@@ -27169,8 +27598,18 @@
               "path": "core/symbol/encoding_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/encoding_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A symbol's text is UTF-8 like every string's (ADR 0069): encoding answers UTF-8 where upstream expects US-ASCII of an ASCII name, and a non-ASCII name does not lex (#139).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/symbol/text_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/symbol/text_spec.pdx"
+                }
+              ],
               "anchor": "core-symbol-encoding"
             },
             {
@@ -27292,7 +27731,12 @@
               "path": "core/symbol/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/symbol/match_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "=~, match, and match? take a regex, which waits on the regex decision (#74).",
+              "link": {
+                "label": "issues/74",
+                "url": "https://github.com/portlandlang/portland/issues/74"
+              },
               "pdx": [],
               "anchor": "core-symbol-match"
             },
@@ -30013,10 +30457,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/break_spec.rb",
               "examples": 39,
               "status": "partial_planned",
-              "reason": "break out of a method's own yield waits on #166 and the lambda rows on the proc question (#77); break carries no value (ADR 0012), the ensure rows have no begin to attach to, splats are deferred (ADR 0014), and there are no threads.",
+              "reason": "the block rows run (#166); the captured-block and lambda rows wait on the proc question (#77); break carries no value (ADR 0012), the ensure rows have no begin to attach to, splats are deferred (ADR 0014), and there are no threads.",
               "link": {
-                "label": "issues/166",
-                "url": "https://github.com/portlandlang/portland/issues/166"
+                "label": "issues/77",
+                "url": "https://github.com/portlandlang/portland/issues/77"
               },
               "pdx": [
                 {
