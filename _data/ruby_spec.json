@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-11-06T06:06:29Z",
-  "portland_commit": "f6b17e1",
+  "generated_at": "2026-11-06T10:42:38Z",
+  "portland_commit": "a2f168b",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 91,
-    "partial_intentional": 377,
-    "partial_planned": 30,
+    "passing": 128,
+    "partial_intentional": 453,
+    "partial_planned": 26,
     "failing": 0,
-    "missing": 2280,
-    "skipped": 1062,
+    "missing": 2148,
+    "skipped": 1085,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 16497,
-    "examples_passing": 716,
-    "examples_partial": 5021
+    "examples_portable": 16410,
+    "examples_passing": 789,
+    "examples_partial": 5368
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 89,
-        "partial_intentional": 351,
-        "partial_planned": 22,
+        "passing": 126,
+        "partial_intentional": 425,
+        "partial_planned": 19,
         "failing": 0,
-        "missing": 845,
-        "skipped": 844,
+        "missing": 713,
+        "skipped": 868,
         "files": 2151
       },
       "directories": [
@@ -3166,8 +3166,8 @@
           "anchor": "core-comparable",
           "totals": {
             "passing": 1,
-            "partial_intentional": 4,
-            "partial_planned": 1,
+            "partial_intentional": 5,
+            "partial_planned": 0,
             "failing": 0,
             "missing": 0,
             "skipped": 1,
@@ -3193,11 +3193,11 @@
               "path": "core/comparable/clamp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/comparable/clamp_spec.rb",
               "examples": 26,
-              "status": "partial_planned",
-              "reason": "A number clamps by an integer range, endless and beginless included (#101); upstream's range examples clamp structs by a range of structs, which waits on the build of ranges over any orderable (ADR 0081). Nil bounds and backwards bounds refuse by design.",
+              "status": "partial_intentional",
+              "reason": "Nil bounds and backwards bounds refuse by design, and an exclusive range with an end refuses as Ruby raises; a nil <=> answer has no mock to come from.",
               "link": {
-                "label": "issues/194",
-                "url": "https://github.com/portlandlang/portland/issues/194"
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
               },
               "pdx": [
                 {
@@ -3303,12 +3303,12 @@
           "name": "core/complex",
           "anchor": "core-complex",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
+            "passing": 20,
+            "partial_intentional": 20,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 43,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 3,
             "files": 43
           },
           "files": [
@@ -3317,8 +3317,13 @@
               "path": "core/complex/abs_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/abs_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-abs"
             },
             {
@@ -3326,8 +3331,13 @@
               "path": "core/complex/abs2_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/abs2_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-abs2"
             },
             {
@@ -3335,8 +3345,13 @@
               "path": "core/complex/angle_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/angle_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-angle"
             },
             {
@@ -3344,8 +3359,13 @@
               "path": "core/complex/arg_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/arg_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-arg"
             },
             {
@@ -3353,7 +3373,12 @@
               "path": "core/complex/coerce_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/coerce_spec.rb",
               "examples": 10,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no coercion protocol yet (#155): a struct does not join the arithmetic by defining coerce.",
+              "link": {
+                "label": "numbers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/numbers.md"
+              },
               "pdx": [],
               "anchor": "core-complex-coerce"
             },
@@ -3362,8 +3387,13 @@
               "path": "core/complex/comparison_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/comparison_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-comparison"
             },
             {
@@ -3371,8 +3401,13 @@
               "path": "core/complex/conj_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/conj_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-conj"
             },
             {
@@ -3380,8 +3415,13 @@
               "path": "core/complex/conjugate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/conjugate_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-conjugate"
             },
             {
@@ -3389,8 +3429,13 @@
               "path": "core/complex/constants_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/constants_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-constants"
             },
             {
@@ -3398,8 +3443,14 @@
               "path": "core/complex/denominator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/denominator_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-denominator"
             },
             {
@@ -3407,8 +3458,14 @@
               "path": "core/complex/divide_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/divide_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155); a zero divisor refuses, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-divide"
             },
             {
@@ -3416,8 +3473,14 @@
               "path": "core/complex/eql_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/eql_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-eql"
             },
             {
@@ -3425,8 +3488,14 @@
               "path": "core/complex/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/equal_value_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-equal_value"
             },
             {
@@ -3434,8 +3503,14 @@
               "path": "core/complex/exponent_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/exponent_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-exponent"
             },
             {
@@ -3443,8 +3518,14 @@
               "path": "core/complex/fdiv_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/fdiv_spec.rb",
               "examples": 18,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155); the Infinity and NaN rows are the floats' own.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-fdiv"
             },
             {
@@ -3452,8 +3533,13 @@
               "path": "core/complex/finite_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/finite_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-finite"
             },
             {
@@ -3461,7 +3547,12 @@
               "path": "core/complex/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/hash_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "hash is not exposed (ADR 0059): a value is a hash key by eql?.",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
               "pdx": [],
               "anchor": "core-complex-hash"
             },
@@ -3470,8 +3561,13 @@
               "path": "core/complex/imag_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/imag_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-imag"
             },
             {
@@ -3479,8 +3575,13 @@
               "path": "core/complex/imaginary_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/imaginary_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-imaginary"
             },
             {
@@ -3488,8 +3589,13 @@
               "path": "core/complex/infinite_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/infinite_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-infinite"
             },
             {
@@ -3497,8 +3603,14 @@
               "path": "core/complex/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/inspect_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(complex), not a method (ADR 0026); the bignum rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-inspect"
             },
             {
@@ -3506,8 +3618,13 @@
               "path": "core/complex/integer_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/integer_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-integer"
             },
             {
@@ -3515,8 +3632,13 @@
               "path": "core/complex/magnitude_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/magnitude_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-magnitude"
             },
             {
@@ -3524,7 +3646,12 @@
               "path": "core/complex/marshal_dump_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/marshal_dump_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Marshal; a value crosses a boundary as JSON (ADR 0072).",
+              "link": {
+                "label": "json",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/json.md"
+              },
               "pdx": [],
               "anchor": "core-complex-marshal_dump"
             },
@@ -3533,8 +3660,14 @@
               "path": "core/complex/minus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/minus_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-minus"
             },
             {
@@ -3542,8 +3675,14 @@
               "path": "core/complex/multiply_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/multiply_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-multiply"
             },
             {
@@ -3551,8 +3690,14 @@
               "path": "core/complex/negative_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/negative_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The row asserts negative? is missing, which the method table says before anything runs.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-negative"
             },
             {
@@ -3560,8 +3705,13 @@
               "path": "core/complex/numerator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/numerator_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-numerator"
             },
             {
@@ -3569,8 +3719,13 @@
               "path": "core/complex/phase_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/phase_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-phase"
             },
             {
@@ -3578,8 +3733,14 @@
               "path": "core/complex/plus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/plus_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-plus"
             },
             {
@@ -3587,8 +3748,13 @@
               "path": "core/complex/polar_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/polar_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-polar"
             },
             {
@@ -3596,8 +3762,14 @@
               "path": "core/complex/positive_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/positive_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The row asserts positive? is missing, which the method table says before anything runs.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-positive"
             },
             {
@@ -3605,8 +3777,13 @@
               "path": "core/complex/quo_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/quo_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-quo"
             },
             {
@@ -3614,8 +3791,14 @@
               "path": "core/complex/rationalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/rationalize_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock rows stay upstream; a nonzero imaginary part refuses in Ruby's words.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-rationalize"
             },
             {
@@ -3623,8 +3806,14 @@
               "path": "core/complex/real_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/real_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock row stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-real"
             },
             {
@@ -3632,8 +3821,13 @@
               "path": "core/complex/rect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/rect_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-rect"
             },
             {
@@ -3641,8 +3835,14 @@
               "path": "core/complex/rectangular_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/rectangular_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock and non-numeric rows stay upstream; Complex.rectangular takes numbers.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-rectangular"
             },
             {
@@ -3650,8 +3850,13 @@
               "path": "core/complex/to_c_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/to_c_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-to_c"
             },
             {
@@ -3659,8 +3864,14 @@
               "path": "core/complex/to_f_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/to_f_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock rows stay upstream; a nonzero imaginary part refuses in Ruby's words.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-to_f"
             },
             {
@@ -3668,8 +3879,14 @@
               "path": "core/complex/to_i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/to_i_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock rows stay upstream; a nonzero imaginary part refuses in Ruby's words.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-to_i"
             },
             {
@@ -3677,8 +3894,14 @@
               "path": "core/complex/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/to_r_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock rows stay upstream; a nonzero imaginary part refuses in Ruby's words, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-to_r"
             },
             {
@@ -3686,8 +3909,14 @@
               "path": "core/complex/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/to_s_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum rows stay upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-to_s"
             },
             {
@@ -3695,8 +3924,14 @@
               "path": "core/complex/uminus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/complex/uminus_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum rows stay upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/complex_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/complex_spec.pdx"
+                }
+              ],
               "anchor": "core-complex-uminus"
             }
           ]
@@ -5024,12 +5259,12 @@
           "name": "core/enumerable",
           "anchor": "core-enumerable",
           "totals": {
-            "passing": 2,
+            "passing": 3,
             "partial_intentional": 54,
             "partial_planned": 0,
             "failing": 0,
             "missing": 0,
-            "skipped": 5,
+            "skipped": 4,
             "files": 61
           },
           "files": [
@@ -6002,7 +6237,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/sum_spec.rb",
               "examples": 5,
               "status": "partial_intentional",
-              "reason": "Rationals wait on #198, so the rows sum integers; symbol-to-block waits on #77.",
+              "reason": "The rational rows sum exactly (spec/number/tower_spec.pdx); symbol-to-block waits on #77.",
               "link": {
                 "label": "types",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/types.md"
@@ -6110,13 +6345,13 @@
               "path": "core/enumerable/to_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/enumerable/to_set_spec.rb",
               "examples": 4,
-              "status": "skipped",
-              "reason": "Set is decided (ADR 0082) and waits on its build.",
-              "link": {
-                "label": "issues/195",
-                "url": "https://github.com/portlandlang/portland/issues/195"
-              },
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-enumerable-to_set"
             },
             {
@@ -10128,7 +10363,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/float/exponent_spec.rb",
               "examples": 2,
               "status": "partial_planned",
-              "reason": "A negative float to a fractional power is a Complex in Ruby; whether Portland has Complex is #198.",
+              "reason": "A negative float to a fractional power is a Complex, as Ruby's is (spec/number/complex_spec.pdx); the bignum and coercion rows stay upstream.",
               "link": {
                 "label": "issues/198",
                 "url": "https://github.com/portlandlang/portland/issues/198"
@@ -12572,7 +12807,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/eql_spec.rb",
               "examples": 5,
               "status": "partial_intentional",
-              "reason": "Integers are 64-bit, so the bignum rows are written with fixnums; rationals wait on #198.",
+              "reason": "Integers are 64-bit, so the bignum rows are written with fixnums; a rational is never eql? to an integer, as in Ruby.",
               "link": {
                 "label": "equality",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
@@ -18907,7 +19142,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/angle_spec.rb",
               "examples": 1,
               "status": "skipped",
-              "reason": "The one row compares method objects, which a closed runtime has none of; the Complex family waits on #198.",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
@@ -18986,7 +19221,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/conj_spec.rb",
               "examples": 1,
               "status": "skipped",
-              "reason": "The one row compares method objects, which a closed runtime has none of; the Complex family waits on #198.",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
@@ -19134,7 +19369,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/imag_spec.rb",
               "examples": 1,
               "status": "skipped",
-              "reason": "The one row compares method objects, which a closed runtime has none of; the Complex family waits on #198.",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
@@ -19273,7 +19508,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/phase_spec.rb",
               "examples": 1,
               "status": "skipped",
-              "reason": "The one row compares method objects, which a closed runtime has none of; the Complex family waits on #198.",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
@@ -19319,7 +19554,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/quo_spec.rb",
               "examples": 10,
               "status": "partial_planned",
-              "reason": "quo answers a Rational for two integers, which waits on the Rational decision; the Float rows are specced, the bignum rows wait on #156, and the to_r row drives a mock subclass.",
+              "reason": "quo answers a Rational for two integers, as Ruby's does (spec/number/rational_spec.pdx); the Float rows are specced, the bignum rows wait on #156, and the to_r row drives a mock subclass.",
               "link": {
                 "label": "issues/198",
                 "url": "https://github.com/portlandlang/portland/issues/198"
@@ -19347,7 +19582,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/numeric/rect_spec.rb",
               "examples": 1,
               "status": "skipped",
-              "reason": "The one row compares method objects, which a closed runtime has none of; the Complex family waits on #198.",
+              "reason": "The one row compares method objects, which a closed runtime has none of; the name itself is specced on the builtins in spec/number/tower_spec.pdx.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
@@ -21420,7 +21655,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/new_spec.rb",
               "examples": 8,
               "status": "partial_intentional",
-              "reason": "Rationals and Complex wait on #198, so their seed rows stay upstream.",
+              "reason": "A seed is an integer here; the rational and complex seed rows stay upstream.",
               "link": {
                 "label": "randomness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
@@ -21453,7 +21688,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/random/rand_spec.rb",
               "examples": 35,
               "status": "partial_intentional",
-              "reason": "Random.rand and Random.srand as class methods are the bare rand and srand here; bignum bounds (#156), float ranges (#194), the to_int mocks, and the custom range types stay upstream.",
+              "reason": "Random.rand and Random.srand as class methods are the bare rand and srand here; bignum bounds (#156), the to_int mocks, and the custom range types stay upstream.",
               "link": {
                 "label": "randomness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/randomness.md"
@@ -21539,8 +21774,8 @@
           "anchor": "core-range",
           "totals": {
             "passing": 2,
-            "partial_intentional": 22,
-            "partial_planned": 2,
+            "partial_intentional": 24,
+            "partial_planned": 0,
             "failing": 0,
             "missing": 1,
             "skipped": 8,
@@ -21553,7 +21788,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/begin_spec.rb",
               "examples": 0,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "reason": "The rows beyond numbers and strings — symbols, Time, mocks — stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21562,6 +21797,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-begin"
@@ -21571,11 +21810,11 @@
               "path": "core/range/bsearch_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/bsearch_spec.rb",
               "examples": 76,
-              "status": "partial_planned",
-              "reason": "A range holds integers until ADR 0081's build, so the Float and endless rows wait on it; without a block there are no enumerators, and the String-range and Object rows refuse at the literal.",
+              "status": "partial_intentional",
+              "reason": "Without a block there are no enumerators (ADR 0055); a String range refuses before any search and the Object rows have no object to build; the infinity-bound rows beyond the few ported stay upstream.",
               "link": {
-                "label": "issues/194",
-                "url": "https://github.com/portlandlang/portland/issues/194"
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
               },
               "pdx": [
                 {
@@ -21591,7 +21830,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/case_compare_spec.rb",
               "examples": 2,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, float, mock, and nil..nil rows stay upstream.",
+              "reason": "The mock and nil..nil rows stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21600,6 +21839,10 @@
                 {
                   "path": "spec/range/overlap_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/overlap_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-case_compare"
@@ -21610,7 +21853,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/clamp_spec.rb",
               "examples": 12,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers (ADR 0019), so the String bounds and the duck range stay behind; no subclasses; backwards bounds and a single non-range argument refuse where Ruby raises.",
+              "reason": "Range#clamp keeps to integer ends and bounds, so the String bounds and the duck range stay behind; no subclasses; backwards bounds and a single non-range argument refuse where Ruby raises.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21657,7 +21900,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/cover_spec.rb",
               "examples": 1,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, float, subrange, and mock rows stay upstream.",
+              "reason": "The subrange and mock rows stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21666,6 +21909,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-cover"
@@ -21690,7 +21937,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/each_spec.rb",
               "examples": 10,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, and an endless range refuses to be walked (ADR 0055); mocks, Time, and blockless Enumerators stay upstream.",
+              "reason": "A float or endless range refuses to be walked (ADR 0055, ADR 0081), and a string range's succ walk is not taken; mocks, Time, and blockless Enumerators stay upstream.",
               "link": {
                 "label": "enumerators",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
@@ -21709,7 +21956,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/end_spec.rb",
               "examples": 0,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "reason": "The rows beyond numbers and strings — symbols, Time, mocks — stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21718,6 +21965,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-end"
@@ -21747,7 +21998,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/eql_spec.rb",
               "examples": 1,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, float, struct-endpoint, subclass, and mock rows stay upstream.",
+              "reason": "The subclass and mock rows stay upstream.",
               "link": {
                 "label": "equality",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
@@ -21756,6 +22007,10 @@
                 {
                   "path": "spec/eql_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/eql_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-eql"
@@ -21766,7 +22021,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/equal_value_spec.rb",
               "examples": 3,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, float, struct-endpoint, Range.new, subclass, and mock rows stay upstream.",
+              "reason": "The subclass and mock rows stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21775,6 +22030,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-equal_value"
@@ -21785,7 +22044,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/exclude_end_spec.rb",
               "examples": 2,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, and Range.new waits on builtin type functions beyond ADR 0058's two.",
+              "reason": "The rows handing Range.new a 1 or a symbol as the flag refuse, since the flag is a Boolean.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21804,7 +22063,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/first_spec.rb",
               "examples": 11,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here; no to_int, Float, nil, or String count (ADR 0036); a negative count or a beginless range refuses where Ruby raises.",
+              "reason": "No to_int, Float, nil, or String count (ADR 0036); a negative count or a beginless range refuses where Ruby raises; a counted first on a float or string range walks, which refuses here.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21813,6 +22072,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-first"
@@ -21851,7 +22114,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/include_spec.rb",
               "examples": 64,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, float, endless-float, nil, and mock rows stay upstream; a missing or extra argument refuses where Ruby raises.",
+              "reason": "include? is cover? here (ADR 0081), so the string rows Ruby answers by walking with succ, and the TypeError rows for open string ranges, stay upstream with the mocks; a missing or extra argument refuses where Ruby raises.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21860,6 +22123,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-include"
@@ -21884,7 +22151,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/inspect_spec.rb",
               "examples": 4,
               "status": "partial_intentional",
-              "reason": "inspect is a function, inspect(range), not a method (ADR 0026); ranges hold integers here, and a nil..nil range has no spelling.",
+              "reason": "inspect is a function, inspect(range), not a method (ADR 0026); a nil..nil range has no spelling.",
               "link": {
                 "label": "inspect",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/inspect.md"
@@ -21893,6 +22160,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-inspect"
@@ -21903,7 +22174,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/last_spec.rb",
               "examples": 12,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here; no to_int, Float, nil, or String count (ADR 0036); a negative count or an endless range refuses where Ruby raises.",
+              "reason": "No to_int, Float, nil, or String count (ADR 0036); a negative count or an endless range refuses where Ruby raises; a counted last on a float or string range walks, which refuses here.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21912,6 +22183,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-last"
@@ -21969,7 +22244,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/minmax_spec.rb",
               "examples": 17,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here; the mock, infinite, open-range, and comparator rows stay upstream.",
+              "reason": "The mock, infinite, and comparator rows stay upstream; an open range refuses where Ruby raises.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -21978,6 +22253,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-minmax"
@@ -21987,16 +22266,20 @@
               "path": "core/range/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/new_spec.rb",
               "examples": 10,
-              "status": "partial_planned",
-              "reason": "The ends are integers or nil until ADR 0081's build; the third argument is a Boolean, so the 1 and symbol rows refuse; the to_str, mock, frozen, and subclass rows stay upstream.",
+              "status": "partial_intentional",
+              "reason": "The third argument is a Boolean, so the 1 and symbol rows refuse; two ends <=> cannot order refuse where the range is written; the to_str, mock, frozen, and subclass rows stay upstream.",
               "link": {
-                "label": "issues/194",
-                "url": "https://github.com/portlandlang/portland/issues/194"
+                "label": "ranges",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
               },
               "pdx": [
                 {
                   "path": "spec/range/construction_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/construction_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-new"
@@ -22007,7 +22290,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/overlap_spec.rb",
               "examples": 9,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string rows stay upstream; nil..nil has no spelling; a non-range argument refuses where Ruby raises TypeError.",
+              "reason": "nil..nil has no spelling; a non-range argument refuses where Ruby raises TypeError.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -22016,6 +22299,10 @@
                 {
                   "path": "spec/range/overlap_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/overlap_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-overlap"
@@ -22054,7 +22341,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/reverse_each_spec.rb",
               "examples": 16,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, and an open range refuses to be walked (ADR 0055); mocks and blockless Enumerators stay upstream.",
+              "reason": "A float or open range refuses to be walked (ADR 0055, ADR 0081), and a string range's succ walk is not taken; mocks and blockless Enumerators stay upstream.",
               "link": {
                 "label": "enumerators",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/enumerators.md"
@@ -22073,7 +22360,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/size_spec.rb",
               "examples": 15,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here: no Float::INFINITY, float, string, or symbol ends, and no beginless or endless size.",
+              "reason": "A float, string, or symbol range refuses to be walked, where Ruby answers nil or raises; no Float::INFINITY ends, and no beginless or endless size.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -22082,6 +22369,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-size"
@@ -22111,7 +22402,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/to_a_spec.rb",
               "examples": 7,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string, symbol, and non-ASCII rows stay upstream; a float, endless, or beginless range refuses where Ruby raises.",
+              "reason": "A string range's succ walk is not taken, so the string, symbol, and non-ASCII rows stay upstream; a float, endless, or beginless range refuses where Ruby raises, and 1..2.5 walks to the floor as Ruby's does.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -22120,6 +22411,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-to_a"
@@ -22130,7 +22425,7 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/range/to_s_spec.rb",
               "examples": 3,
               "status": "partial_intentional",
-              "reason": "Ranges hold integers here, so the string and float rows stay upstream.",
+              "reason": "The mock rows stay upstream.",
               "link": {
                 "label": "ranges",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/ranges.md"
@@ -22139,6 +22434,10 @@
                 {
                   "path": "spec/range/ends_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/range/ends_spec.pdx"
+                },
+                {
+                  "path": "spec/range/orderable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/range/orderable_spec.pdx"
                 }
               ],
               "anchor": "core-range-to_s"
@@ -22158,12 +22457,12 @@
           "name": "core/rational",
           "anchor": "core-rational",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
+            "passing": 10,
+            "partial_intentional": 20,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 32,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 2,
             "files": 32
           },
           "files": [
@@ -22172,8 +22471,14 @@
               "path": "core/rational/abs_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/abs_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-abs"
             },
             {
@@ -22181,8 +22486,14 @@
               "path": "core/rational/ceil_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/ceil_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The precision rows (ceil(2)) stay upstream; the bare form is Ruby's.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-ceil"
             },
             {
@@ -22190,8 +22501,14 @@
               "path": "core/rational/comparison_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/comparison_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-comparison"
             },
             {
@@ -22199,8 +22516,14 @@
               "path": "core/rational/denominator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/denominator_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-denominator"
             },
             {
@@ -22208,8 +22531,14 @@
               "path": "core/rational/div_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/div_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A zero divisor refuses as 1 / 0 does, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-div"
             },
             {
@@ -22217,8 +22546,14 @@
               "path": "core/rational/divide_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/divide_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155); a zero divisor refuses, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-divide"
             },
             {
@@ -22226,8 +22561,14 @@
               "path": "core/rational/divmod_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/divmod_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion rows stay upstream (#155); a zero divisor refuses.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-divmod"
             },
             {
@@ -22235,8 +22576,14 @@
               "path": "core/rational/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/equal_value_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion and mock rows stay upstream (#155).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-equal_value"
             },
             {
@@ -22244,8 +22591,14 @@
               "path": "core/rational/exponent_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/exponent_spec.rb",
               "examples": 28,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum, coercion, and mock rows stay upstream (ADR 0070, #155); a negative power of zero refuses as 1 / 0 does.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-exponent"
             },
             {
@@ -22253,8 +22606,13 @@
               "path": "core/rational/fdiv_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/fdiv_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-fdiv"
             },
             {
@@ -22262,8 +22620,14 @@
               "path": "core/rational/floor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/floor_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The precision rows (floor(2)) stay upstream; the bare form is Ruby's.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-floor"
             },
             {
@@ -22271,7 +22635,12 @@
               "path": "core/rational/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/hash_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "hash is not exposed (ADR 0059): a value is a hash key by eql?.",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
               "pdx": [],
               "anchor": "core-rational-hash"
             },
@@ -22280,8 +22649,14 @@
               "path": "core/rational/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is a function, inspect(rational), not a method (ADR 0026); the bignum row stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-inspect"
             },
             {
@@ -22289,8 +22664,13 @@
               "path": "core/rational/integer_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/integer_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-integer"
             },
             {
@@ -22298,8 +22678,13 @@
               "path": "core/rational/magnitude_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/magnitude_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-magnitude"
             },
             {
@@ -22307,7 +22692,12 @@
               "path": "core/rational/marshal_dump_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/marshal_dump_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Marshal; a value crosses a boundary as JSON (ADR 0072).",
+              "link": {
+                "label": "json",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/json.md"
+              },
               "pdx": [],
               "anchor": "core-rational-marshal_dump"
             },
@@ -22316,8 +22706,14 @@
               "path": "core/rational/minus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/minus_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-minus"
             },
             {
@@ -22325,8 +22721,14 @@
               "path": "core/rational/modulo_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/modulo_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A zero divisor refuses as 1 / 0 does.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-modulo"
             },
             {
@@ -22334,8 +22736,14 @@
               "path": "core/rational/multiply_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/multiply_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-multiply"
             },
             {
@@ -22343,8 +22751,14 @@
               "path": "core/rational/numerator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/numerator_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream (ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-numerator"
             },
             {
@@ -22352,8 +22766,14 @@
               "path": "core/rational/plus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/plus_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The coercion, mock, and bignum rows stay upstream (#155, ADR 0070).",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-plus"
             },
             {
@@ -22361,8 +22781,13 @@
               "path": "core/rational/quo_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/quo_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-quo"
             },
             {
@@ -22370,8 +22795,14 @@
               "path": "core/rational/rational_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/rational_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Rational builds from numbers; the string and nil rows stay upstream, and a bad argument refuses where Ruby raises.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-rational"
             },
             {
@@ -22379,8 +22810,13 @@
               "path": "core/rational/rationalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/rationalize_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-rationalize"
             },
             {
@@ -22388,8 +22824,13 @@
               "path": "core/rational/remainder_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/remainder_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-remainder"
             },
             {
@@ -22397,8 +22838,14 @@
               "path": "core/rational/round_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/round_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The precision and half-mode rows stay upstream; the bare form rounds half away from zero, as Ruby's does.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-round"
             },
             {
@@ -22406,8 +22853,13 @@
               "path": "core/rational/to_f_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/to_f_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-to_f"
             },
             {
@@ -22415,8 +22867,13 @@
               "path": "core/rational/to_i_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/to_i_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-to_i"
             },
             {
@@ -22424,8 +22881,14 @@
               "path": "core/rational/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/to_r_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock row stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-to_r"
             },
             {
@@ -22433,8 +22896,13 @@
               "path": "core/rational/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/to_s_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-to_s"
             },
             {
@@ -22442,8 +22910,14 @@
               "path": "core/rational/truncate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/truncate_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The precision rows (truncate(2)) stay upstream; the bare form is Ruby's.",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-truncate"
             },
             {
@@ -22451,8 +22925,13 @@
               "path": "core/rational/zero_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/rational/zero_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/number/rational_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/rational_spec.pdx"
+                }
+              ],
               "anchor": "core-rational-zero"
             }
           ]
@@ -22843,12 +23322,12 @@
           "name": "core/set",
           "anchor": "core-set",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
+            "passing": 5,
+            "partial_intentional": 31,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 55,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 19,
             "files": 55
           },
           "files": [
@@ -22857,8 +23336,14 @@
               "path": "core/set/add_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/add_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "add answers a new set rather than the receiver, and add? mutates (ADR 0015); the mid-iteration RuntimeError has no mutation to guard.",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-add"
             },
             {
@@ -22866,7 +23351,12 @@
               "path": "core/set/append_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/append_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "<< on a set mutates in place; it refuses toward #103, and add answers the new set (ADR 0082 §3).",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-append"
             },
@@ -22875,8 +23365,14 @@
               "path": "core/set/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/case_compare_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects, which a closed runtime has none of; === is membership under when.",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-case_compare"
             },
             {
@@ -22884,8 +23380,14 @@
               "path": "core/set/classify_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/classify_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Enumerator and compare_by_identity rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-classify"
             },
             {
@@ -22893,7 +23395,12 @@
               "path": "core/set/clear_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/clear_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "clear mutates its receiver (ADR 0015); Set[] is the empty set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-clear"
             },
@@ -22902,7 +23409,12 @@
               "path": "core/set/collect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/collect_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "collect! mutates its receiver (ADR 0015); map answers an array.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-collect"
             },
@@ -22911,7 +23423,12 @@
               "path": "core/set/compare_by_identity_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/compare_by_identity_spec.rb",
               "examples": 18,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Identity is unobservable where values never mutate (ADR 0015): two equal members are the same member.",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-set-compare_by_identity"
             },
@@ -22920,8 +23437,13 @@
               "path": "core/set/comparison_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/comparison_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-comparison"
             },
             {
@@ -22929,8 +23451,14 @@
               "path": "core/set/constructor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/constructor_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "instance_of? is a closed runtime's question; the members are checked.",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-constructor"
             },
             {
@@ -22938,8 +23466,14 @@
               "path": "core/set/delete_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/delete_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "delete answers a new set rather than the receiver, and delete? mutates (ADR 0015).",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-delete"
             },
             {
@@ -22947,7 +23481,12 @@
               "path": "core/set/delete_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/delete_if_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "delete_if mutates its receiver (ADR 0015); reject answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-delete_if"
             },
@@ -22956,8 +23495,14 @@
               "path": "core/set/difference_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/difference_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; difference and - are both specified.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-difference"
             },
             {
@@ -22965,8 +23510,14 @@
               "path": "core/set/disjoint_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/disjoint_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Set-like objects stay upstream; any enumerable is taken.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-disjoint"
             },
             {
@@ -22974,7 +23525,12 @@
               "path": "core/set/divide_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/divide_spec.rb",
               "examples": 10,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "divide's two-arity form walks a graph of member pairs and its one-arity form is classify's groups as a set of sets; classify is the surface here.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-divide"
             },
@@ -22983,8 +23539,14 @@
               "path": "core/set/each_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/each_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Enumerator row stays upstream (ADR 0055).",
+              "pdx": [
+                {
+                  "path": "spec/set/enumerable_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/enumerable_spec.pdx"
+                }
+              ],
               "anchor": "core-set-each"
             },
             {
@@ -22992,8 +23554,13 @@
               "path": "core/set/empty_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/empty_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-empty"
             },
             {
@@ -23001,8 +23568,14 @@
               "path": "core/set/eql_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/eql_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; eql? agrees with == by example.",
+              "pdx": [
+                {
+                  "path": "spec/set/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-set-eql"
             },
             {
@@ -23010,8 +23583,14 @@
               "path": "core/set/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/equal_value_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Set-like object stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/equality_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/equality_spec.pdx"
+                }
+              ],
               "anchor": "core-set-equal_value"
             },
             {
@@ -23019,7 +23598,12 @@
               "path": "core/set/exclusion_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/exclusion_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "^ is out of the grammar (ADR 0003); #207 holds the question, and the symmetric difference is spelled from union and intersection meanwhile.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-exclusion"
             },
@@ -23028,7 +23612,12 @@
               "path": "core/set/filter_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/filter_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "filter! mutates its receiver (ADR 0015); filter answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-filter"
             },
@@ -23037,8 +23626,14 @@
               "path": "core/set/flatten_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/flatten_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No value can hold itself, so the recursive set cannot be built; flatten! mutates (ADR 0015); the compare_by_identity rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-flatten"
             },
             {
@@ -23046,7 +23641,12 @@
               "path": "core/set/flatten_merge_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/flatten_merge_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "A protected internal of Ruby's Set before 4.0, gone since.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-flatten_merge"
             },
@@ -23055,8 +23655,14 @@
               "path": "core/set/gt_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/gt_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; > is specified beside proper_superset?.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-gt"
             },
             {
@@ -23064,8 +23670,14 @@
               "path": "core/set/gte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/gte_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; >= is specified beside superset?.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-gte"
             },
             {
@@ -23073,7 +23685,12 @@
               "path": "core/set/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/hash_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no hash method (ADR 0059); a set is a hash key by eql?.",
+              "link": {
+                "label": "equality",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/equality.md"
+              },
               "pdx": [],
               "anchor": "core-set-hash"
             },
@@ -23082,8 +23699,14 @@
               "path": "core/set/include_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/include_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The objects defining hash and eql? by hand stay upstream; membership is by eql?.",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-include"
             },
             {
@@ -23091,8 +23714,14 @@
               "path": "core/set/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/initialize_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The private-method check and the mock enumerables answering each_entry or each stay upstream; Set.new takes a Set, an Array, a Range, or a Hash.",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-initialize"
             },
             {
@@ -23100,7 +23729,12 @@
               "path": "core/set/initialize_clone_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/initialize_clone_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no clone or freeze; a set is a value (ADR 0015).",
+              "link": {
+                "label": "mutability",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md"
+              },
               "pdx": [],
               "anchor": "core-set-initialize_clone"
             },
@@ -23109,8 +23743,14 @@
               "path": "core/set/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/inspect_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; inspect and to_s both read Set[1, 2].",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-inspect"
             },
             {
@@ -23118,8 +23758,14 @@
               "path": "core/set/intersect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/intersect_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The Set-like objects stay upstream; any enumerable is taken.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-intersect"
             },
             {
@@ -23127,8 +23773,14 @@
               "path": "core/set/intersection_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/intersection_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "& is out of the grammar (ADR 0003, #207), so intersection carries the rows; the alias and compare_by_identity rows stay upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-intersection"
             },
             {
@@ -23136,8 +23788,13 @@
               "path": "core/set/join_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/join_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-join"
             },
             {
@@ -23145,7 +23802,12 @@
               "path": "core/set/keep_if_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/keep_if_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "keep_if mutates its receiver (ADR 0015); select answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-keep_if"
             },
@@ -23154,8 +23816,14 @@
               "path": "core/set/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/length_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; length is specified beside size.",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-length"
             },
             {
@@ -23163,8 +23831,14 @@
               "path": "core/set/lt_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/lt_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; < is specified beside proper_subset?.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-lt"
             },
             {
@@ -23172,8 +23846,14 @@
               "path": "core/set/lte_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/lte_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; <= is specified beside subset?.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-lte"
             },
             {
@@ -23181,7 +23861,12 @@
               "path": "core/set/map_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/map_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "map! mutates its receiver (ADR 0015); map answers an array.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-map"
             },
@@ -23190,8 +23875,14 @@
               "path": "core/set/member_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/member_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; member? is specified beside include?.",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-member"
             },
             {
@@ -23199,7 +23890,12 @@
               "path": "core/set/merge_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/merge_spec.rb",
               "examples": 6,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "merge mutates its receiver (ADR 0015); union answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-merge"
             },
@@ -23208,8 +23904,14 @@
               "path": "core/set/minus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/minus_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The compare_by_identity row stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-minus"
             },
             {
@@ -23217,8 +23919,14 @@
               "path": "core/set/plus_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/plus_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The alias check compares method objects; + is specified beside union.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-plus"
             },
             {
@@ -23226,7 +23934,12 @@
               "path": "core/set/pretty_print_cycle_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/pretty_print_cycle_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "No value can hold itself, and there is no pretty printer.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-pretty_print_cycle"
             },
@@ -23235,8 +23948,14 @@
               "path": "core/set/proper_subset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/proper_subset_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The rows that raise on a non-set are the refusal, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-proper_subset"
             },
             {
@@ -23244,8 +23963,14 @@
               "path": "core/set/proper_superset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/proper_superset_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The rows that raise on a non-set are the refusal, pinned by the two-oracle test; the Set-like object stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-proper_superset"
             },
             {
@@ -23253,7 +23978,12 @@
               "path": "core/set/reject_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/reject_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "reject! mutates its receiver (ADR 0015); reject answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-reject"
             },
@@ -23262,7 +23992,12 @@
               "path": "core/set/replace_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/replace_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "replace mutates its receiver (ADR 0015); bind the other set to the name.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-replace"
             },
@@ -23271,7 +24006,12 @@
               "path": "core/set/select_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/select_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "select! mutates its receiver (ADR 0015); select answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-select"
             },
@@ -23280,8 +24020,14 @@
               "path": "core/set/set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/set_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The row shells out to ruby to show Set needs no require; it needs none here either.",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-set"
             },
             {
@@ -23289,8 +24035,13 @@
               "path": "core/set/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/membership_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/membership_spec.pdx"
+                }
+              ],
               "anchor": "core-set-size"
             },
             {
@@ -23298,8 +24049,14 @@
               "path": "core/set/subset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/subset_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The rows that raise on a non-set are the refusal, pinned by the two-oracle test.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-subset"
             },
             {
@@ -23307,7 +24064,12 @@
               "path": "core/set/subtract_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/subtract_spec.rb",
               "examples": 2,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "subtract mutates its receiver (ADR 0015); difference answers the new set.",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-subtract"
             },
@@ -23316,8 +24078,14 @@
               "path": "core/set/superset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/superset_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The rows that raise on a non-set are the refusal, pinned by the two-oracle test; the Set-like object stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/comparison_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/comparison_spec.pdx"
+                }
+              ],
               "anchor": "core-set-superset"
             },
             {
@@ -23325,8 +24093,13 @@
               "path": "core/set/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/to_a_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-to_a"
             },
             {
@@ -23334,8 +24107,14 @@
               "path": "core/set/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/to_s_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "No value can hold itself, so the cyclic row cannot be built; is_a? is a closed runtime's question.",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-to_s"
             },
             {
@@ -23343,8 +24122,14 @@
               "path": "core/set/union_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/union_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "| is out of the grammar (ADR 0003, #207), so union and + carry the rows; the compare_by_identity row stays upstream.",
+              "pdx": [
+                {
+                  "path": "spec/set/algebra_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/algebra_spec.pdx"
+                }
+              ],
               "anchor": "core-set-union"
             }
           ]
@@ -23353,11 +24138,11 @@
           "name": "core/set/enumerable",
           "anchor": "core-set-enumerable",
           "totals": {
-            "passing": 0,
+            "passing": 1,
             "partial_intentional": 0,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 1,
+            "missing": 0,
             "skipped": 0,
             "files": 1
           },
@@ -23367,8 +24152,13 @@
               "path": "core/set/enumerable/to_set_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/enumerable/to_set_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/set/construction_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/set/construction_spec.pdx"
+                }
+              ],
               "anchor": "core-set-enumerable-to_set"
             }
           ]
@@ -23381,8 +24171,8 @@
             "partial_intentional": 0,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 1,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 1,
             "files": 1
           },
           "files": [
@@ -23391,7 +24181,12 @@
               "path": "core/set/sortedset/sortedset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/set/sortedset/sortedset_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "SortedSet left Ruby in 3.0 and stays gone (ADR 0082 §6).",
+              "link": {
+                "label": "sets",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/sets.md"
+              },
               "pdx": [],
               "anchor": "core-set-sortedset-sortedset"
             }
@@ -29060,11 +29855,11 @@
       "anchor": "language",
       "totals": {
         "passing": 2,
-        "partial_intentional": 26,
-        "partial_planned": 8,
+        "partial_intentional": 28,
+        "partial_planned": 7,
         "failing": 0,
         "missing": 0,
-        "skipped": 44,
+        "skipped": 43,
         "files": 80
       },
       "directories": [
@@ -29073,11 +29868,11 @@
           "anchor": "language",
           "totals": {
             "passing": 2,
-            "partial_intentional": 26,
-            "partial_planned": 8,
+            "partial_intentional": 28,
+            "partial_planned": 7,
             "failing": 0,
             "missing": 0,
-            "skipped": 31,
+            "skipped": 30,
             "files": 67
           },
           "files": [
@@ -29815,11 +30610,11 @@
               "path": "language/pattern_matching_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/pattern_matching_spec.rb",
               "examples": 114,
-              "status": "partial_planned",
-              "reason": "Hash patterns, unless guards, the => capture, reused _ names, and pinning a name bound earlier in the pattern are decided (ADR 0080) and wait on their build; the find pattern, positional and Constant[...] forms, the deconstruct protocols, refinements, and the eval, lambda, regexp, and side-effect rows stay upstream, and an arm that did not match binds nothing.",
+              "status": "partial_intentional",
+              "reason": "The find pattern, positional and Constant[...] forms, the deconstruct protocols, refinements, string-label keys, and the eval, lambda, regexp, and side-effect rows stay upstream; an arm that did not match binds nothing, and a miss on a key is a miss rather than NoMatchingPatternKeyError.",
               "link": {
-                "label": "issues/193",
-                "url": "https://github.com/portlandlang/portland/issues/193"
+                "label": "pattern-matching",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/pattern-matching.md"
               },
               "pdx": [
                 {
@@ -29867,13 +30662,18 @@
               "path": "language/private_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/private_spec.rb",
               "examples": 7,
-              "status": "skipped",
-              "reason": "Visibility is decided (ADR 0076) and waits on its build; private is misread as a field until then.",
+              "status": "partial_intentional",
+              "reason": "The NoMethodError rows are build-time refusals here (ADR 0076), pinned by the two-oracle test; the methods reflection, class_eval, class-reopening, subclass, and class << self rows stay upstream.",
               "link": {
-                "label": "issues/189",
-                "url": "https://github.com/portlandlang/portland/issues/189"
+                "label": "visibility",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/visibility.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/visibility/sections_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/visibility/sections_spec.pdx"
+                }
+              ],
               "anchor": "language-private"
             },
             {
