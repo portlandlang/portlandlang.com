@@ -1,32 +1,32 @@
 {
-  "generated_at": "2026-11-08T04:24:56Z",
-  "portland_commit": "c780379",
+  "generated_at": "2026-11-08T10:11:02Z",
+  "portland_commit": "ea01636",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 141,
-    "partial_intentional": 519,
+    "passing": 142,
+    "partial_intentional": 533,
     "partial_planned": 31,
     "failing": 0,
-    "missing": 2037,
+    "missing": 2022,
     "skipped": 1112,
     "files": 3840
   },
   "progress": {
     "examples_portable": 16426,
-    "examples_passing": 840,
-    "examples_partial": 6143
+    "examples_passing": 853,
+    "examples_partial": 6352
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 138,
-        "partial_intentional": 483,
+        "passing": 139,
+        "partial_intentional": 497,
         "partial_planned": 22,
         "failing": 0,
-        "missing": 602,
+        "missing": 587,
         "skipped": 906,
         "files": 2151
       },
@@ -819,10 +819,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/array/constructor_spec.rb",
               "examples": 2,
               "status": "skipped",
-              "reason": "Array.[] builds what the literal already writes, from a class object that does not exist; the subclass rows have no subclass.",
+              "reason": "Array[...] is decided with Ruby's behavior (ADR 0058, amended) and not yet built; the subclass rows and the dotted Array.[] spelling stay upstream.",
               "link": {
-                "label": "metaprogramming",
-                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+                "label": "issues/218",
+                "url": "https://github.com/portlandlang/portland/issues/218"
               },
               "pdx": [],
               "anchor": "core-array-constructor"
@@ -12435,10 +12435,10 @@
           "anchor": "core-integer",
           "totals": {
             "passing": 11,
-            "partial_intentional": 44,
+            "partial_intentional": 49,
             "partial_planned": 4,
             "failing": 0,
-            "missing": 6,
+            "missing": 1,
             "skipped": 5,
             "files": 70
           },
@@ -12657,8 +12657,18 @@
               "path": "core/integer/chr_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/chr_spec.rb",
               "examples": 26,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "A string is UTF-8 text: 128 to 255 on their own refuse where Ruby answers binary strings, and encodings other than UTF-8 have no string to be. The range errors are Ruby's words, pinned by a two-oracle test.",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/chr_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/chr_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-chr"
             },
             {
@@ -12727,8 +12737,18 @@
               "path": "core/integer/denominator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/denominator_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum rows stay upstream; integers are 64-bit here.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-denominator"
             },
             {
@@ -13231,8 +13251,18 @@
               "path": "core/integer/numerator_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/numerator_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum rows stay upstream; integers are 64-bit here.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-numerator"
             },
             {
@@ -13322,8 +13352,18 @@
               "path": "core/integer/rationalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/rationalize_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream, integers being 64-bit; too many arguments refuses, pinned by a two-oracle test.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-rationalize"
             },
             {
@@ -13506,8 +13546,18 @@
               "path": "core/integer/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/integer/to_r_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The bignum row stays upstream, integers being 64-bit; an argument refuses, pinned by a two-oracle test.",
+              "link": {
+                "label": "integers",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/integers.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/number/integer/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/number/integer/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-integer-to_r"
             },
             {
@@ -25341,11 +25391,11 @@
           "name": "core/string",
           "anchor": "core-string",
           "totals": {
-            "passing": 30,
-            "partial_intentional": 25,
+            "passing": 31,
+            "partial_intentional": 34,
             "partial_planned": 10,
             "failing": 0,
-            "missing": 32,
+            "missing": 22,
             "skipped": 27,
             "files": 124
           },
@@ -25842,8 +25892,18 @@
               "path": "core/string/delete_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/delete_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Arguments are literal characters (ADR 0088): the range, negation, and escape rows refuse naming the gsub that says the same; the bang forms are mutators (ADR 0015); the to_str, subclass, and encoding rows have no meaning with one UTF-8 String type.",
+              "link": {
+                "label": "string-count",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-count.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/character_lists_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/character_lists_spec.pdx"
+                }
+              ],
               "anchor": "core-string-delete"
             },
             {
@@ -26405,8 +26465,18 @@
               "path": "core/string/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/match_spec.rb",
               "examples": 24,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "=~ answers the match, not an index, since the match globals are gone; the $~ and last_match rows, the to_str and method_missing mocks, and the subclass row stay upstream; match with a block is #215.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/match_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/match_spec.pdx"
+                }
+              ],
               "anchor": "core-string-match"
             },
             {
@@ -26644,8 +26714,18 @@
               "path": "core/string/scan_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/scan_spec.rb",
               "examples": 18,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The $~ rows stay upstream, the match globals being gone; the splat block parameter is deferred (ADR 0014); the to_str mock, subclass, and US-ASCII rows have no meaning with one UTF-8 String type.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/scan_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/scan_spec.pdx"
+                }
+              ],
               "anchor": "core-string-scan"
             },
             {
@@ -26737,8 +26817,18 @@
               "path": "core/string/squeeze_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/squeeze_spec.rb",
               "examples": 16,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Arguments are literal characters (ADR 0088): the range, negation, and escape rows refuse naming the gsub that says the same; the bang forms are mutators (ADR 0015); the to_str, subclass, and encoding rows have no meaning with one UTF-8 String type.",
+              "link": {
+                "label": "string-count",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-count.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/character_lists_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/character_lists_spec.pdx"
+                }
+              ],
               "anchor": "core-string-squeeze"
             },
             {
@@ -26854,8 +26944,18 @@
               "path": "core/string/to_c_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_c_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The NUL-byte rows stay upstream, Portland strings having no NUL escape; the UTF-16 row has no string to be, every string being UTF-8 (ADR 0069).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-string-to_c"
             },
             {
@@ -26896,8 +26996,13 @@
               "path": "core/string/to_r_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/to_r_spec.rb",
               "examples": 13,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/string/tower_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/tower_spec.pdx"
+                }
+              ],
               "anchor": "core-string-to_r"
             },
             {
@@ -26952,8 +27057,18 @@
               "path": "core/string/tr_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/tr_spec.rb",
               "examples": 41,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Arguments are literal characters (ADR 0088): the range, negation, and escape rows refuse naming the gsub that says the same; the bang forms are mutators (ADR 0015); the to_str, subclass, and encoding rows have no meaning with one UTF-8 String type. Ruby 4.1's hash form waits for a pull.",
+              "link": {
+                "label": "string-count",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-count.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/character_lists_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/character_lists_spec.pdx"
+                }
+              ],
               "anchor": "core-string-tr"
             },
             {
@@ -26961,8 +27076,18 @@
               "path": "core/string/tr_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/tr_s_spec.rb",
               "examples": 25,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Arguments are literal characters (ADR 0088): the range, negation, and escape rows refuse naming the gsub that says the same; the bang forms are mutators (ADR 0015); the to_str, subclass, and encoding rows have no meaning with one UTF-8 String type.",
+              "link": {
+                "label": "string-count",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/string-count.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/character_lists_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/character_lists_spec.pdx"
+                }
+              ],
               "anchor": "core-string-tr_s"
             },
             {
@@ -27007,8 +27132,18 @@
               "path": "core/string/unicode_normalize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/unicode_normalize_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The non-Unicode-encoding rows stay upstream, every string being UTF-8 (ADR 0069); unicode_normalize! is a mutator, which does not exist (ADR 0015).",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/normalization_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/normalization_spec.pdx"
+                }
+              ],
               "anchor": "core-string-unicode_normalize"
             },
             {
@@ -27016,8 +27151,18 @@
               "path": "core/string/unicode_normalized_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/string/unicode_normalized_spec.rb",
               "examples": 11,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The non-Unicode-encoding row stays upstream, every string being UTF-8 (ADR 0069); the rows that normalize in place ask the normalized copy instead.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/string/normalization_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/string/normalization_spec.pdx"
+                }
+              ],
               "anchor": "core-string-unicode_normalized"
             },
             {
