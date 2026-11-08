@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-11-06T12:46:22Z",
-  "portland_commit": "a4e1a7e",
+  "generated_at": "2026-11-08T04:24:56Z",
+  "portland_commit": "c780379",
   "ruby_spec_commit": "af6351a2b",
   "ruby_spec_date": "2026-09-16",
   "totals": {
-    "passing": 132,
-    "partial_intentional": 484,
-    "partial_planned": 26,
+    "passing": 141,
+    "partial_intentional": 519,
+    "partial_planned": 31,
     "failing": 0,
-    "missing": 2091,
-    "skipped": 1107,
+    "missing": 2037,
+    "skipped": 1112,
     "files": 3840
   },
   "progress": {
-    "examples_portable": 16282,
-    "examples_passing": 803,
-    "examples_partial": 5665
+    "examples_portable": 16426,
+    "examples_passing": 840,
+    "examples_partial": 6143
   },
   "areas": [
     {
       "name": "core",
       "anchor": "core",
       "totals": {
-        "passing": 130,
-        "partial_intentional": 456,
-        "partial_planned": 19,
+        "passing": 138,
+        "partial_intentional": 483,
+        "partial_planned": 22,
         "failing": 0,
-        "missing": 656,
-        "skipped": 890,
+        "missing": 602,
+        "skipped": 906,
         "files": 2151
       },
       "directories": [
@@ -16565,12 +16565,12 @@
           "name": "core/matchdata",
           "anchor": "core-matchdata",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
-            "partial_planned": 0,
+            "passing": 5,
+            "partial_intentional": 14,
+            "partial_planned": 2,
             "failing": 0,
-            "missing": 30,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 9,
             "files": 30
           },
           "files": [
@@ -16579,7 +16579,12 @@
               "path": "core/matchdata/allocate_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/allocate_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no allocate; a match comes from a pattern.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-allocate"
             },
@@ -16588,8 +16593,18 @@
               "path": "core/matchdata/begin_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/begin_spec.rb",
               "examples": 18,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock and to_int coercion rows stay upstream; a closed runtime has no coercion protocol.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-begin"
             },
             {
@@ -16597,7 +16612,12 @@
               "path": "core/matchdata/bytebegin_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/bytebegin_spec.rb",
               "examples": 18,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Positions count graphemes here; the byte-offset family is not spelled.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-bytebegin"
             },
@@ -16606,7 +16626,12 @@
               "path": "core/matchdata/byteend_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/byteend_spec.rb",
               "examples": 15,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Positions count graphemes here; the byte-offset family is not spelled.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-byteend"
             },
@@ -16615,7 +16640,12 @@
               "path": "core/matchdata/byteoffset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/byteoffset_spec.rb",
               "examples": 11,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Positions count graphemes here; the byte-offset family is not spelled.",
+              "link": {
+                "label": "characters",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/characters.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-byteoffset"
             },
@@ -16624,8 +16654,18 @@
               "path": "core/matchdata/captures_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/captures_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The String-subclass rows stay upstream; there is no subclassing.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-captures"
             },
             {
@@ -16633,7 +16673,12 @@
               "path": "core/matchdata/deconstruct_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/deconstruct_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "A match in case/in waits for a port to pull for it.",
+              "link": {
+                "label": "issues/216",
+                "url": "https://github.com/portlandlang/portland/issues/216"
+              },
               "pdx": [],
               "anchor": "core-matchdata-deconstruct"
             },
@@ -16642,7 +16687,12 @@
               "path": "core/matchdata/deconstruct_keys_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/deconstruct_keys_spec.rb",
               "examples": 12,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "A match in case/in waits for a port to pull for it.",
+              "link": {
+                "label": "issues/216",
+                "url": "https://github.com/portlandlang/portland/issues/216"
+              },
               "pdx": [],
               "anchor": "core-matchdata-deconstruct_keys"
             },
@@ -16651,7 +16701,12 @@
               "path": "core/matchdata/dup_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/dup_spec.rb",
               "examples": 1,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "A match is a value; dup and instance variables have no meaning.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-dup"
             },
@@ -16660,8 +16715,18 @@
               "path": "core/matchdata/element_reference_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/element_reference_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The [start, length] and range forms wait for a pull; the subclass row stays upstream.",
+              "link": {
+                "label": "issues/214",
+                "url": "https://github.com/portlandlang/portland/issues/214"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-element_reference"
             },
             {
@@ -16669,8 +16734,18 @@
               "path": "core/matchdata/end_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/end_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock and to_int coercion rows stay upstream; a closed runtime has no coercion protocol.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-end"
             },
             {
@@ -16678,8 +16753,18 @@
               "path": "core/matchdata/eql_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/eql_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Upstream compares method objects; the spec asks eql? and == the same question.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-eql"
             },
             {
@@ -16687,8 +16772,13 @@
               "path": "core/matchdata/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/equal_value_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-equal_value"
             },
             {
@@ -16696,7 +16786,12 @@
               "path": "core/matchdata/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/hash_spec.rb",
               "examples": 0,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no hash method; a match is a value equal by its pattern, text, and positions.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-hash"
             },
@@ -16705,8 +16800,18 @@
               "path": "core/matchdata/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/inspect_spec.rb",
               "examples": 3,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "inspect is the universal function here, not a method.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-inspect"
             },
             {
@@ -16714,7 +16819,12 @@
               "path": "core/matchdata/integer_at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/integer_at_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Ruby 4.1's integer_at waits for a pull.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
               "pdx": [],
               "anchor": "core-matchdata-integer_at"
             },
@@ -16723,8 +16833,18 @@
               "path": "core/matchdata/length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/length_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Upstream compares method objects; the spec asks length and size the same question.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-length"
             },
             {
@@ -16732,8 +16852,13 @@
               "path": "core/matchdata/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/match_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-match"
             },
             {
@@ -16741,8 +16866,13 @@
               "path": "core/matchdata/match_length_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/match_length_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-match_length"
             },
             {
@@ -16750,8 +16880,18 @@
               "path": "core/matchdata/named_captures_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/named_captures_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The symbolize_names keyword waits for a pull; a key is a string.",
+              "link": {
+                "label": "issues/215",
+                "url": "https://github.com/portlandlang/portland/issues/215"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-named_captures"
             },
             {
@@ -16759,8 +16899,13 @@
               "path": "core/matchdata/names_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/names_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-names"
             },
             {
@@ -16768,8 +16913,18 @@
               "path": "core/matchdata/offset_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/offset_spec.rb",
               "examples": 12,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The mock and to_int coercion rows stay upstream; a closed runtime has no coercion protocol.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-offset"
             },
             {
@@ -16777,8 +16932,18 @@
               "path": "core/matchdata/post_match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/post_match_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The encoding and subclass rows stay upstream, and the match globals are gone.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-post_match"
             },
             {
@@ -16786,8 +16951,18 @@
               "path": "core/matchdata/pre_match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/pre_match_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The encoding and subclass rows stay upstream, and the match globals are gone.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-pre_match"
             },
             {
@@ -16795,8 +16970,18 @@
               "path": "core/matchdata/regexp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/regexp_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The object_id and $~ rows stay upstream; a pattern is a value, and the match globals are gone.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-regexp"
             },
             {
@@ -16804,8 +16989,13 @@
               "path": "core/matchdata/size_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/size_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-size"
             },
             {
@@ -16813,8 +17003,18 @@
               "path": "core/matchdata/string_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/string_spec.rb",
               "examples": 4,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The frozen and $~ rows stay upstream; a string is a value.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-string"
             },
             {
@@ -16822,8 +17022,18 @@
               "path": "core/matchdata/to_a_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/to_a_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The String-subclass rows stay upstream; there is no subclassing.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-to_a"
             },
             {
@@ -16831,8 +17041,18 @@
               "path": "core/matchdata/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/to_s_spec.rb",
               "examples": 2,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The String-subclass rows stay upstream; there is no subclassing.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-to_s"
             },
             {
@@ -16840,8 +17060,18 @@
               "path": "core/matchdata/values_at_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/matchdata/values_at_spec.rb",
               "examples": 15,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "The range forms wait for a pull.",
+              "link": {
+                "label": "issues/214",
+                "url": "https://github.com/portlandlang/portland/issues/214"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_data_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_data_spec.pdx"
+                }
+              ],
               "anchor": "core-matchdata-values_at"
             }
           ]
@@ -23496,12 +23726,12 @@
           "name": "core/regexp",
           "anchor": "core-regexp",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
-            "partial_planned": 0,
+            "passing": 3,
+            "partial_intentional": 13,
+            "partial_planned": 1,
             "failing": 0,
-            "missing": 24,
-            "skipped": 0,
+            "missing": 0,
+            "skipped": 7,
             "files": 24
           },
           "files": [
@@ -23510,8 +23740,18 @@
               "path": "core/regexp/case_compare_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/case_compare_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The to_str string-like row stays upstream; a value is text or it is not.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-case_compare"
             },
             {
@@ -23519,8 +23759,13 @@
               "path": "core/regexp/casefold_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/casefold_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-casefold"
             },
             {
@@ -23528,8 +23773,18 @@
               "path": "core/regexp/compile_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/compile_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The subclass, to_str, frozen, and encoding rows of the shared examples stay upstream; a bad pattern refuses, which a spec cannot assert.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-compile"
             },
             {
@@ -23537,7 +23792,12 @@
               "path": "core/regexp/encoding_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/encoding_spec.rb",
               "examples": 13,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string and pattern is UTF-8 here (ADR 0069); the encoding rows have nothing to specify.",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
               "pdx": [],
               "anchor": "core-regexp-encoding"
             },
@@ -23546,8 +23806,18 @@
               "path": "core/regexp/eql_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/eql_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Upstream compares method objects; the spec asks eql? and == the same question.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-eql"
             },
             {
@@ -23555,8 +23825,18 @@
               "path": "core/regexp/equal_value_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/equal_value_spec.rb",
               "examples": 5,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The n, u, e, and s modifier rows have no spelling here; every pattern is UTF-8 (ADR 0069).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-equal_value"
             },
             {
@@ -23564,8 +23844,18 @@
               "path": "core/regexp/escape_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/escape_spec.rb",
               "examples": 1,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Upstream compares method objects; the spec asks escape and quote the same question.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-escape"
             },
             {
@@ -23573,7 +23863,12 @@
               "path": "core/regexp/fixed_encoding_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/fixed_encoding_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Every string and pattern is UTF-8 here (ADR 0069); the encoding rows have nothing to specify.",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
               "pdx": [],
               "anchor": "core-regexp-fixed_encoding"
             },
@@ -23582,7 +23877,12 @@
               "path": "core/regexp/hash_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/hash_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no hash method; a pattern is a value equal by its source and flags.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
               "pdx": [],
               "anchor": "core-regexp-hash"
             },
@@ -23591,7 +23891,12 @@
               "path": "core/regexp/initialize_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/initialize_spec.rb",
               "examples": 5,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "initialize, allocate, and frozen? have no meaning for a value; Regexp.new is the one constructor.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
               "pdx": [],
               "anchor": "core-regexp-initialize"
             },
@@ -23600,8 +23905,18 @@
               "path": "core/regexp/inspect_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/inspect_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The o flag refuses by name and the n, u, e, and s codes do not exist; inspect is the universal function here, not a method.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-inspect"
             },
             {
@@ -23609,7 +23924,12 @@
               "path": "core/regexp/last_match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/last_match_spec.rb",
               "examples": 8,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "Regexp.last_match is the match global by another name; a match is bound and read.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
               "pdx": [],
               "anchor": "core-regexp-last_match"
             },
@@ -23618,8 +23938,18 @@
               "path": "core/regexp/linear_time_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/linear_time_spec.rb",
               "examples": 14,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "Flags beside a pattern refuse where Ruby warns them away; the binary-encoding row has no n flag (ADR 0069), and the rows guarded for DFA engines are not CRuby's answers.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-linear_time"
             },
             {
@@ -23627,8 +23957,18 @@
               "path": "core/regexp/match_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/match_spec.rb",
               "examples": 25,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "=~ answers the MatchData here, not an index, since the match globals are gone; the $~ reset, block, allocate, and invalid-encoding rows stay upstream.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/match_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/match_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-match"
             },
             {
@@ -23636,8 +23976,13 @@
               "path": "core/regexp/named_captures_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/named_captures_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-named_captures"
             },
             {
@@ -23645,8 +23990,13 @@
               "path": "core/regexp/names_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/names_spec.rb",
               "examples": 6,
-              "status": "missing",
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-names"
             },
             {
@@ -23654,8 +24004,18 @@
               "path": "core/regexp/new_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/new_spec.rb",
               "examples": 0,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The subclass, to_str, frozen, and encoding rows of the shared examples stay upstream; a bad pattern refuses, which a spec cannot assert.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-new"
             },
             {
@@ -23663,8 +24023,18 @@
               "path": "core/regexp/options_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/options_spec.rb",
               "examples": 9,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "FIXEDENCODING and NOENCODING do not exist; every pattern is UTF-8 (ADR 0069). The option bits are read with bit_and (ADR 0003).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-options"
             },
             {
@@ -23672,8 +24042,18 @@
               "path": "core/regexp/quote_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/quote_spec.rb",
               "examples": 7,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The encoding and broken-string rows stay upstream; every string is UTF-8 (ADR 0069).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-quote"
             },
             {
@@ -23681,8 +24061,18 @@
               "path": "core/regexp/source_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/source_spec.rb",
               "examples": 8,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The encoding rows stay upstream; %r takes only the family's delimiters, so the non-meta terminator rows have no spelling.",
+              "link": {
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-source"
             },
             {
@@ -23690,7 +24080,12 @@
               "path": "core/regexp/timeout_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/timeout_spec.rb",
               "examples": 3,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no Regexp.timeout; a pattern that never returns is the engine's business.",
+              "link": {
+                "label": "issues/212",
+                "url": "https://github.com/portlandlang/portland/issues/212"
+              },
               "pdx": [],
               "anchor": "core-regexp-timeout"
             },
@@ -23699,8 +24094,18 @@
               "path": "core/regexp/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/to_s_spec.rb",
               "examples": 10,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_planned",
+              "reason": "A single leading group's options fold into the wrapper in Ruby's to_s; here the group is written as it is.",
+              "link": {
+                "label": "issues/217",
+                "url": "https://github.com/portlandlang/portland/issues/217"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-to_s"
             },
             {
@@ -23708,7 +24113,12 @@
               "path": "core/regexp/try_convert_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/try_convert_spec.rb",
               "examples": 4,
-              "status": "missing",
+              "status": "skipped",
+              "reason": "There is no to_regexp protocol; a value is a pattern or it is not.",
+              "link": {
+                "label": "issues/155",
+                "url": "https://github.com/portlandlang/portland/issues/155"
+              },
               "pdx": [],
               "anchor": "core-regexp-try_convert"
             },
@@ -23717,8 +24127,18 @@
               "path": "core/regexp/union_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/core/regexp/union_spec.rb",
               "examples": 30,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The encoding rows stay upstream; every string and pattern is UTF-8 (ADR 0069).",
+              "link": {
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "core-regexp-union"
             }
           ]
@@ -30298,12 +30718,12 @@
       "name": "language",
       "anchor": "language",
       "totals": {
-        "passing": 2,
-        "partial_intentional": 28,
-        "partial_planned": 7,
+        "passing": 3,
+        "partial_intentional": 36,
+        "partial_planned": 9,
         "failing": 0,
         "missing": 0,
-        "skipped": 43,
+        "skipped": 32,
         "files": 80
       },
       "directories": [
@@ -30312,11 +30732,11 @@
           "anchor": "language",
           "totals": {
             "passing": 2,
-            "partial_intentional": 28,
+            "partial_intentional": 29,
             "partial_planned": 7,
             "failing": 0,
             "missing": 0,
-            "skipped": 30,
+            "skipped": 29,
             "files": 67
           },
           "files": [
@@ -31172,13 +31592,18 @@
               "path": "language/regexp_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp_spec.rb",
               "examples": 26,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The $_ conditional, frozen?, caching, and syntax-error rows stay upstream; %r takes the family's delimiters only, so the other delimiter rows have no spelling.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp_spec"
             },
             {
@@ -31530,12 +31955,12 @@
           "name": "language/regexp",
           "anchor": "language-regexp",
           "totals": {
-            "passing": 0,
-            "partial_intentional": 0,
-            "partial_planned": 0,
+            "passing": 1,
+            "partial_intentional": 7,
+            "partial_planned": 2,
             "failing": 0,
             "missing": 0,
-            "skipped": 11,
+            "skipped": 1,
             "files": 11
           },
           "files": [
@@ -31544,13 +31969,18 @@
               "path": "language/regexp/anchors_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/anchors_spec.rb",
               "examples": 14,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The $~ and $1 rows stay upstream; the match globals are gone, and a match is bound and read. The subjects spelled with \\0 stay upstream too; Portland's strings do not escape it.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-anchors"
             },
             {
@@ -31558,13 +31988,18 @@
               "path": "language/regexp/back-references_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/back-references_spec.rb",
               "examples": 20,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The $~ and $1 rows stay upstream; the match globals are gone, and a match is bound and read. The thread row has no Thread.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "removed-syntax",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-back-references"
             },
             {
@@ -31572,13 +32007,18 @@
               "path": "language/regexp/character_classes_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/character_classes_spec.rb",
               "examples": 128,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_planned",
+              "reason": "The common classes and POSIX brackets port; the long property-by-property walk waits for a pull.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-character_classes"
             },
             {
@@ -31586,13 +32026,18 @@
               "path": "language/regexp/empty_checks_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/empty_checks_spec.rb",
               "examples": 4,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_planned",
+              "reason": "A selection of the empty-iteration rows port; the rest wait for a pull.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-empty_checks"
             },
             {
@@ -31601,10 +32046,10 @@
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/encoding_spec.rb",
               "examples": 32,
               "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "reason": "Every string and pattern is UTF-8 here (ADR 0069); the encoding rows have nothing to specify.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
               },
               "pdx": [],
               "anchor": "language-regexp-encoding"
@@ -31614,13 +32059,18 @@
               "path": "language/regexp/escapes_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/escapes_spec.rb",
               "examples": 13,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The file is binary-encoded upstream; the rows a UTF-8 source reads the same port, the eval-driven syntax errors refuse (which a spec cannot assert), and the subjects spelled with \\v, \\f, \\a, and \\e stay upstream.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-escapes"
             },
             {
@@ -31628,13 +32078,18 @@
               "path": "language/regexp/grouping_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/grouping_spec.rb",
               "examples": 7,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The eval-driven syntax error rows refuse, which a spec cannot assert.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-grouping"
             },
             {
@@ -31642,13 +32097,18 @@
               "path": "language/regexp/interpolation_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/interpolation_spec.rb",
               "examples": 9,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The to_s-object, o-flag, encoding, and RegexpError rows stay upstream; the o flag refuses by name and a bad pattern refuses.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/literal_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/literal_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-interpolation"
             },
             {
@@ -31656,13 +32116,18 @@
               "path": "language/regexp/modifiers_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/modifiers_spec.rb",
               "examples": 12,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The o flag refuses by name, and (?a), (?d), (?u), and the eval-driven syntax errors stay upstream.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-modifiers"
             },
             {
@@ -31670,13 +32135,18 @@
               "path": "language/regexp/repetition_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/repetition_spec.rb",
               "examples": 14,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
+              "status": "partial_intentional",
+              "reason": "The rows that complain under eval stay upstream; a nested repeat is read as Ruby reads it.",
               "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
+                "label": "regex",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-repetition"
             },
             {
@@ -31684,13 +32154,13 @@
               "path": "language/regexp/subexpression_call_spec.rb",
               "url": "https://github.com/ruby/spec/blob/af6351a2b55f0d1566f7fcb0cc8b732c273e0c5b/language/regexp/subexpression_call_spec.rb",
               "examples": 5,
-              "status": "skipped",
-              "reason": "Regex literals wait on the regex decision (#74).",
-              "link": {
-                "label": "issues/74",
-                "url": "https://github.com/portlandlang/portland/issues/74"
-              },
-              "pdx": [],
+              "status": "passing",
+              "pdx": [
+                {
+                  "path": "spec/regex/pattern_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/regex/pattern_spec.pdx"
+                }
+              ],
               "anchor": "language-regexp-subexpression_call"
             }
           ]
