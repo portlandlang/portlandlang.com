@@ -1,0 +1,43 @@
+{%- comment -%}
+One area of the spec tree, collapsed: include.area, with its name, anchor,
+totals, and directories, each directory with its files. An area's own
+top-level files, as language/ has, list straight under it with no extra
+level.
+{%- endcomment -%}
+
+{%- assign area = include.area %}
+
+<details class="area" id="{{ area.anchor }}">
+  <summary>
+    <a class="anchor" href="#{{ area.anchor }}" aria-label="Link to {{ area.name }}">#</a>
+
+    <span class="area-name h3">{{ area.name }}</span>
+    <span class="text-body-secondary">{% include number.html value=area.totals.files %} files</span>
+
+    {% include status_bar.html totals=area.totals %}
+  </summary>
+
+  {% for directory in area.directories %}
+    {%- if directory.name == area.name %}
+      {% include spec_files.html files=directory.files %}
+    {%- else %}
+      <details class="directory" id="{{ directory.anchor }}">
+        <summary>
+          {%- assign area_prefix = area.name | append: "/" %}
+          {%- assign short_name = directory.name | remove_first: area_prefix %}
+
+          <span class="directory-label">
+            <a class="anchor" href="#{{ directory.anchor }}" aria-label="Link to {{ directory.name }}">#</a>
+            <span class="directory-name" title="{{ directory.name }}">{{ short_name }}</span>
+          </span>
+
+          <span class="directory-count text-end text-body-secondary">{{ directory.totals.files }}</span>
+
+          {% include status_bar.html totals=directory.totals size="small" %}
+        </summary>
+
+        {% include spec_files.html files=directory.files %}
+      </details>
+    {%- endif %}
+  {% endfor %}
+</details>
