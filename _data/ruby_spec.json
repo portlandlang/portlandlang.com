@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-11-08T19:44:10Z",
-  "portland_commit": "cfab7d4a",
+  "generated_at": "2026-11-09T02:05:43Z",
+  "portland_commit": "fe89a8ef",
   "ruby_spec_commit": "47b10f1d7",
   "ruby_spec_date": "2026-10-29",
   "totals": {
     "passing": 142,
-    "partial_intentional": 538,
-    "partial_planned": 37,
+    "partial_intentional": 541,
+    "partial_planned": 36,
     "failing": 0,
-    "missing": 2025,
-    "skipped": 1116,
+    "missing": 2024,
+    "skipped": 1115,
     "files": 3858
   },
   "progress": {
-    "examples_portable": 16542,
+    "examples_portable": 16544,
     "examples_passing": 853,
-    "examples_partial": 6347
+    "examples_partial": 6369
   },
   "areas": [
     {
@@ -23,11 +23,11 @@
       "anchor": "core",
       "totals": {
         "passing": 139,
-        "partial_intentional": 504,
-        "partial_planned": 28,
+        "partial_intentional": 507,
+        "partial_planned": 27,
         "failing": 0,
-        "missing": 587,
-        "skipped": 899,
+        "missing": 586,
+        "skipped": 898,
         "files": 2157
       },
       "directories": [
@@ -541,11 +541,11 @@
           "anchor": "core-array",
           "totals": {
             "passing": 8,
-            "partial_intentional": 69,
+            "partial_intentional": 70,
             "partial_planned": 1,
             "failing": 0,
             "missing": 0,
-            "skipped": 27,
+            "skipped": 26,
             "files": 105
           },
           "files": [
@@ -823,13 +823,18 @@
               "path": "core/array/constructor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/array/constructor_spec.rb",
               "examples": 2,
-              "status": "skipped",
-              "reason": "Array[...] is decided with Ruby's behavior (ADR 0058, amended) and not yet built; the subclass rows and the dotted Array.[] spelling stay upstream.",
+              "status": "partial_intentional",
+              "reason": "The subclass rows and the dotted Array.[] spelling stay upstream.",
               "link": {
-                "label": "issues/218",
-                "url": "https://github.com/portlandlang/portland/issues/218"
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
-              "pdx": [],
+              "pdx": [
+                {
+                  "path": "spec/core/array/constructor_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/core/array/constructor_spec.pdx"
+                }
+              ],
               "anchor": "core-array-constructor"
             },
             {
@@ -6240,7 +6245,7 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/enumerable/sum_spec.rb",
               "examples": 5,
               "status": "partial_intentional",
-              "reason": "The rational rows sum exactly (spec/portland/number/promotion_spec.pdx); symbol-to-block waits on #77.",
+              "reason": "The rational rows sum exactly, upstream's 2/3r written Rational(2, 3); symbol-to-block waits on #77.",
               "link": {
                 "label": "types",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/types.md"
@@ -10395,7 +10400,7 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/float/exponent_spec.rb",
               "examples": 2,
               "status": "partial_planned",
-              "reason": "A negative float to a fractional power is a Complex, as Ruby's is (spec/portland/number/complex_spec.pdx); the bignum and coercion rows stay upstream.",
+              "reason": "A negative float to a fractional power is a Complex, as Ruby's is (spec/core/float/exponent_spec.pdx); the bignum and coercion rows stay upstream.",
               "link": {
                 "label": "issues/198",
                 "url": "https://github.com/portlandlang/portland/issues/198"
@@ -11263,10 +11268,10 @@
           "anchor": "core-hash",
           "totals": {
             "passing": 4,
-            "partial_intentional": 41,
+            "partial_intentional": 42,
             "partial_planned": 0,
             "failing": 0,
-            "missing": 1,
+            "missing": 0,
             "skipped": 23,
             "files": 69
           },
@@ -11384,8 +11389,18 @@
               "path": "core/hash/constructor_spec.rb",
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/hash/constructor_spec.rb",
               "examples": 20,
-              "status": "missing",
-              "pdx": [],
+              "status": "partial_intentional",
+              "reason": "The to_ary and to_hash coercion rows and their mocks, the subclass rows, defaults (ADR 0063), and compare_by_identity stay upstream.",
+              "link": {
+                "label": "metaprogramming",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
+              },
+              "pdx": [
+                {
+                  "path": "spec/core/hash/constructor_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/core/hash/constructor_spec.pdx"
+                }
+              ],
               "anchor": "core-hash-constructor"
             },
             {
@@ -16908,15 +16923,15 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/matchdata/eql_spec.rb",
               "examples": 1,
               "status": "partial_intentional",
-              "reason": "Upstream compares method objects; the spec asks eql? and == the same question.",
+              "reason": "Upstream compares method objects; the spec asks eql? the questions equal_value_spec asks ==.",
               "link": {
                 "label": "metaprogramming",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md"
               },
               "pdx": [
                 {
-                  "path": "spec/core/matchdata/equal_value_spec.pdx",
-                  "url": "https://github.com/portlandlang/portland/blob/main/spec/core/matchdata/equal_value_spec.pdx"
+                  "path": "spec/core/matchdata/eql_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/core/matchdata/eql_spec.pdx"
                 }
               ],
               "anchor": "core-matchdata-eql"
@@ -17035,10 +17050,10 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/matchdata/named_captures_spec.rb",
               "examples": 5,
               "status": "partial_intentional",
-              "reason": "The symbolize_names keyword waits for a pull; a key is a string.",
+              "reason": "symbolize_names takes true or false, so the rows passing \"truly\" and nil stay upstream.",
               "link": {
-                "label": "issues/215",
-                "url": "https://github.com/portlandlang/portland/issues/215"
+                "label": "truthiness",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
               },
               "pdx": [
                 {
@@ -23950,8 +23965,8 @@
           "anchor": "core-regexp",
           "totals": {
             "passing": 3,
-            "partial_intentional": 13,
-            "partial_planned": 1,
+            "partial_intentional": 14,
+            "partial_planned": 0,
             "failing": 0,
             "missing": 0,
             "skipped": 7,
@@ -24181,7 +24196,7 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/regexp/match_spec.rb",
               "examples": 25,
               "status": "partial_intentional",
-              "reason": "=~ answers the MatchData here, not an index, since the match globals are gone; the $~ reset, block, allocate, and invalid-encoding rows stay upstream.",
+              "reason": "=~ answers the MatchData here, not an index, since the match globals are gone; the $~ reset, allocate, and invalid-encoding rows stay upstream.",
               "link": {
                 "label": "regex",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/regex.md"
@@ -24317,11 +24332,11 @@
               "path": "core/regexp/to_s_spec.rb",
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/core/regexp/to_s_spec.rb",
               "examples": 10,
-              "status": "partial_planned",
-              "reason": "A single leading group's options fold into the wrapper in Ruby's to_s; here the group is written as it is.",
+              "status": "partial_intentional",
+              "reason": "The /jis/s row stays upstream: the n, u, e, and s encoding modifiers do not exist, every string being UTF-8.",
               "link": {
-                "label": "issues/217",
-                "url": "https://github.com/portlandlang/portland/issues/217"
+                "label": "encodings",
+                "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/encodings.md"
               },
               "pdx": [
                 {
@@ -31146,7 +31161,7 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/language/and_spec.rb",
               "examples": 10,
               "status": "partial_intentional",
-              "reason": "The logical operators take booleans only, so the rows with strings, integers, nil, or () as operands refuse; assignment is a statement, so the assignment-in-expression rows stay upstream.",
+              "reason": "The logical operators take booleans only, so the rows with strings, integers, nil, or () as operands refuse; and binds as && does, so x = true and false assigns false where Ruby assigns true (spec/portland/word_operators/precedence_spec.pdx); assignment is a statement, so the assignment-in-expression rows stay upstream.",
               "link": {
                 "label": "truthiness",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/truthiness.md"
@@ -31155,6 +31170,10 @@
                 {
                   "path": "spec/language/and_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/language/and_spec.pdx"
+                },
+                {
+                  "path": "spec/portland/word_operators/precedence_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/word_operators/precedence_spec.pdx"
                 }
               ],
               "anchor": "language-and"
@@ -31750,7 +31769,7 @@
               "url": "https://github.com/ruby/spec/blob/47b10f1d7b1c29bda01d6903cceddd5b0b4c857d/language/or_spec.rb",
               "examples": 15,
               "status": "partial_intentional",
-              "reason": "or and || are dead-identical, so the precedence rows diverge on purpose; the rows with nil, integers, or () as operands refuse, and break, next, and return carry no value out of a lambda.",
+              "reason": "or and || are dead-identical, so the precedence rows diverge on purpose — x = nil or true assigns true where Ruby assigns nil (spec/portland/word_operators/precedence_spec.pdx); the rows with nil, integers, or () as operands refuse, and break, next, and return carry no value out of a lambda.",
               "link": {
                 "label": "word-operators",
                 "url": "https://github.com/portlandlang/portland/blob/main/docs/ruby/word-operators.md"
@@ -31759,6 +31778,10 @@
                 {
                   "path": "spec/language/or_spec.pdx",
                   "url": "https://github.com/portlandlang/portland/blob/main/spec/language/or_spec.pdx"
+                },
+                {
+                  "path": "spec/portland/word_operators/precedence_spec.pdx",
+                  "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/word_operators/precedence_spec.pdx"
                 }
               ],
               "anchor": "language-or"
@@ -50111,5 +50134,924 @@
         }
       ]
     }
-  ]
+  ],
+  "portland": {
+    "name": "portland",
+    "anchor": "portland",
+    "totals": {
+      "passing": 68,
+      "partial_intentional": 0,
+      "partial_planned": 0,
+      "failing": 0,
+      "missing": 0,
+      "skipped": 0,
+      "files": 68
+    },
+    "directories": [
+      {
+        "name": "portland",
+        "anchor": "portland",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "inspect",
+            "path": "spec/portland/inspect_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/inspect_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-inspect"
+          }
+        ]
+      },
+      {
+        "name": "portland/block",
+        "anchor": "portland-block",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "queries",
+            "path": "spec/portland/block/queries_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/block/queries_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-block-queries"
+          }
+        ]
+      },
+      {
+        "name": "portland/enum",
+        "anchor": "portland-enum",
+        "totals": {
+          "passing": 2,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 2
+        },
+        "files": [
+          {
+            "name": "nesting",
+            "path": "spec/portland/enum/nesting_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/enum/nesting_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-enum-nesting"
+          },
+          {
+            "name": "payload",
+            "path": "spec/portland/enum/payload_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/enum/payload_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-enum-payload"
+          }
+        ]
+      },
+      {
+        "name": "portland/enumerable",
+        "anchor": "portland-enumerable",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "trait",
+            "path": "spec/portland/enumerable/trait_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/enumerable/trait_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-enumerable-trait"
+          }
+        ]
+      },
+      {
+        "name": "portland/failure",
+        "anchor": "portland-failure",
+        "totals": {
+          "passing": 5,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 5
+        },
+        "files": [
+          {
+            "name": "box",
+            "path": "spec/portland/failure/box_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/failure/box_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-failure-box"
+          },
+          {
+            "name": "pattern",
+            "path": "spec/portland/failure/pattern_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/failure/pattern_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-failure-pattern"
+          },
+          {
+            "name": "propagate",
+            "path": "spec/portland/failure/propagate_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/failure/propagate_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-failure-propagate"
+          },
+          {
+            "name": "read_file",
+            "path": "spec/portland/failure/read_file_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/failure/read_file_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-failure-read_file"
+          },
+          {
+            "name": "toolkit",
+            "path": "spec/portland/failure/toolkit_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/failure/toolkit_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-failure-toolkit"
+          }
+        ]
+      },
+      {
+        "name": "portland/harness",
+        "anchor": "portland-harness",
+        "totals": {
+          "passing": 7,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 7
+        },
+        "files": [
+          {
+            "name": "collection_matchers",
+            "path": "spec/portland/harness/collection_matchers_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/collection_matchers_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-harness-collection_matchers"
+          },
+          {
+            "name": "comparison_matchers",
+            "path": "spec/portland/harness/comparison_matchers_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/comparison_matchers_spec.pdx",
+            "examples": 10,
+            "status": "passing",
+            "anchor": "portland-harness-comparison_matchers"
+          },
+          {
+            "name": "cover_and_nan_matchers",
+            "path": "spec/portland/harness/cover_and_nan_matchers_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/cover_and_nan_matchers_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-harness-cover_and_nan_matchers"
+          },
+          {
+            "name": "eql_matcher",
+            "path": "spec/portland/harness/eql_matcher_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/eql_matcher_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-harness-eql_matcher"
+          },
+          {
+            "name": "string_matchers",
+            "path": "spec/portland/harness/string_matchers_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/string_matchers_spec.pdx",
+            "examples": 6,
+            "status": "passing",
+            "anchor": "portland-harness-string_matchers"
+          },
+          {
+            "name": "to_satisfy",
+            "path": "spec/portland/harness/to_satisfy_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/to_satisfy_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-harness-to_satisfy"
+          },
+          {
+            "name": "type_matchers",
+            "path": "spec/portland/harness/type_matchers_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/harness/type_matchers_spec.pdx",
+            "examples": 5,
+            "status": "passing",
+            "anchor": "portland-harness-type_matchers"
+          }
+        ]
+      },
+      {
+        "name": "portland/json",
+        "anchor": "portland-json",
+        "totals": {
+          "passing": 2,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 2
+        },
+        "files": [
+          {
+            "name": "generate",
+            "path": "spec/portland/json/generate_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/json/generate_spec.pdx",
+            "examples": 10,
+            "status": "passing",
+            "anchor": "portland-json-generate"
+          },
+          {
+            "name": "parse",
+            "path": "spec/portland/json/parse_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/json/parse_spec.pdx",
+            "examples": 14,
+            "status": "passing",
+            "anchor": "portland-json-parse"
+          }
+        ]
+      },
+      {
+        "name": "portland/kernel",
+        "anchor": "portland-kernel",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "class",
+            "path": "spec/portland/kernel/class_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/kernel/class_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-kernel-class"
+          }
+        ]
+      },
+      {
+        "name": "portland/method",
+        "anchor": "portland-method",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "def_shapes",
+            "path": "spec/portland/method/def_shapes_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/method/def_shapes_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-method-def_shapes"
+          }
+        ]
+      },
+      {
+        "name": "portland/mutable",
+        "anchor": "portland-mutable",
+        "totals": {
+          "passing": 5,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 5
+        },
+        "files": [
+          {
+            "name": "append",
+            "path": "spec/portland/mutable/append_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/mutable/append_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-mutable-append"
+          },
+          {
+            "name": "array_index",
+            "path": "spec/portland/mutable/array_index_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/mutable/array_index_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-mutable-array_index"
+          },
+          {
+            "name": "hash_index",
+            "path": "spec/portland/mutable/hash_index_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/mutable/hash_index_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-mutable-hash_index"
+          },
+          {
+            "name": "or_equals",
+            "path": "spec/portland/mutable/or_equals_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/mutable/or_equals_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-mutable-or_equals"
+          },
+          {
+            "name": "parameter",
+            "path": "spec/portland/mutable/parameter_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/mutable/parameter_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-mutable-parameter"
+          }
+        ]
+      },
+      {
+        "name": "portland/namespace",
+        "anchor": "portland-namespace",
+        "totals": {
+          "passing": 2,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 2
+        },
+        "files": [
+          {
+            "name": "operators",
+            "path": "spec/portland/namespace/operators_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/namespace/operators_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-namespace-operators"
+          },
+          {
+            "name": "resolution",
+            "path": "spec/portland/namespace/resolution_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/namespace/resolution_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-namespace-resolution"
+          }
+        ]
+      },
+      {
+        "name": "portland/number/float",
+        "anchor": "portland-number-float",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "predicates",
+            "path": "spec/portland/number/float/predicates_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/number/float/predicates_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-number-float-predicates"
+          }
+        ]
+      },
+      {
+        "name": "portland/number/integer",
+        "anchor": "portland-number-integer",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "step",
+            "path": "spec/portland/number/integer/step_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/number/integer/step_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-number-integer-step"
+          }
+        ]
+      },
+      {
+        "name": "portland/optionals",
+        "anchor": "portland-optionals",
+        "totals": {
+          "passing": 4,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 4
+        },
+        "files": [
+          {
+            "name": "partial",
+            "path": "spec/portland/optionals/partial_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/optionals/partial_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-optionals-partial"
+          },
+          {
+            "name": "predicates",
+            "path": "spec/portland/optionals/predicates_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/optionals/predicates_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-optionals-predicates"
+          },
+          {
+            "name": "some",
+            "path": "spec/portland/optionals/some_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/optionals/some_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-optionals-some"
+          },
+          {
+            "name": "wrapper",
+            "path": "spec/portland/optionals/wrapper_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/optionals/wrapper_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-optionals-wrapper"
+          }
+        ]
+      },
+      {
+        "name": "portland/pattern_matching",
+        "anchor": "portland-pattern_matching",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "type_pattern",
+            "path": "spec/portland/pattern_matching/type_pattern_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/pattern_matching/type_pattern_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-pattern_matching-type_pattern"
+          }
+        ]
+      },
+      {
+        "name": "portland/range",
+        "anchor": "portland-range",
+        "totals": {
+          "passing": 3,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 3
+        },
+        "files": [
+          {
+            "name": "orderable",
+            "path": "spec/portland/range/orderable_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/range/orderable_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-range-orderable"
+          },
+          {
+            "name": "slicing",
+            "path": "spec/portland/range/slicing_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/range/slicing_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-range-slicing"
+          },
+          {
+            "name": "stepping",
+            "path": "spec/portland/range/stepping_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/range/stepping_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-range-stepping"
+          }
+        ]
+      },
+      {
+        "name": "portland/regex",
+        "anchor": "portland-regex",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "string",
+            "path": "spec/portland/regex/string_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/regex/string_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-regex-string"
+          }
+        ]
+      },
+      {
+        "name": "portland/set",
+        "anchor": "portland-set",
+        "totals": {
+          "passing": 2,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 2
+        },
+        "files": [
+          {
+            "name": "algebra",
+            "path": "spec/portland/set/algebra_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/set/algebra_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-set-algebra"
+          },
+          {
+            "name": "enumerable",
+            "path": "spec/portland/set/enumerable_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/set/enumerable_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-set-enumerable"
+          }
+        ]
+      },
+      {
+        "name": "portland/string",
+        "anchor": "portland-string",
+        "totals": {
+          "passing": 4,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 4
+        },
+        "files": [
+          {
+            "name": "encoding",
+            "path": "spec/portland/string/encoding_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/string/encoding_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-string-encoding"
+          },
+          {
+            "name": "format",
+            "path": "spec/portland/string/format_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/string/format_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-string-format"
+          },
+          {
+            "name": "slice",
+            "path": "spec/portland/string/slice_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/string/slice_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-string-slice"
+          },
+          {
+            "name": "unicode",
+            "path": "spec/portland/string/unicode_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/string/unicode_spec.pdx",
+            "examples": 5,
+            "status": "passing",
+            "anchor": "portland-string-unicode"
+          }
+        ]
+      },
+      {
+        "name": "portland/struct",
+        "anchor": "portland-struct",
+        "totals": {
+          "passing": 9,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 9
+        },
+        "files": [
+          {
+            "name": "class_spelling",
+            "path": "spec/portland/struct/class_spelling_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/class_spelling_spec.pdx",
+            "examples": 8,
+            "status": "passing",
+            "anchor": "portland-struct-class_spelling"
+          },
+          {
+            "name": "comparable",
+            "path": "spec/portland/struct/comparable_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/comparable_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-struct-comparable"
+          },
+          {
+            "name": "construction",
+            "path": "spec/portland/struct/construction_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/construction_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-struct-construction"
+          },
+          {
+            "name": "definable_new",
+            "path": "spec/portland/struct/definable_new_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/definable_new_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-struct-definable_new"
+          },
+          {
+            "name": "methods",
+            "path": "spec/portland/struct/methods_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/methods_spec.pdx",
+            "examples": 5,
+            "status": "passing",
+            "anchor": "portland-struct-methods"
+          },
+          {
+            "name": "module_def_self",
+            "path": "spec/portland/struct/module_def_self_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/module_def_self_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-struct-module_def_self"
+          },
+          {
+            "name": "nesting",
+            "path": "spec/portland/struct/nesting_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/nesting_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-struct-nesting"
+          },
+          {
+            "name": "type_functions",
+            "path": "spec/portland/struct/type_functions_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/type_functions_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-struct-type_functions"
+          },
+          {
+            "name": "with",
+            "path": "spec/portland/struct/with_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/struct/with_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-struct-with"
+          }
+        ]
+      },
+      {
+        "name": "portland/system",
+        "anchor": "portland-system",
+        "totals": {
+          "passing": 8,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 8
+        },
+        "files": [
+          {
+            "name": "append_file",
+            "path": "spec/portland/system/append_file_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/append_file_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-system-append_file"
+          },
+          {
+            "name": "arguments",
+            "path": "spec/portland/system/arguments_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/arguments_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-system-arguments"
+          },
+          {
+            "name": "entropy",
+            "path": "spec/portland/system/entropy_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/entropy_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-system-entropy"
+          },
+          {
+            "name": "monotonic_time",
+            "path": "spec/portland/system/monotonic_time_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/monotonic_time_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-system-monotonic_time"
+          },
+          {
+            "name": "read_file",
+            "path": "spec/portland/system/read_file_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/read_file_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-system-read_file"
+          },
+          {
+            "name": "standard_streams",
+            "path": "spec/portland/system/standard_streams_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/standard_streams_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-system-standard_streams"
+          },
+          {
+            "name": "wall_clock_time",
+            "path": "spec/portland/system/wall_clock_time_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/wall_clock_time_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-system-wall_clock_time"
+          },
+          {
+            "name": "write_file",
+            "path": "spec/portland/system/write_file_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/system/write_file_spec.pdx",
+            "examples": 4,
+            "status": "passing",
+            "anchor": "portland-system-write_file"
+          }
+        ]
+      },
+      {
+        "name": "portland/together",
+        "anchor": "portland-together",
+        "totals": {
+          "passing": 2,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 2
+        },
+        "files": [
+          {
+            "name": "failed_task",
+            "path": "spec/portland/together/failed_task_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/together/failed_task_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-together-failed_task"
+          },
+          {
+            "name": "join",
+            "path": "spec/portland/together/join_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/together/join_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-together-join"
+          }
+        ]
+      },
+      {
+        "name": "portland/trait",
+        "anchor": "portland-trait",
+        "totals": {
+          "passing": 3,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 3
+        },
+        "files": [
+          {
+            "name": "include",
+            "path": "spec/portland/trait/include_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/trait/include_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-trait-include"
+          },
+          {
+            "name": "nesting",
+            "path": "spec/portland/trait/nesting_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/trait/nesting_spec.pdx",
+            "examples": 1,
+            "status": "passing",
+            "anchor": "portland-trait-nesting"
+          },
+          {
+            "name": "resolution",
+            "path": "spec/portland/trait/resolution_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/trait/resolution_spec.pdx",
+            "examples": 2,
+            "status": "passing",
+            "anchor": "portland-trait-resolution"
+          }
+        ]
+      },
+      {
+        "name": "portland/word_operators",
+        "anchor": "portland-word_operators",
+        "totals": {
+          "passing": 1,
+          "partial_intentional": 0,
+          "partial_planned": 0,
+          "failing": 0,
+          "missing": 0,
+          "skipped": 0,
+          "files": 1
+        },
+        "files": [
+          {
+            "name": "precedence",
+            "path": "spec/portland/word_operators/precedence_spec.pdx",
+            "url": "https://github.com/portlandlang/portland/blob/main/spec/portland/word_operators/precedence_spec.pdx",
+            "examples": 3,
+            "status": "passing",
+            "anchor": "portland-word_operators-precedence"
+          }
+        ]
+      }
+    ]
+  }
 }
