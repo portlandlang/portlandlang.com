@@ -22,4 +22,4 @@
 - key: gap or undecided
   label: Open question
   color: orange
-  description: Touches something Portland hasn't decided or built yet, such as require by name or regex
+  description: Touches something Portland hasn't decided or built, such as splats or mutable instance state

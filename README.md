@@ -2,7 +2,7 @@
 
 The website for [Portland](https://github.com/portlandlang/portland), a joyous programming language for Apple silicon.
 
-⚠️ Under construction: for now it says what the site will be, and it will grow a roadmap and a progress dashboard for the language spec.
+⚠️ Under construction: it holds the spec dashboard and the gems dashboard, and it will grow a roadmap.
 
 ## Development
 
