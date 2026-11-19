@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- **Stale claims brought up to date** ([portland#288](https://github.com/portlandlang/portland/issues/288)) — the README promised a spec dashboard the site has, the home and gems pages said "today" and "yet", and the open-question grade gave require by name and regex as examples, both decided and built in Portland (ADR 0077, ADR 0086); it names splats and mutable instance state instead. The gems data still grades from ruby_research's removals list, whose update is tracked there.
+
 - **Portland's own specs** ([portland#241](https://github.com/portlandlang/portland/issues/241)) — below the upstream areas, `/spec/` lists every spec under the language repo's `spec/portland/`, Portland's own features and its deliberate differences from Ruby, by directory, each passing or failing on both oracles with its example count, linked at `#portland-only`. It reads `portland` from `_data/ruby_spec.json` and shows nothing when the data has none. An area's markup moved into `_includes/spec_area.html`, so both sections draw alike.
 
 - **The gems dashboard** (#2) — `/gems/` shows how far RubyGems.org gets under Portland: the corpus, the gems with `lib/` files, and the gems whose every `lib/` file parses unedited (10,426 of 196,982 today); then the 500 most downloaded of those, each graded by the hardest listed Ruby difference it touches — runs as is, taste only, thesis, or open question, drawn from `_data/grades.yml` in the spec page's colors — with what it touches listed beside it. The data is `_data/gem_readiness.json`, from ruby_research's `script/report gem-readiness`. The page says plainly that grades are read off the source, not a run. `_includes/number.html` now groups millions too, for download counts; the home page links the page.
